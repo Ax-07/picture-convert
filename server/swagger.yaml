@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info: 
+  title: Todo API
+  description: simple API pour gérer une liste de tâches
+  version: 1.0.0
+servers:
+  - url: http://localhost:8050/api
+    description: Serveur de développement
+paths:
+  /users:
+    get:
+      summary: Récupérer la liste des utilisateurs
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    role:
+                      type: string
+                    createdAt:
+                      type: string
+                      format: date-time
+                    updatedAt:
+                      type: string
+                      format: date-time
+components:
+  schemas:
+    Todo:
+      type: object
+      description: "Le modèle Todo. Lorsqu'une image est téléchargée, le backend crée trois versions différentes (desktop, tablette, mobile) qui sont stockées dans le tableau 'images'."
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        description:
+          type: string
+        images: 
+          type: array
+          description: "Un tableau d'objets, chaque objet contenant les URLs des versions desktop, tablette et mobile de l'image. Ces versions sont créées automatiquement par le backend lors du téléchargement de l'image."
+          items: 
+            type: object
+            properties:
+              desktop:
+                type: string
+              tablet:
+                type: string
+              mobile:
+                type: string
+        status:
+          type: boolean
+      required:
+        - id
+        - title
+        - status

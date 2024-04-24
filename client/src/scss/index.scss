@@ -1,0 +1,23 @@
+// globals styles
+@import './global/theme.scss';
+@import './global/reset.scss';
+
+// layouts
+@import '../layouts/header/header.scss';
+@import '../layouts/footer/footer.scss';
+
+// components
+@import '../scss/components/btn.scss';
+@import '../components/separateLines/separateLine.scss';
+@import '../components/addPicture/addPictureForm.scss';
+@import '../components/imageComparator/imageComparator.scss';
+@import '../components/navigation/navbar/navbar.scss';
+@import '../components/navigation/socialNav/socialNav.scss';
+@import '../components/stepByStep/stepByStep.scss';
+@import '../components/sliderRange/sliderRange.scss';
+@import '../components/SizeSelector/sizeSelector.scss';
+
+// pages
+@import '../pages/compress/compress.scss';
+@import '../pages/home/home.scss';
+@import '../pages/guide/guide.scss';

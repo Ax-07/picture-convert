@@ -1,0 +1,44 @@
+.img-comparator {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    &__img {
+        position: absolute;
+        display: block;
+        height: 100%;
+        // width: 100%
+        // overflow: hidden;
+
+        & img {
+            display: block;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+    
+    &__overlay {
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    &__slider {
+        position: absolute;
+        z-index: 1;
+        width: 2px;
+        height: 100%;
+        background-color: $color-light;
+        opacity: 0.7;
+        cursor: ew-resize;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: $color-light;
+            border-radius: 50%;
+            top: 50%;
+            left: -14px;
+        }
+    }
+}

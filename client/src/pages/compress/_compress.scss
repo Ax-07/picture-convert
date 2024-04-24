@@ -1,0 +1,60 @@
+.compress-picture {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 1024px;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 1rem; 
+        margin-bottom: 0.5rem;
+        border: 1px solid $color-dark;
+        border-radius: 5px;
+        background-color: $color-white;
+        box-shadow: $box-shadow-dark;
+
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 2rem;
+        padding: 1rem; 
+        border: 1px solid $color-dark;
+        border-radius: 5px;
+        background-color: $color-white;
+        box-shadow: $box-shadow-dark;
+
+    }
+
+    &__comparator {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        padding: 1rem; 
+        border: 1px solid $color-dark;
+        border-radius: 5px;
+        background-color: $color-white;
+        box-shadow: $box-shadow-dark;
+    }
+
+    &__infos-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 1rem;
+    }
+}

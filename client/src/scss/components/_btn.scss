@@ -1,0 +1,23 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 5px;
+    background-color: darken($color-light, 10);
+    color: $color-dark;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-dark;
+        color: $color-light;
+
+    }
+    &:disabled {
+        background-color: $color-light;
+        color: $color-dark;
+        cursor: not-allowed;
+    }
+}

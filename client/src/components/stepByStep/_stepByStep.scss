@@ -1,0 +1,72 @@
+.stepByStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+    
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0 2rem;
+        gap: 2rem;
+        counter-reset: steps;
+        list-style: none;
+
+        @media screen and (max-width: 1024px) {
+           display: grid;
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: 430px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex: 1;
+        width: 100%;
+        max-width: 275px;
+        height: 70px;
+        counter-increment: steps;
+        align-items: center;
+        list-style: none;
+        border: 1px solid $color-dark;
+        border-radius: 15px;
+        box-shadow: $box-shadow-dark;
+        padding: 1rem 1.5rem;
+        background-color: $color-white;
+
+        &::before {
+            content: counter(steps);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            transform: translateX(-150%);
+            z-index: 1;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: $color-dark;
+            color: $color-light;
+            font-size: small;
+        }
+
+        &:hover {
+            background-color: $color-light;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+    }
+}

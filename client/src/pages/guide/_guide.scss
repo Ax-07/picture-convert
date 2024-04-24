@@ -1,0 +1,34 @@
+.guide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    max-width: 1024px;
+    background: $color-white;
+    border: 1px solid $color-dark;
+    border-radius: 5px;
+    box-shadow: $box-shadow-dark;
+    &__title {
+        align-self: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    &__sub-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    &__desc {
+        margin-bottom: 1rem;
+    }
+
+    &__list {
+        margin-bottom: 1rem;
+    }
+
+    &__item {
+        list-style: disc;
+        margin-bottom: 0.5rem;
+    }
+}

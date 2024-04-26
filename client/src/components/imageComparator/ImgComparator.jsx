@@ -64,7 +64,7 @@ export const ImgComparator = ({ original, compared, imgWidth, setImgWidth }) => 
   };
 
   return (
-    <div className="img-comparator" style={{ maxWidth: imgWidth }}>
+    <div className="img-comparator" style={{ maxWidth: imgWidth }} data-testid="img-comparator">
       <div className="img-comparator__img" >
         <img src={original} alt="image original" onLoad={onImageLoad} data-testid='originalImg'/>
       </div>

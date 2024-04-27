@@ -12,11 +12,7 @@ export const Convert = () => {
     width: 0,
     height: 0,
   });
-  const [compressedImageProperty, setCompressedImageProperty] = useState({
-    size: 0,
-    width: 0,
-    height: 0,
-  });
+
   const [isLoading, setIsLoading] = useState(false);
 
   const resetForm = () => {
@@ -24,7 +20,6 @@ export const Convert = () => {
     setReponse(null);
     setUrl(null);
     setOriginalPictureProperty({ size: 0, width: 0, height: 0 });
-    setCompressedImageProperty({ size: 0, width: 0, height: 0 });
   };
 
   const onSubmit = async (e) => {
@@ -71,24 +66,37 @@ export const Convert = () => {
   ]);
 
   return (
-    <section className="compress-picture">
-      <header className="compress-picture__header">
-        <h2 className="compress-picture__title">Compresser une image</h2>
+    <section className="compress-picture" data-testid="convert-picture">
+      <header
+        className="compress-picture__header"
+        data-testid="convert-picture__header"
+      >
+        <h2 className="compress-picture__title">Convertir une image</h2>
         <p className="compress-picture__sub-title">
           Réduisez la taille de vos images tout en conservant la qualité.
         </p>
       </header>
-      <form className="compress-picture__form" onSubmit={onSubmit}>
-        <AddPicture setImages={setImages} />
-        {images && !reponse && (
-          <span className="btn" onClick={() => resetForm}>
-            Annuler
-          </span>
-        )}
+      <form
+        className="compress-picture__form"
+        onSubmit={onSubmit}
+        data-testid="convert-picture__form"
+      >
+        <AddPicture images={images} setImages={setImages} />
         {reponse ? (
-          <a className="btn" href={url} download={reponse.originalname}>
-            {`Télécharger ${reponse.originalname}`}
-          </a>
+          <>
+            <a
+              className="btn"
+              href={url}
+              onClick={() => resetForm()}
+              download={reponse.originalname}
+              data-testid="downloadBtn"
+            >
+              {`Télécharger ${reponse.originalname}`}
+            </a>
+            <span className="btn" onClick={() => resetForm()} role="cancel-btn">
+              Annuler
+            </span>
+          </>
         ) : (
           <button className="btn" type="submit" disabled={!images}>
             {isLoading ? "en cours" : "Convertir l'image"}

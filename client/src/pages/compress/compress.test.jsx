@@ -1,6 +1,5 @@
 import { describe, test, expect, vi, beforeEach, afterEach } from "vitest";
-import { cleanup, render, screen, fireEvent } from "@testing-library/react";
-import { act } from "@testing-library/react";
+import { cleanup, render, screen, fireEvent,act } from "@testing-library/react";
 import { Compress } from "./Compress";
 import { compressPicture } from "../../api/convertPictureApi";
 
@@ -23,14 +22,14 @@ afterEach(() => {
 });
 // test d'intégration
 describe("renders Compress component and checks DOM elements", () => {
-  test("a compress picture component is display", () => {
+  beforeEach(() => {
     render(<Compress />);
-
+  });
+  test("a compress picture component is display", () => {
     const compressPicture = screen.getByTestId("compress-picture");
     expect(compressPicture).toBeInTheDocument();
   });
   test(" a header with title ans sub-title is displayed", () => {
-    render(<Compress />);
     const header = screen.getByTestId("compress-picture__header");
     expect(header).toBeInTheDocument();
     const title = screen.getByText("Compresser une image");
@@ -42,7 +41,6 @@ describe("renders Compress component and checks DOM elements", () => {
   });
 
   test('a form is displayed', () => {
-    render(<Compress />);
     const form = screen.getByTestId('compress-picture__form');
     expect(form).toBeInTheDocument();
   });

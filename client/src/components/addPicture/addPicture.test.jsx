@@ -1,8 +1,6 @@
 import { test, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from "@testing-library/react";
 import { AddPicture } from './AddPicture';
-import { useRef } from 'react';
-import {act, renderHook} from "@testing-library/react";  
 
 // Tests d'intégration
 test('renders AddPicture component and checks DOM elements', () => {

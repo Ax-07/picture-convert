@@ -113,10 +113,10 @@ export const MultiSize = () => {
   }, [reponse, compressedImageProperty.size, compressedImageProperty.width, compressedImageProperty.height]);
 
   return (
-    <section className="compress-picture">
-      <header className="compress-picture__header">
-        <h2 className="compress-picture__title">Compresser une image</h2>
-        <p className="compress-picture__sub-title">
+    <section className="compress-picture" data-testid="multiSize-picture">
+      <header className="compress-picture__header" data-testid="multiSize-picture__header">
+        <h2 className="compress-picture__title" role="title">Compresser une image</h2>
+        <p className="compress-picture__sub-title" role="sub-title">
           Réduisez la taille de vos images tout en conservant la qualité.
         </p>
       </header>
@@ -134,15 +134,15 @@ export const MultiSize = () => {
               <InfoPicture pictureProperty={compressedImageProperty} type={"compressed"} />
             </div>
             {imgComp && Object.keys(imgComp).map((key) => (
-              <a key={key} href={imgComp[key].url} download={imgComp[key].name}>
+              <a key={key} href={imgComp[key].url} download={imgComp[key].name} data-testid="downloadBtn">
                 <span className="btn">Télécharger {imgComp[key].name}</span>
               </a>
             ))}
-            <span className="btn" onClick={() => resetForm()}>Annuler</span>
+            <span className="btn" onClick={() => resetForm()} role="cancel-btn">Annuler</span>
           </div>
         </>
       ) : (
-        <form className="compress-picture__form" onSubmit={onSubmit}>
+        <form className="compress-picture__form" onSubmit={onSubmit} data-testid="multiSize-picture__form">
           <AddPicture setImages={setImages} />
           {images && (
             <InfoPicture
@@ -161,14 +161,6 @@ export const MultiSize = () => {
           </p>
           <p>Une qualité inférieure réduira donc la taille du fichier.</p>
           <br />
-          <input
-            type="number"
-            onChange={(e) => setQuality(Number(e.target.value))}
-            id="quality"
-            min={1}
-            max={100}
-            value={quality}
-          />
           <SliderRange min={0} max={100} value={quality} setValue={setQuality} />
           <br />
           <br />

@@ -9,8 +9,7 @@ export const SizeSelector = ({ sizes, setSize }) => {
   };
 
   return (
-    <>
-      <div className= "sizeSelector">
+      <div className= "sizeSelector" data-testid="sizeSelector">
         <div className="sizeSelector__wrapper">
           <label htmlFor="mobile">Mobile</label>
           <input
@@ -39,7 +38,6 @@ export const SizeSelector = ({ sizes, setSize }) => {
           />
         </div>
       </div>
-    </>
   );
 };
 

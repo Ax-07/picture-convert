@@ -2,9 +2,10 @@ import { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { InputPicture } from "./InputPicture";
 import { PreviewPicture } from "./PreviewPicture";
+import { useEffect } from "react";
 
 
-export const AddPicture = ({ setImages }) => {
+export const AddPicture = ({ images, setImages }) => {
   const [isDisplayPreviewPicture, setIsDisplayPreviewPicture] = useState(false);
   const [previewPicture, setPreviewPicture] = useState(null);
   const inputRef = useRef();
@@ -33,6 +34,10 @@ export const AddPicture = ({ setImages }) => {
     }
   };
 
+  useEffect(() => {
+    if(!images && isDisplayPreviewPicture) onCancel();
+  },[images]);
+
   return (
     <div className="add-picture" data-testid="addPicture">
       {!isDisplayPreviewPicture && (
@@ -50,5 +55,4 @@ export const AddPicture = ({ setImages }) => {
 AddPicture.propTypes = {
   images: PropTypes.object,
   setImages: PropTypes.func,
-  projetform: PropTypes.object,
 };

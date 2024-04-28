@@ -8,7 +8,7 @@ import { convertPicture } from "../../api/convertPictureApi";
 const fetchReponseTrue = {
   ok: true,
   json: () => Promise.resolve({ buffer: { data: new Uint8Array() } }),
-};
+}; // simule une réponse de l'api avec un ok à true et un buffer.data de type Uint8Array
 
 beforeEach(() => {
   cleanup();
@@ -22,7 +22,6 @@ describe("Convert page", () => {
     input = screen.getByRole("addPictureButton");
     file = new File(["image"], "image.png", { type: "image/png" });
   });
-
   test("renders Convert component and checks DOM elements", () => {
     const convertPicture = screen.getByTestId("convert-picture");
     expect(convertPicture).toBeInTheDocument();
@@ -43,7 +42,6 @@ describe("Convert page", () => {
 
     expect(convertButton).toBeDisabled();
   });
-
   describe("when a picture is selected", () => {
     test('enables the "Convertir l\'image" button when an image is selected', () => {
       fireEvent.change(input, { target: { files: [file] } });

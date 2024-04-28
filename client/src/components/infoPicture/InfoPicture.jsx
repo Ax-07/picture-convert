@@ -10,7 +10,7 @@ export const InfoPicture = ({pictureProperty, type}) => {
         displayType = "compressée";
         break;
       default:
-        displayType = type;
+        displayType = "originale";
         break;
     }
     return (

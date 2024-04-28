@@ -9,5 +9,7 @@ describe('Footer', () => {
         expect(footer).toBeInTheDocument();
         const p = screen.getByRole('paragraph');
         expect(p).toBeInTheDocument();
+        const a = screen.getByRole('link');
+        expect(a).toBeInTheDocument();
     });
     });

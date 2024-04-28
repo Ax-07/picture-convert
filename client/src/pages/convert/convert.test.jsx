@@ -21,6 +21,7 @@ describe("Convert page", () => {
     convertButton = screen.getByText("Convertir l'image");
     input = screen.getByRole("addPictureButton");
     file = new File(["image"], "image.png", { type: "image/png" });
+    globalThis.URL.createObjectURL = vi.fn();
   });
   test("renders Convert component and checks DOM elements", () => {
     const convertPicture = screen.getByTestId("convert-picture");
@@ -50,6 +51,7 @@ describe("Convert page", () => {
     test('set picture property', async () => {
       const img = { src: '', onload: null };
       globalThis.Image = function() { return img; }
+      globalThis.URL.createObjectURL = vi.fn();
       const setOriginalPictureProperty = vi.fn();
       
       await act(async () => {

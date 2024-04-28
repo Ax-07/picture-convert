@@ -21,12 +21,13 @@ beforeEach(() => {
     });
 
 describe("MultiSize page", () => {
-    let convertButton, input, file, quality, sizes;
+    let convertButton, input, file;
     beforeEach(() => {
         render(<MultiSize />);
         convertButton = screen.getByText("Convertir l'image");
         input = screen.getByRole("addPictureButton");
         file = new File(["image"], "image.png", { type: "image/png" });
+        globalThis.URL.createObjectURL = vi.fn();
     });
     test("renders MultiSize component and checks DOM elements", () => {
         const multiSizePicture = screen.getByTestId("multiSize-picture");
@@ -65,6 +66,7 @@ describe("MultiSize page", () => {
                     width: this.width,
                     height: this.height,
                 });
+                img.onload();
             });
 
             expect(setOriginalPictureProperty).toHaveBeenCalled();
@@ -100,23 +102,6 @@ describe("MultiSize page", () => {
                     const cancelBtn = screen.getByRole('cancel-btn');
                     fireEvent.click(cancelBtn);
                     expect(input).toHaveValue('');
-                });
-                test('setOriginalPictureProperty is called with correct values when images change', async () => {
-                    const file = new File(['image'], 'image.png', { type: 'image/png' });
-                    const img = { src: '', onload: null };
-                    globalThis.Image = function() { return img; }
-                    const setOriginalPictureProperty = vi.fn();
-                    
-                    await act(async () => {
-                        fireEvent.change(input, { target: { files: [file] } });
-                        setOriginalPictureProperty({
-                            size: file.size,
-                            width: this.width,
-                            height: this.height,
-                        });
-                        img.onload();
-                    });
-                    expect(setOriginalPictureProperty).toHaveBeenCalled();
                 });
             });
             test("with error", async () => {

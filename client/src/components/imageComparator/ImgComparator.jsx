@@ -1,40 +1,21 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 
-export const ImgComparator = ({ original, compared, imgWidth, setImgWidth }) => {
+export const ImgComparator = ({
+  original,
+  compared,
+  imgWidth,
+  setImgWidth,
+}) => {
   const imgRef = useRef(null);
   const sliderRef = useRef(null);
-  const img = imgRef.current;
-  const slider = sliderRef.current;
-  // const imgWidth = img?.offsetWidth; console.log("imgWidth : ", imgWidth);
-  
+
   useEffect(() => {
-    if (!img || !slider || imgWidth === null) return;
-    img.style.width = imgWidth / 2 + "px";
+    const img = imgRef.current;
+    const slider = sliderRef.current;
     slider.style.left = imgWidth / 2 + "px";
-    
-    let clicked = 0;
+    img.style.width = imgWidth / 2 + "px";
 
-    const slideReady = (e) => {
-      e.preventDefault();
-      clicked = 1;
-      window.addEventListener("mousemove", slideMove);
-      window.addEventListener("touchmove", slideMove);
-    };
-
-    const slideFinish = () => {
-      clicked = 0;
-      window.removeEventListener("mousemove", slideMove);
-      window.removeEventListener("touchmove", slideMove);
-    };
-
-    const slideMove = (e) => {
-      if (clicked === 0) return false;
-      let position = getCursorPosition(e);
-      if (position < 0) position = 0;
-      if (position > imgWidth) position = imgWidth;
-      slide(position);
-    };
     const getCursorPosition = (e) => {
       const a = img.getBoundingClientRect();
       let x = e.clientX - a.left;
@@ -44,6 +25,25 @@ export const ImgComparator = ({ original, compared, imgWidth, setImgWidth }) => 
     const slide = (x) => {
       img.style.width = x + "px";
       slider.style.left = x + "px";
+    };
+
+    const slideMove = (e) => {
+      let position = getCursorPosition(e);
+      if (position < 0) position = 0;
+      if (position > imgWidth) position = imgWidth;
+      slide(position);
+    };
+
+    const slideReady = (e) => {
+      e.preventDefault();
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    };
+
+    const slideFinish = () => {
+      window.removeEventListener("mousemove", slideMove);
+      window.removeEventListener("touchmove", slideMove);
+      console.log("position : ", img.style.width);
     };
 
     slider.addEventListener("mousedown", slideReady);
@@ -57,21 +57,38 @@ export const ImgComparator = ({ original, compared, imgWidth, setImgWidth }) => 
       window.removeEventListener("mouseup", slideFinish);
       window.removeEventListener("touchend", slideFinish);
     };
-  }, [img, imgWidth, slider]);
+  }, [imgWidth]);
 
   const onImageLoad = (e) => {
     setImgWidth(e.target.offsetWidth);
   };
 
   return (
-    <div className="img-comparator" style={{ maxWidth: imgWidth }} data-testid="img-comparator">
-      <div className="img-comparator__img" >
-        <img src={original} alt="image original" onLoad={onImageLoad} data-testid='originalImg'/>
+    <div
+      className="img-comparator"
+      style={{ maxWidth: imgWidth }}
+      data-testid="img-comparator"
+    >
+      <div className="img-comparator__img">
+        <img
+          src={original}
+          alt="image original"
+          onLoad={onImageLoad}
+          data-testid="originalImg"
+        />
       </div>
-      <div ref={imgRef} className="img-comparator__img img-comparator__overlay" role="img-comp-overlay">
-        <img src={compared} alt="image compared" data-testid='comparedImg' />
+      <div
+        ref={imgRef}
+        className="img-comparator__img img-comparator__overlay"
+        role="img-comp-overlay"
+      >
+        <img src={compared} alt="image compared" data-testid="comparedImg" />
       </div>
-      <div ref={sliderRef} className="img-comparator__slider" role="slider"></div>
+      <div
+        ref={sliderRef}
+        className="img-comparator__slider"
+        role="slider"
+      ></div>
     </div>
   );
 };

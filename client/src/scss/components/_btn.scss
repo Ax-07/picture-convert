@@ -1,19 +1,23 @@
 .btn {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem 2rem;
     margin: 1rem 0;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 5px;
-    background-color: darken($color-light, 10);
+    // background-color: darken($color-light, 10);
+    background: linear-gradient(40deg, $color-light 50%, $color-dark 200%) padding-box, 
+    linear-gradient(240deg, $color-light 50%, $color-dark 200%) border-box;
+    box-shadow: 0px 0px 5px 0px $color-dark;
     color: $color-dark;
     cursor: pointer;
+    overflow: hidden;
 
     &:hover {
         background-color: $color-dark;
-        color: $color-light;
-
+        box-shadow: 0px 0px 10px 0px $color-dark;
     }
     &:disabled {
         background-color: $color-light;

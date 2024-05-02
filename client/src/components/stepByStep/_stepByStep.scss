@@ -42,11 +42,13 @@
         counter-increment: steps;
         align-items: center;
         list-style: none;
-        border: 1px solid $color-dark;
+        border: 2px solid transparent;
         border-radius: 15px;
         box-shadow: $box-shadow-dark;
         padding: 1rem 1.5rem;
-        background-color: $color-white;
+        // background-color: $color-white;
+        background: linear-gradient(40deg, rgba($color-light, 1) 70%,rgba($color-dark, 0.5) 200%) padding-box, 
+        linear-gradient(200deg, rgba($color-light, 0.6) 0%, rgba($color-dark, 0.5) 70%) border-box;
 
         &::before {
             content: counter(steps);
@@ -59,13 +61,14 @@
             width: 1.5rem;
             height: 1.5rem;
             border-radius: 50%;
-            background-color: $color-dark;
+            background: linear-gradient(40deg, $color-light 0%, $color-dark 60%) padding-box, 
+            linear-gradient(240deg, $color-light 0%, $color-dark 50%) border-box;
             color: $color-light;
             font-size: small;
         }
 
         &:hover {
-            background-color: $color-light;
+            // background-color: $color-light;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
         }
     }

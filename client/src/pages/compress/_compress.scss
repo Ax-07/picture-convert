@@ -5,6 +5,8 @@
     max-width: 1024px;
 
     &__header {
+        position: relative;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -17,21 +19,24 @@
         border-radius: 5px;
         background-color: $color-white;
         box-shadow: $box-shadow-dark;
-
+        background: linear-gradient(40deg, rgba($color-light, 0.3) 60%, $color-dark 200%);
+        backdrop-filter: blur(3px);
     }
 
     &__form {
+        position: relative;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 100%;
-        margin-bottom: 2rem;
         padding: 1rem; 
         border: 1px solid $color-dark;
         border-radius: 5px;
-        background-color: $color-white;
+        background: linear-gradient(190deg, rgba($color-light, 0.3) 70%, $color-dark 200%);
         box-shadow: $box-shadow-dark;
+        backdrop-filter: blur(3px);
 
     }
 

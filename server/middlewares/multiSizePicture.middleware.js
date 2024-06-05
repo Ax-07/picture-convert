@@ -31,9 +31,9 @@ module.exports = (req, res, next) => {
         try {
             if (req.files) {
                 const sizes = JSON.parse(req.body.sizes);
-                const DESKTOP_SIZE = sizes.desktop;
-                const TABLET_SIZE = sizes.tablet;
-                const MOBILE_SIZE = sizes.mobile;
+                const DESKTOP_SIZE = Number(sizes.desktop);
+                const TABLET_SIZE = Number(sizes.tablet);
+                const MOBILE_SIZE = Number(sizes.mobile);
                 const IMAGE_QUALITY = Number(req.body.quality);
                 
                 res.locals.files = await Promise.all(req.files.map(async file => {

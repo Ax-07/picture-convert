@@ -3,7 +3,9 @@ info:
   title: API de Traitement d'Images
   version: 1.0.0
   description: API pour la conversion, la compression et le redimensionnement des images.
-
+servers:
+  - url: http://localhost:8050/api
+    description: Serveur de développement
 paths:
   /convert:
     post:

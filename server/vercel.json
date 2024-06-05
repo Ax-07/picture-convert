@@ -1,13 +1,16 @@
 {
     "version":2,
-    "name": "picture-convert-API",
+    "name": "pictureconvertapi",
     "builds": [
-        { "src": "server.js", "use": "@vercel/node" }
-      ],
+        {
+            "src": "index.js",
+            "use": "@vercel/node"
+        }
+    ],
     "routes": [
         {
             "src": "/.*",
-            "dest": "/"
+            "dest": "index.js"
         }
     ]
 }

@@ -22,9 +22,6 @@ const yaml = require('yamljs'); // Importation du module yamljs
 const swaggerDocs = yaml.load('swagger.yaml'); // Importation du fichier swagger.yaml
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs)); // Configuration de swagger-ui-express pour servir la documentation Swagger
 
-app.use('/',(req, res) => {
-  res.send('Welcome to the Pictures-convert API');
-})
 
 // Gestion des erreurs
 app.use((err, req, res, next) => {
@@ -32,6 +29,9 @@ app.use((err, req, res, next) => {
   res.json({ error: err.message || 'Erreur interne du serveur' });
 });
 
+app.use('/',(req, res) => {
+  res.send('Welcome to the Pictures-convert API');
+})
 // Gestion des routes non trouvées (404)
 app.use((req, res, next) => {
   const err = new Error('Route non trouvée');

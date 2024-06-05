@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express(); // Création d'une nouvelle application express
-const path = require('path'); // Importation du module path pour gérer les chemins de fichiers
 const cors = require('cors'); // Importation du module cors pour gerer les origines
 app.use(cors()); // Configuration de l'application pour utiliser le module cors
 app.use(express.json()); // Configuration de l'application pour utiliser le format JSON
@@ -19,7 +18,7 @@ const swaggerDocs = yaml.load('swagger.yaml'); // Importation du fichier swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs)); // Configuration de swagger-ui-express pour servir la documentation Swagger
 
 app.use('/',(req, res) => {
-  res.send('Welcome to the API');
+  res.send('Welcome to the Pictures-convert API');
 })
 // Gestion des routes non trouvées (404)
 app.use((req, res, next) => {

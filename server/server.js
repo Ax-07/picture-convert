@@ -5,10 +5,6 @@ const cors = require('cors'); // Importation du module cors pour gerer les origi
 app.use(cors()); // Configuration de l'application pour utiliser le module cors
 app.use(express.json()); // Configuration de l'application pour utiliser le format JSON
 app.use(express.urlencoded({ extended: true })); // Configuration de l'analyseur de corps de requête pour analyser les requêtes en format JSON
-app.use(express.static(path.join(__dirname, "public"))); // Configuration du dossier static pour servir les fichiers statiques
-
-const db = require("./models"); // Importation du modèle de la base de données
-db.sequelize.sync().then(()=> console.log('db synchronisé')); // Synchronisation du modèle avec la base de données
 
 // Importation des routes
 const convertPictureRoute = require('./routes/convertPicture.routes');

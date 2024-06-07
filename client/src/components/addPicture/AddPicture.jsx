@@ -4,17 +4,20 @@ import { InputPicture } from "./InputPicture";
 import { PreviewPicture } from "./PreviewPicture";
 import { useEffect } from "react";
 
-
 export const AddPicture = ({ images, setImages }) => {
   const [isDisplayPreviewPicture, setIsDisplayPreviewPicture] = useState(false);
   const [previewPicture, setPreviewPicture] = useState(null);
   const inputRef = useRef();
+  const maxSize = 2; // 2mo
 
   const onInputChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
-      const fileSizeInMB = selectedFile.size / (1024 * 1024);
-      console.log("fileSizeInMB:", fileSizeInMB);
+      const fileSizeInMB = selectedFile.size / (1024 * 1024); console.log(fileSizeInMB);
+      if (fileSizeInMB > maxSize) {
+        alert("Le fichier est trop grand. Veuillez choisir un fichier de moins de 4 Mo.");
+        return;
+      }
       const reader = new FileReader();
       reader.onload = () => {
         setPreviewPicture(reader.result);

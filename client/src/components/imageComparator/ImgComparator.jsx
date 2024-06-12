@@ -1,6 +1,16 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 
+/**
+ * 
+ * @param {string} original - URL de l'image originale
+ * @param {string} compared - URL de l'image à comparer
+ * @param {number} imgWidth - Largeur de l'image
+ * @param {function} setImgWidth - Fonction pour mettre à jour la largeur de l'image
+ *  
+ * @returns {JSX.Element} - Un élément JSX qui affiche un comparateur d'images
+ */
+
 export const ImgComparator = ({
   original,
   compared,
@@ -43,7 +53,6 @@ export const ImgComparator = ({
     const slideFinish = () => {
       window.removeEventListener("mousemove", slideMove);
       window.removeEventListener("touchmove", slideMove);
-      console.log("position : ", img.style.width);
     };
 
     slider.addEventListener("mousedown", slideReady);
@@ -62,6 +71,8 @@ export const ImgComparator = ({
   const onImageLoad = (e) => {
     setImgWidth(e.target.offsetWidth);
   };
+  console.log("original", original);
+  console.log("compared", compared);
 
   return (
     <div

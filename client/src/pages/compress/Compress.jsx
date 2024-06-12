@@ -1,103 +1,30 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { AddPicture } from "../../components/addPicture/AddPicture";
-import { compressPicture } from "../../api/convertPictureApi";
 import { ImgComparator } from "../../components/imageComparator/ImgComparator";
 import { InfoPicture } from "../../components/infoPicture/InfoPicture";
 import { SliderRange } from "../../components/sliderRange/SliderRange";
 import { SeparateLine } from "../../components/separateLines/SeparateLine";
+import { PropagateLoader } from "react-spinners";
+import { PictureContext } from "../../context/PicturesContext";
+import { useImageProcessing } from "../../utils/hooks/useImageProcessing";
 
 export const Compress = () => {
-  const [images, setImages] = useState();
-  const [imgWidth, setImgWidth] = useState(0);
-  const [quality, setQuality] = useState(80);
-  const [reponse, setReponse] = useState();
-  const [url, setUrl] = useState();
-  const [originalPictureProperty, setOriginalPictureProperty] = useState({
-    size: 0,
-    width: 0,
-    height: 0,
-  });
-  const [compressedImageProperty, setCompressedImageProperty] = useState({
-    size: 0,
-    width: 0,
-    height: 0,
-  });
-  const [isLoading, setIsLoading] = useState(false);
+  const {
+    images, setImages,
+    quality, setQuality,
+    originalPictureProperty,
+    comparedImageProperty,
+    imgWidth, setImgWidth,
+    resetPictures,
+  } = useContext(PictureContext);
 
-  const resetForm = () => {
-    setImages(null);
-    setQuality(80);
-    setReponse(null);
-    setUrl(null);
-    setOriginalPictureProperty({ size: 0, width: 0, height: 0 });
-    setCompressedImageProperty({ size: 0, width: 0, height: 0 });
+  const { response, downloadUrl, isError, isLoading, onSubmit, onReset } =
+    useImageProcessing(images, quality);
+
+  const onCancel = () => {
+    onReset();
+    resetPictures();
   };
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    const formData = new FormData();
-    formData.append("images", images);
-    formData.append("quality", quality);
-
-    try {
-      // Appeler la fonction convertPicture avec les données du formulaire
-      const response = await compressPicture(formData);
-      if (response) setIsLoading(false);
-      setReponse(response);
-      setUrl(
-        window.URL.createObjectURL(
-          new Blob([new Uint8Array(response.buffer.data)], {
-            type: "image/webp",
-          })
-        )
-      );
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    if (images) {
-      const img = new Image();
-      img.onload = function () {
-        setOriginalPictureProperty({
-          size: images.size,
-          width: this.width,
-          height: this.height,
-        });
-      };
-      img.src = URL.createObjectURL(images);
-    }
-  }, [
-    images,
-    originalPictureProperty.size,
-    originalPictureProperty.width,
-    originalPictureProperty.height,
-  ]);
-
-  useEffect(() => {
-    if (reponse) {
-      const blob = new Blob([new Uint8Array(reponse.buffer.data)], {
-        type: "image/webp",
-      });
-      const url = URL.createObjectURL(blob);
-      const img = new Image();
-      img.src = url;
-      img.onload = function () {
-        setCompressedImageProperty({
-          size: reponse.buffer.data.length,
-          width: this.width,
-          height: this.height,
-        });
-      };
-    }
-  }, [
-    reponse,
-    compressedImageProperty.size,
-    compressedImageProperty.width,
-    compressedImageProperty.height,
-  ]);
 
   return (
     <section className="compress-picture" data-testid="compress-picture">
@@ -105,12 +32,12 @@ export const Compress = () => {
         className="compress-picture__header"
         data-testid="compress-picture__header"
       >
-        <h2 className="compress-picture__title">Compresser une image</h2>
-        <p className="compress-picture__sub-title">
+        <h2 className="compress-picture__title" role="title">Compresser une image</h2>
+        <p className="compress-picture__sub-title" role="sub-title">
           Réduisez la taille de vos images tout en conservant la qualité.
         </p>
       </header>
-      {reponse ? (
+      {response && images && downloadUrl && !isLoading ? (
         <>
           <div
             className="compress-picture__comparator"
@@ -118,7 +45,7 @@ export const Compress = () => {
           >
             <ImgComparator
               original={URL.createObjectURL(images)}
-              compared={url}
+              compared={downloadUrl}
               imgWidth={imgWidth}
               setImgWidth={setImgWidth}
             />
@@ -131,19 +58,20 @@ export const Compress = () => {
                 type={"originale"}
               />
               <InfoPicture
-                pictureProperty={compressedImageProperty}
+                pictureProperty={comparedImageProperty}
                 type={"compressed"}
               />
             </div>
             <a
               className="btn"
-              href={url}
-              download={reponse.originalname}
+              href={downloadUrl}
+              download={response.originalname}
               data-testid="downloadBtn"
+              role="download-btn"
             >
-              {`Télécharger ${reponse.originalname}`}
+              {`Télécharger ${response.originalname}`}
             </a>
-            <span className="btn" onClick={() => resetForm()} role="cancel-btn">
+            <span className="btn" onClick={onCancel} role="cancel-btn">
               Annuler
             </span>
           </div>
@@ -154,8 +82,13 @@ export const Compress = () => {
           onSubmit={onSubmit}
           data-testid="compress-picture__form"
         >
-          <AddPicture setImages={setImages} />
-
+        <AddPicture setImages={setImages} cancel={onCancel} />
+        {images && (
+            <InfoPicture
+              pictureProperty={originalPictureProperty}
+              type={"origine"}
+            />
+          )}
           <label htmlFor="quality">
             <h3>Choisissez la qualité l’image</h3>
           </label>
@@ -171,20 +104,27 @@ export const Compress = () => {
             value={quality}
             setValue={setQuality}
           />
-          <button
+          <SeparateLine />
+          {isError && <span>{"une erreur est survenue"}</span>}
+          {isLoading && !isError ? (
+            <>
+              <button className="btn" onClick={onCancel}>
+                Annuler
+              </button>
+              <PropagateLoader color={"#333"} loading={isLoading} size={15} />
+            </>
+          ) : (
+            <button
             className="btn"
             type="submit"
             disabled={!images}
             data-testid="submit-btn"
+            role="convert-btn"
           >
-            {isLoading ? "en cours" : "Convertir l'image"}
-          </button>
-          {images && (
-            <InfoPicture
-              pictureProperty={originalPictureProperty}
-              type={"origine"}
-            />
+              {"Convertir l'image"}
+            </button>
           )}
+
         </form>
       )}
     </section>

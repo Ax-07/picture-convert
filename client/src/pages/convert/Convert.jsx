@@ -1,69 +1,33 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { AddPicture } from "../../components/addPicture/AddPicture";
-import { convertPicture } from "../../api/convertPictureApi";
 import { InfoPicture } from "../../components/infoPicture/InfoPicture";
+import { PropagateLoader } from "react-spinners";
+import { PictureContext } from "../../context/PicturesContext";
+import { useImageProcessing } from "../../utils/hooks/useImageProcessing";
 
 export const Convert = () => {
-  const [images, setImages] = useState();
-  const [reponse, setReponse] = useState();
-  const [url, setUrl] = useState();
-  const [originalPictureProperty, setOriginalPictureProperty] = useState({
-    size: 0,
-    width: 0,
-    height: 0,
-  });
+  const {
+    images, setImages,
+    originalPictureProperty,
+    resetPictures,
+  } = useContext(PictureContext);
 
-  const [isLoading, setIsLoading] = useState(false);
 
-  const resetForm = () => {
-    setImages(null);
-    setReponse(null);
-    setUrl(null);
-    setOriginalPictureProperty({ size: 0, width: 0, height: 0 });
+  const {
+    response,
+    downloadUrl,
+    isError,
+    isLoading,
+    onSubmit,
+    onReset,
+  } = useImageProcessing(images);
+
+
+  const onCancel = () => {
+    onReset();
+    resetPictures();
   };
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    const formData = new FormData();
-    formData.append("images", images);
-
-    try {
-      // Appeler la fonction convertPicture avec les données du formulaire
-      const response = await convertPicture(formData);
-      if (response) setIsLoading(false);
-      setReponse(response);
-      setUrl(
-        window.URL.createObjectURL(
-          new Blob([new Uint8Array(response.buffer.data)], {
-            type: "image/webp",
-          })
-        )
-      );
-      console.log("response : ", response);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    if (images) {
-      const img = new Image();
-      img.onload = function () {
-        setOriginalPictureProperty({
-          size: images.size,
-          width: this.width,
-          height: this.height,
-        });
-      };
-      img.src = URL.createObjectURL(images);
-    }
-  }, [
-    images,
-    originalPictureProperty.size,
-    originalPictureProperty.width,
-    originalPictureProperty.height,
-  ]);
+  console.log("downloadUrl", downloadUrl)
 
   return (
     <section className="compress-picture" data-testid="convert-picture">
@@ -71,8 +35,8 @@ export const Convert = () => {
         className="compress-picture__header"
         data-testid="convert-picture__header"
       >
-        <h2 className="compress-picture__title">Convertir une image</h2>
-        <p className="compress-picture__sub-title">
+        <h2 className="compress-picture__title" role="title">Convertir une image</h2>
+        <p className="compress-picture__sub-title" role="sub-title">
           Réduisez la taille de vos images tout en conservant la qualité.
         </p>
       </header>
@@ -81,26 +45,36 @@ export const Convert = () => {
         onSubmit={onSubmit}
         data-testid="convert-picture__form"
       >
-        <AddPicture images={images} setImages={setImages} />
-        {reponse ? (
+        <AddPicture setImages={setImages} cancel={onCancel} />
+        {downloadUrl && !isLoading ? (
           <>
             <a
               className="btn"
-              href={url}
-              onClick={() => resetForm()}
-              download={reponse.originalname}
+              href={downloadUrl}
+              download={response?.originalname}
               data-testid="downloadBtn"
+              role="download-btn"
             >
-              {`Télécharger ${reponse.originalname}`}
+              {`Télécharger ${response?.originalname}`}
             </a>
-            <span className="btn" onClick={() => resetForm()} role="cancel-btn">
+            <span className="btn" onClick={onCancel} role="cancel-btn">
               Annuler
             </span>
           </>
         ) : (
-          <button className="btn" type="submit" disabled={!images}>
-            {isLoading ? "en cours" : "Convertir l'image"}
-          </button>
+          <>
+          {isError && <span>{"une erreur est survenue"}</span>}
+          {isLoading && !isError ? (
+            <>
+            <button className="btn" onClick={onCancel}>Annuler</button>
+            <PropagateLoader color={"#333"} loading={isLoading} size={15} />
+            </>
+          ) : (
+            <button className="btn" type="submit" disabled={!images} role="convert-btn">
+              {"Convertir l'image"}
+            </button>
+          )}
+          </>
         )}
         {images && (
           <InfoPicture

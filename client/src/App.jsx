@@ -7,10 +7,11 @@ import { Compress } from "./pages/compress/Compress.jsx";
 import { MultiSize } from "./pages/multiSize/MultiSize.jsx";
 import { PointAnimation } from "./components/pointAnimation/PointAnimation.jsx";
 import {Guide} from "./pages/guide/Guide.jsx";
+import { PictureProvider } from "./context/PicturesContext.jsx";
 
 function App() {
   return (
-    <>
+    <PictureProvider>
       <Header data-testid='header'/>
       <main data-testid='main'>
         <Routes>
@@ -23,7 +24,7 @@ function App() {
         <PointAnimation />
       </main>
       <Footer/>
-    </>
+    </PictureProvider>
   );
 }
 

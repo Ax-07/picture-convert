@@ -17,9 +17,9 @@ describe('Guide', () => {
         expect(sectionTitle).toHaveLength(7);
         const sectionDesc = screen.getAllByRole('section-description');
         expect(sectionDesc).toHaveLength(7);
-        const list = screen.getAllByRole('liste');
+        const list = screen.getAllByRole('list');
         expect(list).toHaveLength(3);
-        const listItem = screen.getAllByRole('liste-item');
+        const listItem = screen.getAllByRole('list-item');
         expect(listItem).toHaveLength(17);
     });
 });

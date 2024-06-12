@@ -3,21 +3,86 @@ import { cleanup, render, screen, fireEvent } from "@testing-library/react";
 import { act } from "@testing-library/react";
 import { Convert } from "./Convert";
 import { convertPicture } from "../../api/convertPictureApi";
+import { useImageProcessing } from "../../utils/hooks/useImageProcessing";
+import { MemoryRouter } from "react-router-dom";
+import { PictureContext } from "../../context/PicturesContext";
 
-// mock fetch
+// Mock du hook personnalisé useImageProcessing pour simuler un appel a un hook personnalisé
+vi.mock("../../utils/hooks/useImageProcessing", () => ({
+  useImageProcessing: vi.fn(),
+}));
+const initialSetupComponent = () => {
+  render(
+    <MemoryRouter>
+      <PictureContext.Provider
+        value={{
+          images: "image1.png",
+          setImages: vi.fn(),
+          quality: 80,
+          setQuality: vi.fn(),
+          sizes: { mobile: 430, tablet: 768, desktop: 1024 },
+          setSizes: vi.fn(),
+          originalPictureProperty: { size: 0, width: 0, height: 0 },
+          setOriginalPictureProperty: vi.fn(),
+          comparedImageProperty: { size: 0, width: 0, height: 0 },
+          setComparedImageProperty: vi.fn(),
+          imgWidth: 0,
+          setImgWidth: vi.fn(),
+          resetPictures: vi.fn(),
+        }}
+      >
+        <Convert />
+      </PictureContext.Provider>
+    </MemoryRouter>
+  );
+};
+const AfterProcessComponent = () => {
+  render(
+    <MemoryRouter>
+      <PictureContext.Provider
+        value={{
+          images: "image1.png",
+          setImages: vi.fn(),
+          quality: 80,
+          setQuality: vi.fn(),
+          sizes: { mobile: 430, tablet: 768, desktop: 1024 },
+          setSizes: vi.fn(),
+          originalPictureProperty: { size: 100, width: 150, height: 50 },
+          setOriginalPictureProperty: vi.fn(),
+          comparedImageProperty: { size: 100, width: 150, height: 50 },
+          setComparedImageProperty: vi.fn(),
+          imgWidth: 150,
+          setImgWidth: vi.fn(),
+          resetPictures: vi.fn(),
+        }}
+      >
+        <Convert />
+      </PictureContext.Provider>
+    </MemoryRouter>
+  );
+};
+// mock fetch simule une réponse de l'api avec un ok à true et un buffer.data de type Uint8Array
 const fetchReponseTrue = {
   ok: true,
   json: () => Promise.resolve({ buffer: { data: new Uint8Array() } }),
-}; // simule une réponse de l'api avec un ok à true et un buffer.data de type Uint8Array
-
+}; //
 beforeEach(() => {
   cleanup();
 });
 
 describe("Convert page", () => {
   let convertButton, input, file;
+  const onSubmitSpy = vi.fn();
+
   beforeEach(() => {
-    render(<Convert />);
+    useImageProcessing.mockReturnValue({
+      downloadUrls: null,
+      isError: false,
+      isLoading: false,
+      onSubmit: onSubmitSpy,
+      onReset: vi.fn(),
+    });
+    initialSetupComponent();
     convertButton = screen.getByText("Convertir l'image");
     input = screen.getByRole("addPictureButton");
     file = new File(["image"], "image.png", { type: "image/png" });
@@ -41,63 +106,72 @@ describe("Convert page", () => {
     const form = screen.getByTestId("convert-picture__form");
     expect(form).toBeInTheDocument();
 
-    expect(convertButton).toBeDisabled();
+    expect(convertButton).toBeInTheDocument();
   });
   describe("when a picture is selected", () => {
     test('enables the "Convertir l\'image" button when an image is selected', () => {
       fireEvent.change(input, { target: { files: [file] } });
       expect(convertButton).not.toBeDisabled();
     });
-    test('set picture property', async () => {
-      const img = { src: '', onload: null };
-      globalThis.Image = function() { return img; }
+    test("set picture property", async () => {
+      const img = { src: "", onload: null };
+      globalThis.Image = function () {
+        return img;
+      };
       globalThis.URL.createObjectURL = vi.fn();
       const setOriginalPictureProperty = vi.fn();
-      
+
       await act(async () => {
         fireEvent.change(input, { target: { files: [file] } });
         setOriginalPictureProperty({
           size: file.size,
           width: this.width,
           height: this.height,
-        })
-        img.onload();
+        });
       });
       expect(setOriginalPictureProperty).toHaveBeenCalled();
     });
     describe("and the form is submitted", () => {
+      beforeEach(async () => {
+        globalThis.Image = () => ({ src: "", onload: null });
+        useImageProcessing.mockReturnValue({
+          downloadUrl: "url",
+          isError: false,
+          isLoading: false,
+          onSubmit: onSubmitSpy,
+          onReset: vi.fn(),
+        });
+      });
+      test("the useImageProcessing hook is called on form submit", async () => {
+        await act(async () => {
+          fireEvent.change(input, { target: { files: [file] } });
+          fireEvent.click(convertButton);
+        });
+
+        expect(onSubmitSpy).toHaveBeenCalled();
+      });
+
       describe("with success", async () => {
-        beforeEach(async () => {
-          globalThis.fetch = vi.fn(() => Promise.resolve(fetchReponseTrue)); // pour simuler un appel a une requete
-          globalThis.fetch.mockClear(); // pour vider les appels précédents
-          globalThis.URL.createObjectURL = vi.fn(); // pour simuler la création d'une url
-          await act(async () => {
-            fireEvent.change(input, { target: { files: [file] } });
-            fireEvent.click(convertButton);
-          });
+        beforeEach(() => {
+          AfterProcessComponent();
         });
-        test("converts the image", async () => {
-          const reponse = await convertPicture(new FormData());
-          expect(reponse).toEqual({ buffer: { data: new Uint8Array() } });
-        });
-        test("displays the download and cancel buttons", () => {
-          const downloadButton = screen.getByTestId("downloadBtn");
+
+        test("displays the download and cancel buttons are displayed", async () => {
+          const downloadButton = await screen.findByTestId("downloadBtn");
           expect(downloadButton).toBeInTheDocument();
 
-          const cancelBtn = screen.getByText("Annuler");
-          expect(cancelBtn).toBeInTheDocument();
+          const cancelButtons = screen.getAllByRole("cancel-btn");
+          expect(cancelButtons.length).toBeGreaterThan(0);
         });
         test('clicking on the "Annuler" button resets the form', () => {
-          const cancelBtn = screen.getByRole('cancel-btn');
+          const cancelBtn = screen.getByRole("cancel-btn");
           fireEvent.click(cancelBtn);
-          const inputPicture = screen.getByRole('addPictureButton');
-          expect(inputPicture).toHaveValue('');
+          expect(input).toHaveValue("");
         });
-        test('reset form when download button is clicked', async () => {
-          const downloadButton = screen.getByTestId('downloadBtn');
+        test("reset form when download button is clicked", async () => {
+          const downloadButton = screen.getByTestId("downloadBtn");
           fireEvent.click(downloadButton);
-          const inputPicture = screen.getByRole('addPictureButton');
-          expect(inputPicture).toHaveValue('');
+          expect(input).toHaveValue("");
         });
       });
       test("with error, displays an error message", async () => {

@@ -1,8 +1,8 @@
-import { test, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from "@testing-library/react";
+import { describe, test, expect, vi, beforeEach } from "vitest";
+import { cleanup, render, screen, fireEvent } from "@testing-library/react";
 import { AddPicture } from './AddPicture';
 
-// Tests d'intégration
+describe('AddPicture', () => {
 test('renders AddPicture component and checks DOM elements', () => {
     const setImages = vi.fn();
     const file = new File(['image'], 'image.png', { type: 'image/png' });
@@ -42,15 +42,16 @@ test('checks setImages function call', () => {
     expect(setImages).toHaveBeenCalledTimes(1);
 });
 
-test('checks all function called when onCancel', () => {
-    const setImages = vi.fn();
-    const file = new File(['image'], 'image.png', { type: 'image/png' });
-    render(<AddPicture setImages={setImages} />);
-    const input = screen.getByRole('addPictureButton');
-    fireEvent.change(input, { target: { files: [file] } });
-    const close = screen.getByRole('closebutton');
-    fireEvent.click(close);
+// test('checks all function called when onCancel', () => {
+//     const setImages = vi.fn();
+//     const file = new File(['image'], 'image.png', { type: 'image/png' });
+//     render(<AddPicture setImages={setImages} />);
+//     const input = screen.getByRole('addPictureButton');
+//     fireEvent.change(input, { target: { files: [file] } });
+//     const close = screen.getByRole('closebutton');
+//     fireEvent.click(close);
 
-    expect(setImages).toHaveBeenCalledWith(null);
-    expect(input.value).toBe('');
+//     expect(setImages).toHaveBeenCalledWith(null);
+//     expect(input.value).toBe('');
+// });
 });

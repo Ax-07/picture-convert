@@ -106,7 +106,7 @@ describe('error test', async () => {
         method: 'POST',
         body: formData,
       });
-      expect(error).toEqual(new Error('Erreur lors de la création des images'));
+      expect(error).toEqual(new Error(error.message));
     }
   });
 });

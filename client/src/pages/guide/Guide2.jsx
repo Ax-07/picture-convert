@@ -53,7 +53,7 @@ export const Guide2 = () => {
               </code>
             </pre>
 
-            <h2>Questions Fréquentes</h2>
+            {/* <h2>Questions Fréquentes</h2>
             <div className="faq">
               <h3>
                 Q : Quelle est la meilleure résolution pour les images sur
@@ -83,8 +83,8 @@ export const Guide2 = () => {
                 Optimizer, ou d'autres outils en ligne qui permettent de réduire
                 la taille des fichiers tout en maintenant une bonne qualité
                 d'image.
-              </p>
-            </div>
+              </p> 
+            </div>*/}
           </div>
         </section>
       );

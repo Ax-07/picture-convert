@@ -1,0 +1,79 @@
+.dashboard {
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    max-height: 414px;
+    border: 1px solid #ddd;
+    background: $background-light;
+    box-shadow: $box-shadow-light;
+    border: 1px solid $color-dark;
+    overflow: auto;
+    &__sidenav {
+        position: sticky;
+        width: 300px;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #333;
+        padding-top: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        ul {
+            list-style-type: none;
+            padding: 0;
+            li {
+                padding: 8px 16px;
+                text-align: left;
+                button {
+                    color: #ddd;
+                    background: none;
+                    border: none;
+                    text-align: left;
+                    width: 100%;
+                    padding: 10px ;
+                    font: inherit;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #575757;
+                        color: #fff;
+                    }
+                    &.active {
+                        background-color: #dddd;
+                        color: #333;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    &__component-display {
+        position: relative;
+        padding: 20px 80px;
+        width: calc(100% - 300px);
+        height: 100%;
+        overflow: auto;
+        & h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        &__list {
+            margin-top: 20px;
+
+            & h3 {
+                // text-align: center;
+                margin-bottom: 20px;
+            }
+
+            & ul {
+                list-style-type: none;
+                padding: 0;
+                font-size: 16px;
+                color: #495057;
+
+                & li {
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+  }

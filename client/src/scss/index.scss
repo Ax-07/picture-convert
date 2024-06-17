@@ -5,6 +5,7 @@
 // layouts
 @import '../layouts/header/header.scss';
 @import '../layouts/footer/footer.scss';
+@import '../layouts/dashboard/dashboard.scss';
 
 // components
 @import '../scss/components/btn.scss';
@@ -15,6 +16,9 @@
 @import '../components/stepByStep/stepByStep.scss';
 @import '../components/sliderRange/sliderRange.scss';
 @import '../components/SizeSelector/sizeSelector.scss';
+@import '../components/hero/hero.scss';
+@import '../components/features/features.scss';
+@import '../components/about/about.scss';
 
 // pages
 @import '../pages/compress/compress.scss';

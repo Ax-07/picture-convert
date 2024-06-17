@@ -6,8 +6,9 @@ import { Convert } from "./pages/convert/Convert.jsx";
 import { Compress } from "./pages/compress/Compress.jsx";
 import { MultiSize } from "./pages/multiSize/MultiSize.jsx";
 import { PointAnimation } from "./components/pointAnimation/PointAnimation.jsx";
-import {Guide} from "./pages/guide/Guide.jsx";
 import { PictureProvider } from "./context/PicturesContext.jsx";
+import { Guide2 } from "./pages/guide/Guide2.jsx";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -19,11 +20,12 @@ function App() {
           <Route path="/convert" element={<Convert />} />
           <Route path="/compress" element={<Compress />} />
           <Route path="/multi-size" element={<MultiSize />} />
-          <Route path="/guide" element={<Guide />} />
+          <Route path="/guide" element={<Guide2 />} />
         </Routes>
         <PointAnimation />
       </main>
       <Footer/>
+      <Analytics/>
     </PictureProvider>
   );
 }

@@ -8,10 +8,8 @@ import { MultiSize } from "./pages/multiSize/MultiSize.jsx";
 import { PointAnimation } from "./components/pointAnimation/PointAnimation.jsx";
 import { PictureProvider } from "./context/PicturesContext.jsx";
 import { Guide2 } from "./pages/guide/Guide2.jsx";
-import { inject } from '@vercel/analytics';
 
 function App() {
-  inject();
   return (
     <PictureProvider>
       <Header data-testid='header'/>

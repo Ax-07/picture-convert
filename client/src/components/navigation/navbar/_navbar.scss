@@ -18,6 +18,10 @@
         &>h1 {
             font-size: 40px;
             background: none;
+
+            @media screen and (max-width: 768px) {
+                font-size: 30px;
+            }
         }
 
         &.active {

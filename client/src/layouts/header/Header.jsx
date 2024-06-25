@@ -1,6 +1,9 @@
 import { BtnStart } from "../../components/btn/Buttons";
 import { Navbar } from "../../components/navigation/navbar/Navbar";
 import { Link } from "react-router-dom";
+import { useWindowSize } from "../../utils/hooks/useWindowSize";
+import { BtnBurger } from "../../components/btnBurger/BtnBurger";
+
 const navData = [
   {
     id: 1,
@@ -21,6 +24,8 @@ const navData = [
 const logo = "Picture convert";
 
 export const Header = () => {
+  const { windowWidth } = useWindowSize();
+  const desktopView = windowWidth > 1024;
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -30,10 +35,11 @@ export const Header = () => {
         <Link to="/#" className={`navbar__link`} onClick={scrollToTop}>
           <h1>{logo}</h1>
         </Link>
-        <Navbar navData={navData} />
+        { desktopView && <Navbar navData={navData} /> }
       </div>
 
-      <BtnStart />
+      {desktopView && <BtnStart />}
+      {!desktopView && <BtnBurger windowWidth={windowWidth} />}
     </header>
   );
 };

@@ -3722,6 +3722,11 @@ pre, code {
   font-size: 40px;
   background: none;
 }
+@media screen and (max-width: 768px) {
+  .navbar__link > h1 {
+    font-size: 30px;
+  }
+}
 .navbar__link.active::after {
   content: "";
   display: block;
@@ -3908,6 +3913,11 @@ pre, code {
 .hero__column {
   flex: 1;
 }
+@media (max-width: 1024px) {
+  .hero__column-right {
+    display: none;
+  }
+}
 .hero h2 {
   font-size: 2.5em;
   margin-bottom: 20px;
@@ -4055,6 +4065,122 @@ pre, code {
     font-size: 1.5em;
   }
 }
+.burgerBtn {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin: auto 0;
+  cursor: pointer;
+}
+.burgerBtn__lines {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.burgerBtn__line {
+  transition: all 0.4s ease-in-out, top 0.4s ease-in-out;
+  position: absolute;
+  width: 75%;
+  border: 1px solid #ff6600;
+}
+.burgerBtn__line:nth-child(1) {
+  top: 25%;
+}
+.burgerBtn__line:nth-child(2) {
+  transform: translateY(-50%);
+  top: 50%;
+  animation: btnBurgerAnimationReverse 0.4s ease-in-out forwards;
+  transition: all 0.4s ease-in-out;
+}
+.burgerBtn__line:nth-child(3) {
+  bottom: 25%;
+}
+
+.burgerBtn--open .burgerBtn__line:nth-child(1) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.burgerBtn--open .burgerBtn__line:nth-child(2) {
+  border-left: none;
+  animation: btnBurgerAnimation 0.4s ease-in-out forwards;
+  transition: all 0.4s ease-in-out;
+}
+.burgerBtn--open .burgerBtn__line:nth-child(3) {
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(-45deg);
+}
+.burgerBtn--open .burgerBtn__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  animation: menuAnimation 0.4s ease-in-out forwards;
+  transition: all 0.4s ease-in-out;
+}
+
+@keyframes btnBurgerAnimation {
+  0% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 0%;
+  }
+  50% {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+@keyframes btnBurgerAnimationReverse {
+  0% {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 70%;
+    height: 1px;
+  }
+}
+@keyframes menuAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .compress-picture {
   position: relative;
   display: flex;
@@ -4135,6 +4261,7 @@ pre, code {
 }
 .home__container-border {
   background: white;
+  width: 100%;
 }
 
 .application__menu ul {

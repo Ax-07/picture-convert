@@ -1,0 +1,135 @@
+.burgerBtn {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    user-select: none;
+    margin: auto 0;
+
+    // overflow: hidden;
+    cursor: pointer;
+
+    &__lines {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__line {
+        transition: all 0.4s ease-in-out, top 0.4s ease-in-out;
+        position: absolute;
+        width: 75%;
+
+        border: 1px solid $color-secondary;
+
+        &:nth-child(1) {
+            top: 25%;
+        }
+
+        &:nth-child(2) {
+            transform: translateY(-50%);
+            top: 50%;
+            animation: btnBurgerAnimationReverse 0.4s ease-in-out forwards;
+            transition: all 0.4s ease-in-out;
+        }
+
+        &:nth-child(3) {
+            bottom: 25%;
+        }
+    }
+}
+
+.burgerBtn--open {
+    .burgerBtn {
+        &__line:nth-child(1) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &__line:nth-child(2) {
+            border-left: none;
+            animation: btnBurgerAnimation 0.4s ease-in-out forwards;
+            transition: all 0.4s ease-in-out;
+        }
+        &__line:nth-child(3) {
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%) rotate(-45deg);
+        }
+
+        &__menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            // background: $color-secondary;
+            z-index: 99;
+            backdrop-filter: blur(10px);
+            animation: menuAnimation 0.4s ease-in-out forwards;
+            transition: all 0.4s ease-in-out;
+        
+        }
+    }
+}
+
+@keyframes btnBurgerAnimation {
+    0% {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        border-radius: 0%;
+    }
+
+    50% {
+        width: 100%;
+        height: 100%;
+        border-radius: 0%;
+    }
+
+    100% {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+
+@keyframes btnBurgerAnimationReverse {
+    0% {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        width: 70%;
+        height: 1px;
+    }
+}
+
+@keyframes menuAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

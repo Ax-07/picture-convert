@@ -39,5 +39,5 @@ const Step = ({ title, description, icon }) => {
 Step.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.object.isRequired,
 };

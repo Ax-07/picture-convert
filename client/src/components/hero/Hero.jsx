@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { BtnStart } from "../btn/Buttons";
+import mockup from "../../assets/images/hero-mockup.png";
 
 export const Hero = () => {
     return (
@@ -24,7 +25,7 @@ export const Hero = () => {
         </div>
         </div>
         <div className="hero__column">
-          <img className="hero__img" src="/src/assets/images/hero-mockup.png" alt="" />
+          <img className="hero__img" src={mockup} alt="" />
         </div>
       </section>
     );

@@ -1,6 +1,6 @@
 /* Section Styling */
 .advice {
-    max-width: 800px;
+    width: 100%;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -42,11 +42,13 @@
   
   .advice pre {
     // background-color: #333;
+    width: 100%;
     color: #f4f4f4;
     padding: 20px;
     border-radius: 8px;
     overflow-x: auto;
     margin-top: 20px;
+    font-size: 1rem;
   }
   
   /* Media Queries for Responsive Design */

@@ -42,10 +42,10 @@ export const BtnBurger = ({ windowWidth }) => {
           <span className="burgerBtn__line"></span>
           <span className="burgerBtn__line"></span>
         </div>
-        { isOpen && <div className="burgerBtn__menu">
+ <div className="burgerBtn__menu">
           <Navbar navData={navData} />
           <BtnStart />
-        </div>}
+        </div>
         </>
       ) : null}
     </div>

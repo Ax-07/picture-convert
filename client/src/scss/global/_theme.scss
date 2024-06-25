@@ -14,6 +14,7 @@ $border-radius: 0.25rem;
 $box-shadow-light: 0 0 10px 0px rgba($color-dark, 0.2);
 $box-shadow-dark: 0 0 10px 0px rgba($color-dark, 0.8);
 $background: linear-gradient(40deg, rgba($color-dark-gray, 0.1) 60%, $color-dark 200%);
+$background-secondary: linear-gradient(40deg, rgba($color-secondary-light, 1) 0%, $color-secondary 100%);
 $background-light: linear-gradient(190deg, rgba($color-light, 0.3) 70%, $color-dark 200%);
 $background-btn: linear-gradient(40deg, rgba($color-secondary, 1) 0%, $color-secondary-light 100%) padding-box,
   linear-gradient(40deg, $color-secondary-light 0%, $color-secondary 100%) border-box;

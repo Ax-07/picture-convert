@@ -65,6 +65,7 @@ pre, code {
   background-color: #222;
   padding: 2px 4px;
   border-radius: 4px;
+  font-size: 0.9em;
 }
 
 .header {
@@ -3715,6 +3716,11 @@ pre, code {
   font-size: 1rem;
   font-weight: 600;
 }
+@media screen and (max-width: 1024px) {
+  .navbar__list {
+    flex-direction: column;
+  }
+}
 .navbar__link {
   position: relative;
 }
@@ -3932,7 +3938,7 @@ pre, code {
 .about {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
   text-align: left;
   padding: 20px 50px;
 }
@@ -3941,21 +3947,43 @@ pre, code {
   font-size: 2.5em;
   color: #333;
 }
+@media screen and (max-width: 768px) {
+  .about__title {
+    font-size: 2em;
+  }
+}
 .about__description {
   font-size: 1.1em;
   color: #666;
   margin-bottom: 20px;
   line-height: 1.6;
 }
+@media screen and (max-width: 768px) {
+  .about__description {
+    font-size: 1em;
+  }
+}
 .about__btn {
   display: inline-block;
+}
+.about ul li {
+  margin-bottom: 20px;
 }
 .about .feature {
   display: flex;
   margin: 25px;
 }
+@media screen and (max-width: 430px) {
+  .about .feature {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+  }
+}
 .about .feature__icon {
   width: 75px;
+  height: auto;
   aspect-ratio: 1/1;
 }
 .about .feature__content {
@@ -3965,9 +3993,20 @@ pre, code {
   gap: 10px;
   margin-left: 20px;
 }
+@media screen and (max-width: 430px) {
+  .about .feature__content {
+    text-align: center;
+    margin-left: 0;
+  }
+}
 .about .feature__title {
   font-size: 1.5em;
   color: #ff6600;
+}
+@media screen and (max-width: 768px) {
+  .about .feature__title {
+    font-size: 1.2em;
+  }
 }
 
 .how-it-works {
@@ -3977,6 +4016,11 @@ pre, code {
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  .how-it-works h2 {
+    font-size: 2em;
+  }
 }
 .how-it-works .step {
   background-color: white;
@@ -3992,23 +4036,44 @@ pre, code {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 768px) {
+  .how-it-works .step__list {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+}
 .how-it-works .step svg {
   font-size: 3em;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .how-it-works .step svg {
+    font-size: 2em;
+  }
 }
 .how-it-works .step h3 {
   font-size: 1.5em;
   margin-bottom: 15px;
   color: #ff6600;
 }
+@media screen and (max-width: 768px) {
+  .how-it-works .step h3 {
+    font-size: 1.2em;
+  }
+}
 .how-it-works .step p {
   font-size: 1em;
   color: #555;
 }
+@media screen and (max-width: 768px) {
+  .how-it-works .step p {
+    font-size: 0.9em;
+  }
+}
 
 /* Section Styling */
 .advice {
-  max-width: 800px;
+  width: 100%;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -4049,11 +4114,13 @@ pre, code {
 }
 
 .advice pre {
+  width: 100%;
   color: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
   overflow-x: auto;
   margin-top: 20px;
+  font-size: 1rem;
 }
 
 /* Media Queries for Responsive Design */
@@ -4067,7 +4134,7 @@ pre, code {
 }
 .burgerBtn {
   position: relative;
-  z-index: 100;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -4105,7 +4172,27 @@ pre, code {
 .burgerBtn__line:nth-child(3) {
   bottom: 25%;
 }
+.burgerBtn__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(40deg, #ff9900 0%, #ff6600 100%);
+  z-index: -1;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-100%);
+}
 
+.burgerBtn--open .burgerBtn__line {
+  border: 2px solid #000;
+}
 .burgerBtn--open .burgerBtn__line:nth-child(1) {
   top: 50%;
   left: 50%;
@@ -4122,19 +4209,7 @@ pre, code {
   transform: translate(-50%, 50%) rotate(-45deg);
 }
 .burgerBtn--open .burgerBtn__menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  z-index: 99;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  animation: menuAnimation 0.4s ease-in-out forwards;
-  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
 }
 
 @keyframes btnBurgerAnimation {
@@ -4174,11 +4249,11 @@ pre, code {
 @keyframes menuAnimation {
   0% {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateX(-100%);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 .compress-picture {

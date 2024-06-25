@@ -33,8 +33,6 @@ export const About = () => {
 
   return (
     <section id="about" className="about">
-
-      <div className="container">
         <h2 className="about__title">Pourquoi utiliser Picture Convert?</h2>
         <p className="about__description">
           <strong>Picture convert</strong> est conçu pour vous offrir une solution simple, rapide et efficace pour gérer vos images en ligne. Voici pourquoi vous devriez choisir notre application :
@@ -54,7 +52,6 @@ export const About = () => {
           <strong>Conclusion :</strong> Picture Convert est une solution complète pour gérer vos images en ligne. Elle vous permet de convertir, compresser et redimensionner vos images avec facilité, tout en garantissant une qualité optimale et des performances web améliorées.
         </p>
         <BtnStart />
-      </div>
     </section>
   );
 };

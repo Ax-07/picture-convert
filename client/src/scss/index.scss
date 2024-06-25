@@ -8,19 +8,19 @@
 @import '../layouts/dashboard/dashboard.scss';
 
 // components
-@import '../scss/components/btn.scss';
+@import '../components/btn/btn.scss';
 @import '../components/separateLines/separateLine.scss';
 @import '../components/addPicture/addPictureForm.scss';
 @import '../components/imageComparator/imageComparator.scss';
 @import '../components/navigation/navbar/navbar.scss';
-@import '../components/stepByStep/stepByStep.scss';
 @import '../components/sliderRange/sliderRange.scss';
 @import '../components/SizeSelector/sizeSelector.scss';
 @import '../components/hero/hero.scss';
-@import '../components/features/features.scss';
 @import '../components/about/about.scss';
+@import '../components/howItWorks/howItWorks.scss';
+@import '../components/advice/advice.scss';
 
 // pages
-@import '../pages/compress/compress.scss';
+@import '../pages/app/compress/compress.scss';
 @import '../pages/home/home.scss';
-@import '../pages/guide/guide.scss';
+@import '../pages/app/application.scss';

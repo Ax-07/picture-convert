@@ -23,7 +23,6 @@ export const PictureProvider = ({ children }) => {
     width: 0,
     height: 0,
   });
-  const [imgWidth, setImgWidth] = useState(0);
 
   const resetPictures = () => {
     setReponse(null);
@@ -31,7 +30,6 @@ export const PictureProvider = ({ children }) => {
     setQuality(80);
     setOriginalPictureProperty({ size: 0, width: 0, height: 0 });
     setComparedImageProperty({ size: 0, width: 0, height: 0 });
-    setImgWidth(0);
   };
 
   useEffect(() => {
@@ -48,7 +46,6 @@ export const PictureProvider = ({ children }) => {
         sizes, setSizes,
         originalPictureProperty, setOriginalPictureProperty,
         comparedImageProperty, setComparedImageProperty,
-        imgWidth, setImgWidth,
         resetPictures,
       }}
     >

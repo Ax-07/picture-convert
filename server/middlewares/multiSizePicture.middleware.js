@@ -1,15 +1,15 @@
 const multer = require('multer');
 const sharp = require('sharp');
 const path = require('path');
+const archiver = require('archiver');
+const fs = require('fs');
 
 const upload = multer({
-    storage: multer.memoryStorage(), 
+    storage: multer.memoryStorage(),
     limits: {
         fileSize: 15 * 1024 * 1024, // Limite à 15MB
     }
 }).any();
-
-
 
 const processImage = async (file, size, quality) => {
     const buffer = await sharp(file.buffer)
@@ -27,7 +27,7 @@ module.exports = (req, res, next) => {
         } else if (err) {
             return res.status(500).json(err);
         }
-        
+
         try {
             if (req.files) {
                 const sizes = JSON.parse(req.body.sizes);
@@ -35,7 +35,7 @@ module.exports = (req, res, next) => {
                 const TABLET_SIZE = Number(sizes.tablet);
                 const MOBILE_SIZE = Number(sizes.mobile);
                 const IMAGE_QUALITY = Number(req.body.quality);
-                
+
                 res.locals.files = await Promise.all(req.files.map(async file => {
                     const desktopImage = await processImage(file, DESKTOP_SIZE, IMAGE_QUALITY);
                     const tabletImage = await processImage(file, TABLET_SIZE, IMAGE_QUALITY);
@@ -61,12 +61,47 @@ module.exports = (req, res, next) => {
                         }
                     };
                 }));
+
+                // Générer le fichier ZIP
+                const zipFilePath = path.join(__dirname, '..', 'downloads', 'images.zip');
+                const output = fs.createWriteStream(zipFilePath);
+                const archive = archiver('zip', { zlib: { level: 9 } });
+
+                archive.on('error', function (err) {
+                    throw err;
+                });
+
+                archive.pipe(output);
+                res.locals.files.forEach(fileSet => {
+                    archive.append(fileSet.desktop.buffer, { name: fileSet.desktop.originalname });
+                    archive.append(fileSet.tablet.buffer, { name: fileSet.tablet.originalname });
+                    archive.append(fileSet.mobile.buffer, { name: fileSet.mobile.originalname });
+                }); 
+                await archive.finalize();
+
+                output.on('close', () => {
+                    console.log(`${archive.pointer()} total bytes`);
+                    console.log('archive has been finalized and the output file descriptor has closed.');
+
+                    // Générer les liens de téléchargement
+                    const fileLinks = res.locals.files.map(fileSet => {
+                        return {
+                            desktop: `/download/desktop/${fileSet.desktop.originalname}`,
+                            tablet: `/download/tablet/${fileSet.tablet.originalname}`,
+                            mobile: `/download/mobile/${fileSet.mobile.originalname}`,
+                        };
+                    });
+
+                    res.status(200).json({
+                        files: res.locals.files,
+                        zip: '/download/zip/images.zip'
+                    });
+                });
             }
         } catch (error) {
             console.log(error);
             return res.status(500).json({ error: 'An error occurred while processing the image.' });
         }
-        res.status(200).json(res.locals.files);
-
+        // res.status(200).json(res.locals.files);
     });
 };

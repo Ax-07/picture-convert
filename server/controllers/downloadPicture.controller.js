@@ -1,3 +1,8 @@
+const path = require('path');
+const util = require('util');
+const fs = require('fs');
+const unlink = util.promisify(fs.unlink);
+
 // Cette fonction est destinée à télécharger un fichier en réponse à une requête HTTP
 module.exports.download = (req, res) => {
     // Récupération du format et du nom de l'image à télécharger à partir des paramètres de la requête
@@ -9,8 +14,10 @@ module.exports.download = (req, res) => {
     console.log('imageName:', imageName);
 
     // Recherche du fichier correspondant dans la liste des fichiers disponibles dans res.locals.files
-    const file = res.locals.files.find(file => 
+    const file = res.locals.files.find(file => {
         file[format] && file[format].originalname === imageName
+        
+    }
     );
 
     // Si le fichier est trouvé
@@ -28,4 +35,17 @@ module.exports.download = (req, res) => {
             message: "Image non trouvée."
         });
     }
+};
+
+module.exports.downloadZip = (req, res) => {
+    const zipFilePath = path.join(__dirname,'..','downloads', 'images.zip');
+
+    res.download(zipFilePath, 'images.zip', err => {
+        if (err) {
+            res.status(404).send({ message: "Fichier ZIP non trouvé." });
+        } else {
+            // Supprimer le fichier ZIP après le téléchargement
+            unlink(zipFilePath).catch(console.error);
+        }
+    });
 };

@@ -1,5 +1,6 @@
 $color-primary: #17a2b8;
-$color-secondary: #28a745;
+$color-secondary: #ff6600;
+$color-secondary-light: #ff9900;
 $color-danger: #dc3545;
 $color-success: #28a745;
 $color-warning: #ffc107;
@@ -12,4 +13,8 @@ $color-dark-gray: #6c757d;
 $border-radius: 0.25rem;
 $box-shadow-light: 0 0 10px 0px rgba($color-dark, 0.2);
 $box-shadow-dark: 0 0 10px 0px rgba($color-dark, 0.8);
+$background: linear-gradient(40deg, rgba($color-dark-gray, 0.1) 60%, $color-dark 200%);
+$background-light: linear-gradient(190deg, rgba($color-light, 0.3) 70%, $color-dark 200%);
+$background-btn: linear-gradient(40deg, rgba($color-secondary, 1) 0%, $color-secondary-light 100%) padding-box,
+  linear-gradient(40deg, $color-secondary-light 0%, $color-secondary 100%) border-box;
 // Path: client/src/scss/global/_theme.scss

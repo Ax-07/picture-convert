@@ -8,4 +8,10 @@
     width: 100%;
     padding: 0px 20px;
     backdrop-filter: blur(10px);
+
+    &__nav {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+    }
 }

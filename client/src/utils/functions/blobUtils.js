@@ -23,7 +23,7 @@ export const createDownloadUrls = (response) => {
         desktop: { url: "", name: "" },
     };
 
-    response?.forEach((res) => {
+    response.files?.forEach((res) => {
         if (res.mobile && res.tablet && res.desktop) {
         downloadUrls.mobile.url = createBlobUrl(res.mobile);
         downloadUrls.mobile.name = res.mobile.originalname;

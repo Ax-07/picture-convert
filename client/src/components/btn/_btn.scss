@@ -1,0 +1,60 @@
+.btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    margin: 1rem;
+    border: 0px solid transparent;
+    border-radius: 8px;
+    // background-color: darken($color-light, 10);
+    background: $background-btn;
+    color: $color-light;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0px 0px 10px 0px $color-secondary-light;
+            animation: rotateRadialGradientBtn 1s linear alternate-reverse infinite;
+            transition: all 0.3s ease-in-out;
+    }
+    &:disabled {
+        background: $color-light;
+        color: $color-dark;
+        cursor: not-allowed;
+        &:hover {
+          box-shadow: 0px 0px 10px 0px $color-danger;
+          animation: none;
+        }
+    }
+}
+
+@keyframes rotateGradientBtn {
+    @for $i from 0 through 360 {
+      #{percentage(calc($i / 360))} {
+        $angle1: calc(40deg + #{$i}deg);
+        $angle2: calc(140deg - #{$i}deg);
+        $color-light-percent: calc(1% * $i / 6);
+        $color-dark-percent: calc(1% * $i * 2);
+        background: linear-gradient($angle1, $color-secondary $color-light-percent, $color-secondary-light 100%) padding-box, 
+        linear-gradient($angle2, $color-secondary $color-light-percent , $color-secondary-light $color-dark-percent) border-box;
+      }
+    }
+  }
+
+  @keyframes rotateRadialGradientBtn {
+    @for $i from 0 through 360 {
+      #{percentage(calc($i / 360))} {
+        $angle1: calc(40deg + #{$i}deg);
+        $angle2: calc(140deg - #{$i}deg);
+        $color-light-percent: calc(1% * $i / 6);
+        $color-dark-percent: calc(1% * $i * 2);
+        background: 
+        radial-gradient(circle at calc(0% + #{$i}px) calc(50% + #{$i}px), $color-secondary $color-light-percent, $color-secondary-light 100%) border-box, 
+        linear-gradient($angle2, $color-secondary $color-light-percent , $color-secondary-light $color-dark-percent) padding-box,
+        radial-gradient(circle at calc(100% - #{$i}px) calc(50% - #{$i}px), $color-secondary $color-light-percent, $color-secondary-light 100%) content-box,;
+      }
+    }
+  }

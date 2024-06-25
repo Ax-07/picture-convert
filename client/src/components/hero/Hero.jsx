@@ -18,8 +18,8 @@ export const Hero = () => {
             vos images en toute simplicité. Que vous travailliez avec des graphismes professionnels ou des photos personnelles, nous avons tout ce qu'il vous faut.
           </p>
           <div className="hero__cta">
+            <NavLink to="/#how-it-works" className="hero__link btn">En savoir plus</NavLink>
             <BtnStart />
-            <NavLink to="/#features" className="hero__link btn">En savoir plus</NavLink>
           </div>
         </div>
         </div>

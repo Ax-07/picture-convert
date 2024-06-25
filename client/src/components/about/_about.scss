@@ -1,0 +1,47 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    text-align: left;
+    padding: 20px 50px;
+
+    &__title {
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        color: #333;
+    }
+
+    &__description {
+        font-size: 1.1em;
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    &__btn {
+        display: inline-block;
+    }
+
+    .feature {
+        display: flex;
+        margin: 25px;
+
+        &__icon {
+            width: 75px;
+            aspect-ratio: 1/1;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        &__title {
+            font-size: 1.5em;
+            color: #ff6600;
+        }
+    
+    }
+}

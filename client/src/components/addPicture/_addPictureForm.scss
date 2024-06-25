@@ -39,10 +39,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        // margin: 5px auto;
         color: darken($color-light, 10%);
-        // padding: 2px;
-        // background: $color-dark;
         background: linear-gradient(140deg, $color-light 0%, $color-dark 10%) padding-box, 
         linear-gradient(180deg, rgba($color-light, 0.3) 0%, $color-dark 60%) border-box;
         border: 10px solid transparent;
@@ -50,6 +47,11 @@
         font-size: 3rem;
         &:active {
             transform: scale(0.97);
+        }
+        &:hover {
+            &::before {
+                animation: rotateGradient 2s ease-in-out alternate-reverse infinite;
+            }
         }
         &::before {
             position: absolute;
@@ -67,8 +69,6 @@
             background: linear-gradient(40deg, $color-light 50%, $color-dark 200%) padding-box, 
             linear-gradient(140deg, $color-light 50%, $color-dark 100%) border-box;
             color: $color-dark;
-
-
         }
     }
 
@@ -143,4 +143,18 @@
             }
         }
     }
+}
+
+
+@keyframes rotateGradient {
+  @for $i from 0 through 360 {
+    #{percentage(calc($i / 360))} {
+      $angle1: calc(40deg + #{$i}deg);
+      $angle2: calc(140deg - #{$i}deg);
+      $color-light-percent: calc(1% * $i / 6);
+      $color-dark-percent: calc(1% * $i * 2);
+      background: linear-gradient($angle1, $color-light $color-light-percent, $color-dark 200%) padding-box, 
+      linear-gradient($angle2, $color-light $color-light-percent , $color-dark $color-dark-percent) border-box;
+    }
+  }
 }

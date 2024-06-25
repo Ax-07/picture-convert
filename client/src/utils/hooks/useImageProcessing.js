@@ -49,25 +49,25 @@ export const useImageProcessing = (images, quality, sizes) => {
         setIsError(false);
         setIsLoading(true);
         abortControllerRef.current = new AbortController();
-
+        console.log(location.pathname)
         try {
             let response, multiSizeForm, compressForm, convertForm;
             switch (location.pathname) {
-                case '/multi-size':
+                case '/application/multi-size':
                     multiSizeForm = setMultiSizeFormData(images, quality, sizes);
                     response = await multiSizePicture(multiSizeForm, abortControllerRef.current);
                     setResponse(response);
-                    initComparedImageProperty(response[0].desktop, setComparedImageProperty);
+                    initComparedImageProperty(response.files[0].desktop, setComparedImageProperty);
                     setDownloadUrls(createDownloadUrls(response));
                     break;
-                case '/compress':
+                case '/application/compress':
                     compressForm = setCompressFormData(images, quality);
                     response = await compressPicture(compressForm, abortControllerRef.current);
                     setResponse(response);
                     initComparedImageProperty(response, setComparedImageProperty)
                     setDownloadUrl(createBlobUrl(response));
                     break;
-                case '/convert':
+                case '/application/convert':
                     convertForm = setConvertFormData(images);
                     response = await convertPicture(convertForm, abortControllerRef.current);
                     setResponse(response);

@@ -1,0 +1,61 @@
+/* Section Styling */
+.advice {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title Styling */
+  .advice__title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* List Styling */
+  .advice ul {
+    list-style: none;
+    padding-left: 20px;
+  }
+  
+  .advice li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .advice li::before {
+    content: '✔';
+    color: $color-secondary;;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+  }
+  
+  /* Strong Text Styling */
+  .advice strong {
+    color: $color-secondary;
+  }
+  
+  .advice pre {
+    // background-color: #333;
+    color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 600px) {
+    .advice {
+      padding: 10px;
+    }
+  
+    .advice__title {
+      font-size: 1.5em;
+    }
+  }

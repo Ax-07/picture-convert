@@ -1,105 +1,105 @@
 import PropTypes from "prop-types";
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { ImageZoom } from "../imageZoom/ImageZoom";
 
 /**
- * 
+ *
  * @param {string} original - URL de l'image originale
  * @param {string} compared - URL de l'image à comparer
- * @param {number} imgWidth - Largeur de l'image
- * @param {function} setImgWidth - Fonction pour mettre à jour la largeur de l'image
- *  
+ *
  * @returns {JSX.Element} - Un élément JSX qui affiche un comparateur d'images
  */
 
-export const ImgComparator = ({
-  original,
-  compared,
-  imgWidth,
-  setImgWidth,
-}) => {
-  const imgRef = useRef(null);
+export const ImgComparator = ({ original, compared }) => {
+  const comparatorRef = useRef(null);
+  const overlayRef = useRef(null);
   const sliderRef = useRef(null);
+  const [isSliding, setIsSliding] = useState(false);
 
   useEffect(() => {
-    const img = imgRef.current;
+    const comparator = comparatorRef.current;
+    const overlay = overlayRef.current;
     const slider = sliderRef.current;
-    slider.style.left = imgWidth / 2 + "px";
-    img.style.width = imgWidth / 2 + "px";
+
+    if (!comparator || !overlay || !slider) return;
 
     const getCursorPosition = (e) => {
-      const a = img.getBoundingClientRect();
-      let x = e.clientX - a.left;
+      const rect = comparator.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      if (x < 0) x = 0;
+      if (x > rect.width) x = rect.width;
       return x;
     };
 
     const slide = (x) => {
-      img.style.width = x + "px";
-      slider.style.left = x + "px";
+      overlay.style.width = `${x}px`;
+      slider.style.left = `${x}px`;
     };
 
-    const slideMove = (e) => {
-      let position = getCursorPosition(e);
-      if (position < 0) position = 0;
-      if (position > imgWidth) position = imgWidth;
-      slide(position);
+    const startSlide = (e) => {
+      setIsSliding(true);
+      slide(getCursorPosition(e));
     };
 
-    const slideReady = (e) => {
-      e.preventDefault();
-      window.addEventListener("mousemove", slideMove);
-      window.addEventListener("touchmove", slideMove);
+    const stopSlide = () => {
+      setIsSliding(false);
     };
 
-    const slideFinish = () => {
-      window.removeEventListener("mousemove", slideMove);
-      window.removeEventListener("touchmove", slideMove);
+    const moveSlide = (e) => {
+      if (isSliding) {
+        slide(getCursorPosition(e));
+      }
     };
 
-    slider.addEventListener("mousedown", slideReady);
-    slider.addEventListener("touchstart", slideReady);
-    window.addEventListener("mouseup", slideFinish);
-    window.addEventListener("touchend", slideFinish);
+    slider.addEventListener("mousedown", startSlide);
+    window.addEventListener("mouseup", stopSlide);
+    window.addEventListener("mousemove", moveSlide);
+
+    slider.addEventListener("touchstart", (e) => startSlide(e.touches[0]));
+    window.addEventListener("touchend", stopSlide);
+    window.addEventListener("touchmove", (e) => moveSlide(e.touches[0]));
 
     return () => {
-      slider.removeEventListener("mousedown", slideReady);
-      slider.removeEventListener("touchstart", slideReady);
-      window.removeEventListener("mouseup", slideFinish);
-      window.removeEventListener("touchend", slideFinish);
+      slider.removeEventListener("mousedown", startSlide);
+      window.removeEventListener("mouseup", stopSlide);
+      window.removeEventListener("mousemove", moveSlide);
+      slider.removeEventListener("touchstart", (e) => startSlide(e.touches[0]));
+      window.removeEventListener("touchend", stopSlide);
+      window.removeEventListener("touchmove", (e) => moveSlide(e.touches[0]));
     };
-  }, [imgWidth]);
-
-  const onImageLoad = (e) => {
-    setImgWidth(e.target.offsetWidth);
-  };
-  console.log("original", original);
-  console.log("compared", compared);
+  }, [isSliding]);
 
   return (
     <div
-      className="img-comparator"
-      style={{ maxWidth: imgWidth }}
-      data-testid="img-comparator"
+      className="image-comparator"
+      data-testid="image-comparator"
+      ref={comparatorRef}
     >
-      <div className="img-comparator__img">
-        <img
+      <div className="image-comparator__wrapper">
+         <img
           src={original}
-          alt="image original"
-          onLoad={onImageLoad}
-          data-testid="originalImg"
-        />
+          alt="Original Image"
+          className="image-comparator__image image-comparator__image--original"
+          data-testid="original-image"
+        /> 
+        <div
+          className="image-comparator__overlay"
+          data-testid="image-comparator-overlay"
+          ref={overlayRef}
+        >
+          <img
+            src={compared}
+            alt="Compared Image"
+            className="image-comparator__image image-comparator__image--compared"
+            data-testid="compared-image"
+          /> 
+        </div>
+        <div 
+          className="image-comparator__slider"
+          data-testid="image-comparator-slider"
+          ref={sliderRef}
+        ></div>
       </div>
-      <div
-        ref={imgRef}
-        className="img-comparator__img img-comparator__overlay"
-        role="img-comp-overlay"
-      >
-        <img src={compared} alt="image compared" data-testid="comparedImg" />
-      </div>
-      <div
-        ref={sliderRef}
-        className="img-comparator__slider"
-        role="slider"
-      ></div>
     </div>
   );
 };
@@ -107,6 +107,4 @@ export const ImgComparator = ({
 ImgComparator.propTypes = {
   original: PropTypes.string.isRequired,
   compared: PropTypes.string.isRequired,
-  imgWidth: PropTypes.number.isRequired,
-  setImgWidth: PropTypes.func.isRequired,
 };

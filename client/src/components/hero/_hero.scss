@@ -50,6 +50,12 @@
 
     &__column {
       flex: 1;
+      &-left {}
+      &-right {
+        @media (max-width: 1024px) {
+          display: none;
+        }
+      }
     }
   
     h2 {

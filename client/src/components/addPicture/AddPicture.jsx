@@ -14,7 +14,7 @@ export const AddPicture = ({ setImages, cancel }) => {
     if (selectedFile) {
       const fileSizeInMB = selectedFile.size / (1024 * 1024);
       if (fileSizeInMB > maxSize) {
-        alert("Le fichier est trop grand. Veuillez choisir un fichier de moins de 4 Mo.");
+        alert(`Le fichier est trop grand. Veuillez choisir un fichier de moins de ${maxSize} Mo.`);
         return;
       }
       const reader = new FileReader();

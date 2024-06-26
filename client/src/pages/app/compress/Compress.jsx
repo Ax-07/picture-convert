@@ -107,7 +107,9 @@ export const Compress = () => {
               <button className="btn" onClick={onCancel}>
                 Annuler
               </button>
-              <PropagateLoader color={"#333"} loading={isLoading} size={15} />
+              <div>
+                <PropagateLoader color={"#333"} loading={isLoading} size={15} />
+              </div>
             </>
           ) : (
             <button

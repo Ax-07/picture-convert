@@ -42,6 +42,7 @@
       left: 0;
       overflow: hidden;
       width: 50%;
+      height: 100%;
     }
   
     &__image--compared {
@@ -52,7 +53,6 @@
       width: 600px;
       pointer-events: none;
       object-fit: cover;
-      filter: hue-rotate(180deg);
     }
   
     &__slider {

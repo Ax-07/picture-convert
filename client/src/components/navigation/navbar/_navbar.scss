@@ -9,9 +9,16 @@
         font-size: 1rem;
         font-weight: 600;
 
-        @media screen and (max-width: 1024px) {
+        &--column {
             flex-direction: column;
         }
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+        }
+        &--row {
+            flex-direction: row;
+        }
+
     }
 
     &__item {}

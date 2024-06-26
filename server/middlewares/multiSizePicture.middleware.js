@@ -3,6 +3,7 @@ const sharp = require('sharp');
 const path = require('path');
 const archiver = require('archiver');
 const fs = require('fs');
+const { WritableStreamBuffer } = require('stream-buffers');
 
 const upload = multer({
     storage: multer.memoryStorage(),
@@ -63,45 +64,35 @@ module.exports = (req, res, next) => {
                 }));
 
                 // Générer le fichier ZIP
-                const zipFilePath = path.join(__dirname, '..', 'downloads', 'images.zip');
-                const output = fs.createWriteStream(zipFilePath);
+                const bufferStream = new WritableStreamBuffer();
                 const archive = archiver('zip', { zlib: { level: 9 } });
 
                 archive.on('error', function (err) {
                     throw err;
                 });
 
-                archive.pipe(output);
+                archive.pipe(bufferStream);
                 res.locals.files.forEach(fileSet => {
                     archive.append(fileSet.desktop.buffer, { name: fileSet.desktop.originalname });
                     archive.append(fileSet.tablet.buffer, { name: fileSet.tablet.originalname });
                     archive.append(fileSet.mobile.buffer, { name: fileSet.mobile.originalname });
-                }); 
+                });
                 await archive.finalize();
 
-                output.on('close', () => {
-                    console.log(`${archive.pointer()} total bytes`);
-                    console.log('archive has been finalized and the output file descriptor has closed.');
+                const zipBuffer = bufferStream.getContents();
 
-                    // Générer les liens de téléchargement
-                    const fileLinks = res.locals.files.map(fileSet => {
-                        return {
-                            desktop: `/download/desktop/${fileSet.desktop.originalname}`,
-                            tablet: `/download/tablet/${fileSet.tablet.originalname}`,
-                            mobile: `/download/mobile/${fileSet.mobile.originalname}`,
-                        };
-                    });
-
-                    res.status(200).json({
-                        files: res.locals.files,
-                        zip: '/download/zip/images.zip'
-                    });
+                res.status(200).json({
+                    files: res.locals.files,
+                    zip: {
+                        buffer: zipBuffer,
+                        originalname: 'images.zip',
+                        mimetype: 'application/zip'
+                    }
                 });
             }
         } catch (error) {
             console.log(error);
             return res.status(500).json({ error: 'An error occurred while processing the image.' });
         }
-        // res.status(200).json(res.locals.files);
     });
 };

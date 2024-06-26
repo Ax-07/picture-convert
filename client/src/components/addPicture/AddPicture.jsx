@@ -7,7 +7,7 @@ export const AddPicture = ({ setImages, cancel }) => {
   const [isDisplayPreviewPicture, setIsDisplayPreviewPicture] = useState(false);
   const [previewPicture, setPreviewPicture] = useState(null);
   const inputRef = useRef();
-  const maxSize = 3; // 2mo
+  const maxSize = 2; // 2mo
 
   const onInputChange = (e) => {
     const selectedFile = e.target.files[0];

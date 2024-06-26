@@ -5,6 +5,8 @@ import { initPictureProperty } from "../utils/functions/blobUtils";
 export const PictureContext = createContext();
 
 export const PictureProvider = ({ children }) => {
+  const [isDisplayPreviewPicture, setIsDisplayPreviewPicture] = useState(false);
+  const [previewPicture, setPreviewPicture] = useState(null);
   const [reponse, setReponse] = useState();
   const [images, setImages] = useState(null);
   const [quality, setQuality] = useState(80);
@@ -40,6 +42,8 @@ export const PictureProvider = ({ children }) => {
   return (
     <PictureContext.Provider
       value={{
+        isDisplayPreviewPicture, setIsDisplayPreviewPicture,
+        previewPicture, setPreviewPicture,
         reponse, setReponse,
         images, setImages,
         quality, setQuality,

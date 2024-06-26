@@ -1,11 +1,12 @@
-import { useState, useRef } from "react";
+import { useRef, useContext } from "react";
 import PropTypes from "prop-types";
 import { InputPicture } from "./InputPicture";
 import { PreviewPicture } from "./PreviewPicture";
+import { PictureContext } from "../../context/PicturesContext";
 
 export const AddPicture = ({ setImages, cancel }) => {
-  const [isDisplayPreviewPicture, setIsDisplayPreviewPicture] = useState(false);
-  const [previewPicture, setPreviewPicture] = useState(null);
+  const {isDisplayPreviewPicture, setIsDisplayPreviewPicture} = useContext(PictureContext)
+  const {previewPicture, setPreviewPicture} = useContext(PictureContext);
   const inputRef = useRef();
   const maxSize = 2; // 2mo
 

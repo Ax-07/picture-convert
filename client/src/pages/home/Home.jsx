@@ -11,13 +11,13 @@ export const Home = () => {
     <div className="home" data-testid="home">
       <Hero />
       <div className="home__container">
-        <img className="home__container-border" src={waveTop} alt="" />
+        <img className="home__container-border" src={waveTop} alt="ligne de separation" />
         <HowItWorks />
         <SeparateLine />
         <About />
         <SeparateLine />
         <Advice />
-        <img className="home__container-border" src={waveBottom} alt="" />
+        <img className="home__container-border" src={waveBottom} alt="ligne de separation" />
       </div>
     </div>
   );

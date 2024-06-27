@@ -20,6 +20,7 @@
   justify-content: center;
   min-height: 100vh;
   color: #333;
+  background: #D8D6D3;
 }
 
 main {
@@ -3885,12 +3886,11 @@ pre, code {
   align-items: center;
   padding: 50px 100px;
   text-align: center;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
   width: 100%;
   height: 100vh;
   margin: 0 !important;
   color: white;
+  background: black;
 }
 @media (max-width: 1024px) {
   .hero {
@@ -3904,7 +3904,7 @@ pre, code {
   display: flex;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -3914,7 +3914,18 @@ pre, code {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.hero__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(139, 109, 65, 0.2);
+  z-index: 0;
+}
 .hero__content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -3987,7 +3998,7 @@ pre, code {
 }
 .about__description {
   font-size: 1.1em;
-  color: #666;
+  color: #000;
   margin-bottom: 20px;
   line-height: 1.6;
 }
@@ -4005,6 +4016,8 @@ pre, code {
 .about .feature {
   display: flex;
   margin: 25px;
+  padding: 20px;
+  background: linear-gradient(-66deg, #666666, #000000);
 }
 @media screen and (max-width: 430px) {
   .about .feature {
@@ -4041,6 +4054,14 @@ pre, code {
     font-size: 1.2em;
   }
 }
+.about .feature__description {
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .about .feature__description {
+    font-size: 0.9em;
+  }
+}
 
 .how-it-works {
   max-width: 1440px;
@@ -4056,7 +4077,7 @@ pre, code {
   }
 }
 .how-it-works .step {
-  background-color: white;
+  background: linear-gradient(-66deg, #666666, #000000);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgb(0, 0, 0);
@@ -4078,6 +4099,7 @@ pre, code {
 .how-it-works .step svg {
   font-size: 3em;
   margin-bottom: 20px;
+  color: white;
 }
 @media screen and (max-width: 768px) {
   .how-it-works .step svg {
@@ -4096,7 +4118,7 @@ pre, code {
 }
 .how-it-works .step p {
   font-size: 1em;
-  color: #555;
+  color: #fff;
 }
 @media screen and (max-width: 768px) {
   .how-it-works .step p {
@@ -4107,10 +4129,6 @@ pre, code {
 /* Section Styling */
 .advice {
   width: 100%;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Title Styling */
@@ -4120,16 +4138,28 @@ pre, code {
   text-align: center;
 }
 
+.advice__sub-title {
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 /* List Styling */
 .advice ul {
   list-style: none;
-  padding-left: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  background: linear-gradient(-66deg, #666666, #000000);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .advice li {
   margin-bottom: 15px;
   padding-left: 20px;
   position: relative;
+  color: #fff;
 }
 
 .advice li::before {
@@ -4147,12 +4177,14 @@ pre, code {
 }
 
 .advice pre {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
   overflow-x: auto;
-  margin-top: 20px;
   font-size: 1rem;
 }
 
@@ -4369,7 +4401,6 @@ pre, code {
   width: 100%;
 }
 .home__container-border {
-  background: white;
   width: 100%;
 }
 
@@ -4380,4 +4411,25 @@ pre, code {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.application__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+.application__btn-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 165px;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(-66deg, #666666, #000000);
+}
+.application__btn-link > h2 {
+  color: #ff6600;
 }/*# sourceMappingURL=index.css.map */

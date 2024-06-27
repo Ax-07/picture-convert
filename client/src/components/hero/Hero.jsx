@@ -11,6 +11,7 @@ export const Hero = () => {
           <source srcSet="/hero_picture/desktop-unsplash_y2azHvupCVo.webp" media="(min-width: 1025px)" />
           <img src="/hero_picture/desktop-unsplash_y2azHvupCVo.webp" alt="photo d'un paysage de montagne au dessus des nuages" />
         </picture>
+        <div className="hero__mask"></div>
         <div className="hero__column hero__column-left">
         <div className="hero__content">
           <h2>Convertissez, Compressez et Redimensionnez Vos Images Facilement</h2>

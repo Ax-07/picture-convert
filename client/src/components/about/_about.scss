@@ -17,7 +17,7 @@
 
     &__description {
         font-size: 1.1em;
-        color: #666;
+        color: #000;
         margin-bottom: 20px;
         line-height: 1.6;
 
@@ -38,6 +38,8 @@
     .feature {
         display: flex;
         margin: 25px;
+        padding: 20px;
+        background: linear-gradient(-66deg, #666666, #000000);
 
         @media screen and (max-width: 430px) {
             flex-direction: column;
@@ -71,6 +73,14 @@
 
             @media screen and (max-width: 768px) {
                 font-size: 1.2em;
+            }
+        }
+
+        &__description {
+            color: #fff;
+
+            @media screen and (max-width: 768px) {
+                font-size: 0.9em;
             }
         }
     

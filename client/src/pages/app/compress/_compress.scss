@@ -45,13 +45,10 @@
         border-radius: 5px;
         background: linear-gradient(-66deg, #666666, #000000);
         box-shadow: $box-shadow-dark;
+        color: #fff;
         
         & h3 {
             color: $color-secondary;
-        }
-
-        & p {
-            color: #fff;
         }
 
         & > .separateLine {

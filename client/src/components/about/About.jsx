@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { icons } from "../../assets/icons/icons";
-import { BtnStart } from "../btn/Buttons";
 
 export const About = () => {
   const features = [
@@ -51,7 +50,6 @@ export const About = () => {
         <p className="about__description">
           <strong>Conclusion :</strong> Picture Convert est une solution complète pour gérer vos images en ligne. Elle vous permet de convertir, compresser et redimensionner vos images avec facilité, tout en garantissant une qualité optimale et des performances web améliorées.
         </p>
-        <BtnStart />
     </section>
   );
 };

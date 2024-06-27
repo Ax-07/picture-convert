@@ -27,6 +27,8 @@ export const PictureProvider = ({ children }) => {
   });
 
   const resetPictures = () => {
+    setPreviewPicture(null);
+    setIsDisplayPreviewPicture(false);
     setReponse(null);
     setImages(null);
     setQuality(80);

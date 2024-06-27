@@ -2434,6 +2434,7 @@ pre, code {
   flex-direction: column;
   align-items: center;
   position: relative;
+  background: linear-gradient(40deg, #f4f4f4 0%, #ff6600 100%);
 }
 .add-picture__wrapper--dragging {
   background: #f4f4f4;
@@ -3785,7 +3786,7 @@ pre, code {
   height: 100%;
   cursor: pointer;
   box-shadow: 1px 1px 1px #333;
-  background: #333;
+  background: #fff;
   border-radius: 5px;
 }
 .sliderRange__input::-webkit-slider-thumb {
@@ -3794,7 +3795,7 @@ pre, code {
   width: 15px;
   height: 15px;
   cursor: pointer;
-  background: #333;
+  background: #ff6600;
   border: 1px solid #f4f4f4;
   border-bottom: none;
   box-shadow: 1px 1px 1px #333;
@@ -4328,6 +4329,12 @@ pre, code {
   width: 100%;
   max-width: 1024px;
 }
+.compress-picture__title {
+  color: #ff6600;
+}
+.compress-picture__sub-title {
+  color: #fff;
+}
 .compress-picture__header {
   position: relative;
   z-index: 1;
@@ -4343,7 +4350,7 @@ pre, code {
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 0 10px 0px rgba(51, 51, 51, 0.8);
-  background: linear-gradient(40deg, rgba(244, 244, 244, 0.3) 60%, #333 200%);
+  background: linear-gradient(84deg, #000 15%, #666 100%);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
 }
@@ -4358,10 +4365,20 @@ pre, code {
   padding: 50px 10px;
   border: 1px solid #333;
   border-radius: 5px;
-  background: linear-gradient(190deg, rgba(244, 244, 244, 0.3) 70%, #333 200%);
+  background: linear-gradient(-66deg, #666666, #000000);
   box-shadow: 0 0 10px 0px rgba(51, 51, 51, 0.8);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+}
+.compress-picture__form h3 {
+  color: #ff6600;
+}
+.compress-picture__form p {
+  color: #fff;
+}
+.compress-picture__form > .separateLine > .separateLine__line {
+  border-color: #fff;
+}
+.compress-picture__form > .separateLine > .separateLine__icon {
+  border-color: #fff;
 }
 .compress-picture__comparator {
   position: relative;
@@ -4374,7 +4391,7 @@ pre, code {
   padding: 1rem;
   border: 1px solid #333;
   border-radius: 5px;
-  background-color: #fff;
+  background: linear-gradient(-66deg, #666666, #000000);
   box-shadow: 0 0 10px 0px rgba(51, 51, 51, 0.8);
 }
 .compress-picture__infos-wrapper {
@@ -4432,4 +4449,7 @@ pre, code {
 }
 .application__btn-link > h2 {
   color: #ff6600;
+}
+.application__btn-link:hover {
+  box-shadow: #ff6600 0px 0px 10px 0px;
 }/*# sourceMappingURL=index.css.map */

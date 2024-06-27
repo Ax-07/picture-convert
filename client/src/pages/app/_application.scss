@@ -28,5 +28,9 @@
         > h2 {
             color: $color-secondary;
         }
+
+        &:hover {
+            box-shadow: $color-secondary 0px 0px 10px 0px;
+        }
     }
 }

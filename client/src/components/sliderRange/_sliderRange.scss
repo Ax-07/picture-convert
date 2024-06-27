@@ -25,7 +25,7 @@
             height: 100%;
             cursor: pointer;
             box-shadow: 1px 1px 1px $color-dark;
-            background: $color-dark;
+            background: #fff;
             border-radius: 5px;
         }
 
@@ -35,7 +35,7 @@
             width: 15px;
             height: 15px;
             cursor: pointer;
-            background: $color-dark;
+            background: $color-secondary;
             border: 1px solid $color-light;
             border-bottom: none;
             box-shadow: 1px 1px 1px $color-dark;

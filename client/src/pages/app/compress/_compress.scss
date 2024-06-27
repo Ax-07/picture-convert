@@ -4,6 +4,14 @@
     width: 100%;
     max-width: 1024px;
 
+    &__title {
+        color: $color-secondary;
+    }
+
+    &__sub-title {
+        color: #fff;
+    }
+
     &__header {
         position: relative;
         z-index: 1;
@@ -19,9 +27,10 @@
         border-radius: 5px;
         background-color: $color-white;
         box-shadow: $box-shadow-dark;
-        background: linear-gradient(40deg, rgba($color-light, 0.3) 60%, $color-dark 200%);
+        background: linear-gradient(84deg, #000 15%, #666 100%);
         backdrop-filter: blur(3px);
     }
+
 
     &__form {
         position: relative;
@@ -34,10 +43,25 @@
         padding: 50px 10px; 
         border: 1px solid $color-dark;
         border-radius: 5px;
-        background: linear-gradient(190deg, rgba($color-light, 0.3) 70%, $color-dark 200%);
+        background: linear-gradient(-66deg, #666666, #000000);
         box-shadow: $box-shadow-dark;
-        backdrop-filter: blur(3px);
+        
+        & h3 {
+            color: $color-secondary;
+        }
 
+        & p {
+            color: #fff;
+        }
+
+        & > .separateLine {
+            & > .separateLine__line {
+                border-color: #fff;
+            }
+            & > .separateLine__icon {
+                border-color: #fff;
+            }
+        }
     }
 
     &__comparator {
@@ -51,7 +75,7 @@
         padding: 1rem; 
         border: 1px solid $color-dark;
         border-radius: 5px;
-        background-color: $color-white;
+        background: linear-gradient(-66deg, #666666, #000000);
         box-shadow: $box-shadow-dark;
     }
 

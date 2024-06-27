@@ -2434,7 +2434,7 @@ pre, code {
   flex-direction: column;
   align-items: center;
   position: relative;
-  background: linear-gradient(40deg, #f4f4f4 0%, #ff6600 100%);
+  background: linear-gradient(40deg, #f4f4f4 0%, #D8D6D3 100%);
 }
 .add-picture__wrapper--dragging {
   background: #f4f4f4;
@@ -2483,8 +2483,8 @@ pre, code {
   display: none;
 }
 .add-picture__txt {
-  font-size: 10px;
-  color: #444444;
+  font-size: 16px;
+  color: #444444 !important;
   margin-bottom: 19px;
 }
 .add-picture__preview {

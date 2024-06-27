@@ -15,11 +15,11 @@ import {
   faDownload,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCopy, faImage } from "@fortawesome/free-regular-svg-icons";
-import cursorarrow from "./img/cursorarrow.rays.png";
-import figureWalk from "./img/figure.walk.motion.png";
-import gaugeOpen from "./img/gauge.open.with.lines.needle.33percent.and.arrowtriangle.from.0percent.to.50percent.png";
-import photoStack from "./img/photo.stack.png";
-import faStar from "./img/faStar.png";
+import cursorarrow from "../svg/cursorarrow.rays.svg";
+import figureWalk from "../svg/figure.walk.motion.svg";
+import gaugeOpen from "../svg/gauge.open.with.lines.needle.33percent.and.arrowtriangle.from.0percent.to.50percent.svg";
+import photoStack from "../svg/photo.stack.svg";
+import faStar from "../svg/faStar.svg";
 
 export const icons = {
   trash: <FontAwesomeIcon icon={faTrash} />,

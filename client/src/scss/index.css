@@ -4436,7 +4436,13 @@ pre, code {
   gap: 20px;
   padding: 20px;
 }
+@media screen and (max-width: 768px) {
+  .application__list {
+    flex-direction: column;
+  }
+}
 .application__btn-link {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4446,10 +4452,2197 @@ pre, code {
   padding: 20px;
   border-radius: 10px;
   background: linear-gradient(-66deg, #666666, #000000);
+  box-shadow: #6c757d 4px -4px 4px 0px;
+  transition: all 0.1s ease-in-out;
+}
+.application__btn-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(40deg, #ff9900 0%, #ff6600 100%);
+  border-radius: 10px;
+  z-index: -1;
+  border: 3px solid transparent;
 }
 .application__btn-link > h2 {
   color: #ff6600;
 }
 .application__btn-link:hover {
-  box-shadow: #ff6600 0px 0px 10px 0px;
+  border: 3px solid transparent;
+  animation: rotateGradientPad 2s ease-in-out infinite;
+  box-shadow: 0 0 10px 0px rgba(255, 102, 0, 0.8);
+}
+
+@keyframes rotateGradientPad {
+  0% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 0deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  0.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 1deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  0.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 2deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  0.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 3deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  1.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 4deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  1.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 5deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  1.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 6deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  1.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 7deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  2.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 8deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  2.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 9deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  2.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 10deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  3.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 11deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  3.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 12deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  3.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 13deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  3.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 14deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  4.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 15deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  4.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 16deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  4.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 17deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 18deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  5.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 19deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  5.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 20deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  5.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 21deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  6.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 22deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  6.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 23deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  6.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 24deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  6.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 25deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  7.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 26deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  7.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 27deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  7.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 28deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  8.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 29deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  8.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 30deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  8.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 31deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  8.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 32deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  9.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 33deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  9.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 34deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  9.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 35deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  10% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 36deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  10.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 37deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  10.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 38deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  10.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 39deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  11.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 40deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  11.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 41deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  11.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 42deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  11.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 43deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  12.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 44deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  12.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 45deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  12.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 46deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  13.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 47deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  13.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 48deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  13.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 49deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  13.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 50deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  14.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 51deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  14.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 52deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  14.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 53deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  15% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 54deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  15.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 55deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  15.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 56deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  15.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 57deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  16.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 58deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  16.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 59deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  16.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 60deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  16.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 61deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  17.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 62deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  17.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 63deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  17.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 64deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  18.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 65deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  18.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 66deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  18.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 67deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  18.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 68deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  19.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 69deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  19.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 70deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  19.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 71deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  20% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 72deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  20.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 73deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  20.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 74deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  20.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 75deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  21.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 76deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  21.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 77deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  21.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 78deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  21.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 79deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  22.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 80deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  22.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 81deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  22.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 82deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  23.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 83deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  23.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 84deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  23.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 85deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  23.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 86deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  24.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 87deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  24.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 88deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  24.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 89deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  25% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 90deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  25.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 91deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  25.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 92deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  25.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 93deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  26.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 94deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  26.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 95deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  26.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 96deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  26.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 97deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  27.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 98deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  27.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 99deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  27.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 100deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  28.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 101deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  28.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 102deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  28.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 103deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  28.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 104deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  29.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 105deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  29.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 106deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  29.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 107deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  30% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 108deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  30.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 109deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  30.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 110deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  30.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 111deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  31.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 112deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  31.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 113deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  31.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 114deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  31.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 115deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  32.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 116deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  32.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 117deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  32.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 118deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  33.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 119deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  33.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 120deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  33.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 121deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  33.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 122deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  34.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 123deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  34.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 124deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  34.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 125deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  35% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 126deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  35.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 127deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  35.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 128deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  35.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 129deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  36.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 130deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  36.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 131deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  36.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 132deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  36.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 133deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  37.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 134deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  37.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 135deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  37.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 136deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  38.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 137deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  38.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 138deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  38.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 139deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  38.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 140deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  39.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 141deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  39.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 142deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  39.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 143deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  40% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 144deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  40.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 145deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  40.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 146deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  40.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 147deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  41.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 148deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  41.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 149deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  41.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 150deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  41.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 151deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  42.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 152deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  42.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 153deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  42.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 154deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  43.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 155deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  43.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 156deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  43.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 157deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  43.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 158deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  44.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 159deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  44.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 160deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  44.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 161deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  45% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 162deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  45.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 163deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  45.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 164deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  45.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 165deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  46.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 166deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  46.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 167deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  46.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 168deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  46.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 169deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  47.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 170deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  47.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 171deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  47.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 172deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  48.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 173deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  48.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 174deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  48.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 175deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  48.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 176deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  49.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 177deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  49.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 178deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  49.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 179deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  50% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 180deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  50.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 181deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  50.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 182deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  50.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 183deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  51.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 184deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  51.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 185deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  51.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 186deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  51.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 187deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  52.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 188deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  52.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 189deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  52.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 190deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  53.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 191deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  53.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 192deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  53.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 193deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  53.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 194deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  54.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 195deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  54.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 196deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  54.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 197deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  55% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 198deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  55.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 199deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  55.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 200deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  55.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 201deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  56.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 202deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  56.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 203deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  56.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 204deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  56.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 205deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  57.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 206deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  57.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 207deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  57.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 208deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  58.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 209deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  58.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 210deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  58.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 211deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  58.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 212deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  59.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 213deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  59.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 214deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  59.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 215deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  60% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 216deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  60.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 217deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  60.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 218deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  60.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 219deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  61.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 220deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  61.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 221deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  61.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 222deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  61.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 223deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  62.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 224deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  62.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 225deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  62.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 226deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  63.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 227deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  63.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 228deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  63.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 229deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  63.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 230deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  64.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 231deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  64.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 232deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  64.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 233deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  65% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 234deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  65.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 235deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  65.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 236deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  65.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 237deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  66.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 238deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  66.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 239deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  66.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 240deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  66.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 241deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  67.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 242deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  67.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 243deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  67.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 244deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  68.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 245deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  68.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 246deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  68.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 247deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  68.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 248deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  69.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 249deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  69.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 250deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  69.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 251deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  70% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 252deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  70.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 253deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  70.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 254deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  70.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 255deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  71.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 256deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  71.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 257deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  71.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 258deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  71.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 259deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  72.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 260deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  72.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 261deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  72.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 262deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  73.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 263deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  73.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 264deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  73.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 265deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  73.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 266deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  74.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 267deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  74.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 268deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  74.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 269deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  75% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 270deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  75.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 271deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  75.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 272deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  75.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 273deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  76.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 274deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  76.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 275deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  76.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 276deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  76.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 277deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  77.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 278deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  77.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 279deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  77.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 280deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  78.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 281deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  78.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 282deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  78.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 283deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  78.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 284deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  79.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 285deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  79.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 286deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  79.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 287deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  80% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 288deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  80.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 289deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  80.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 290deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  80.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 291deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  81.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 292deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  81.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 293deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  81.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 294deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  81.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 295deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  82.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 296deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  82.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 297deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  82.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 298deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  83.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 299deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  83.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 300deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  83.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 301deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  83.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 302deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  84.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 303deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  84.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 304deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  84.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 305deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  85% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 306deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  85.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 307deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  85.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 308deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  85.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 309deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  86.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 310deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  86.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 311deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  86.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 312deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  86.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 313deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  87.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 314deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  87.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 315deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  87.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 316deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  88.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 317deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  88.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 318deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  88.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 319deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  88.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 320deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  89.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 321deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  89.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 322deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  89.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 323deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  90% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 324deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  90.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 325deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  90.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 326deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  90.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 327deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  91.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 328deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  91.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 329deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  91.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 330deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  91.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 331deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  92.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 332deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  92.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 333deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  92.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 334deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  93.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 335deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  93.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 336deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  93.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 337deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  93.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 338deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  94.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 339deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  94.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 340deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  94.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 341deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  95% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 342deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  95.2777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 343deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  95.5555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 344deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  95.8333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 345deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  96.1111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 346deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  96.3888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 347deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  96.6666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 348deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  96.9444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 349deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  97.2222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 350deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  97.5% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 351deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  97.7777777778% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 352deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  98.0555555556% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 353deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  98.3333333333% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 354deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  98.6111111111% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 355deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  98.8888888889% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 356deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  99.1666666667% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 357deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  99.4444444444% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 358deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  99.7222222222% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 359deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+  100% {
+    background: linear-gradient(-66deg, #666 0%, #000 100%) padding-box, repeating-conic-gradient(from calc(-66deg + 360deg) at 50% 50%, #ff6600 0%, #ffc107 15%, #ff6600 33%) 50% 50%/200% 200% border-box;
+  }
+}
+@keyframes rotateRadialGradientPad {
+  0% {
+    background: radial-gradient(circle at calc(0% + 0px) calc(50% + 0px), #333 0%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 0deg), #333 0%, #ff9900 0%) padding-box, radial-gradient(circle at calc(100% - 0px) calc(50% - 0px), #333 0%, #ff9900 100%) content-box;
+  }
+  0.2777777778% {
+    background: radial-gradient(circle at calc(0% + 1px) calc(50% + 1px), #333 0.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 1deg), #333 0.2%, #ff9900 2%) padding-box, radial-gradient(circle at calc(100% - 1px) calc(50% - 1px), #333 0.2%, #ff9900 100%) content-box;
+  }
+  0.5555555556% {
+    background: radial-gradient(circle at calc(0% + 2px) calc(50% + 2px), #333 0.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 2deg), #333 0.4%, #ff9900 4%) padding-box, radial-gradient(circle at calc(100% - 2px) calc(50% - 2px), #333 0.4%, #ff9900 100%) content-box;
+  }
+  0.8333333333% {
+    background: radial-gradient(circle at calc(0% + 3px) calc(50% + 3px), #333 0.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 3deg), #333 0.6%, #ff9900 6%) padding-box, radial-gradient(circle at calc(100% - 3px) calc(50% - 3px), #333 0.6%, #ff9900 100%) content-box;
+  }
+  1.1111111111% {
+    background: radial-gradient(circle at calc(0% + 4px) calc(50% + 4px), #333 0.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 4deg), #333 0.8%, #ff9900 8%) padding-box, radial-gradient(circle at calc(100% - 4px) calc(50% - 4px), #333 0.8%, #ff9900 100%) content-box;
+  }
+  1.3888888889% {
+    background: radial-gradient(circle at calc(0% + 5px) calc(50% + 5px), #333 1%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 5deg), #333 1%, #ff9900 10%) padding-box, radial-gradient(circle at calc(100% - 5px) calc(50% - 5px), #333 1%, #ff9900 100%) content-box;
+  }
+  1.6666666667% {
+    background: radial-gradient(circle at calc(0% + 6px) calc(50% + 6px), #333 1.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 6deg), #333 1.2%, #ff9900 12%) padding-box, radial-gradient(circle at calc(100% - 6px) calc(50% - 6px), #333 1.2%, #ff9900 100%) content-box;
+  }
+  1.9444444444% {
+    background: radial-gradient(circle at calc(0% + 7px) calc(50% + 7px), #333 1.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 7deg), #333 1.4%, #ff9900 14%) padding-box, radial-gradient(circle at calc(100% - 7px) calc(50% - 7px), #333 1.4%, #ff9900 100%) content-box;
+  }
+  2.2222222222% {
+    background: radial-gradient(circle at calc(0% + 8px) calc(50% + 8px), #333 1.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 8deg), #333 1.6%, #ff9900 16%) padding-box, radial-gradient(circle at calc(100% - 8px) calc(50% - 8px), #333 1.6%, #ff9900 100%) content-box;
+  }
+  2.5% {
+    background: radial-gradient(circle at calc(0% + 9px) calc(50% + 9px), #333 1.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 9deg), #333 1.8%, #ff9900 18%) padding-box, radial-gradient(circle at calc(100% - 9px) calc(50% - 9px), #333 1.8%, #ff9900 100%) content-box;
+  }
+  2.7777777778% {
+    background: radial-gradient(circle at calc(0% + 10px) calc(50% + 10px), #333 2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 10deg), #333 2%, #ff9900 20%) padding-box, radial-gradient(circle at calc(100% - 10px) calc(50% - 10px), #333 2%, #ff9900 100%) content-box;
+  }
+  3.0555555556% {
+    background: radial-gradient(circle at calc(0% + 11px) calc(50% + 11px), #333 2.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 11deg), #333 2.2%, #ff9900 22%) padding-box, radial-gradient(circle at calc(100% - 11px) calc(50% - 11px), #333 2.2%, #ff9900 100%) content-box;
+  }
+  3.3333333333% {
+    background: radial-gradient(circle at calc(0% + 12px) calc(50% + 12px), #333 2.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 12deg), #333 2.4%, #ff9900 24%) padding-box, radial-gradient(circle at calc(100% - 12px) calc(50% - 12px), #333 2.4%, #ff9900 100%) content-box;
+  }
+  3.6111111111% {
+    background: radial-gradient(circle at calc(0% + 13px) calc(50% + 13px), #333 2.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 13deg), #333 2.6%, #ff9900 26%) padding-box, radial-gradient(circle at calc(100% - 13px) calc(50% - 13px), #333 2.6%, #ff9900 100%) content-box;
+  }
+  3.8888888889% {
+    background: radial-gradient(circle at calc(0% + 14px) calc(50% + 14px), #333 2.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 14deg), #333 2.8%, #ff9900 28%) padding-box, radial-gradient(circle at calc(100% - 14px) calc(50% - 14px), #333 2.8%, #ff9900 100%) content-box;
+  }
+  4.1666666667% {
+    background: radial-gradient(circle at calc(0% + 15px) calc(50% + 15px), #333 3%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 15deg), #333 3%, #ff9900 30%) padding-box, radial-gradient(circle at calc(100% - 15px) calc(50% - 15px), #333 3%, #ff9900 100%) content-box;
+  }
+  4.4444444444% {
+    background: radial-gradient(circle at calc(0% + 16px) calc(50% + 16px), #333 3.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 16deg), #333 3.2%, #ff9900 32%) padding-box, radial-gradient(circle at calc(100% - 16px) calc(50% - 16px), #333 3.2%, #ff9900 100%) content-box;
+  }
+  4.7222222222% {
+    background: radial-gradient(circle at calc(0% + 17px) calc(50% + 17px), #333 3.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 17deg), #333 3.4%, #ff9900 34%) padding-box, radial-gradient(circle at calc(100% - 17px) calc(50% - 17px), #333 3.4%, #ff9900 100%) content-box;
+  }
+  5% {
+    background: radial-gradient(circle at calc(0% + 18px) calc(50% + 18px), #333 3.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 18deg), #333 3.6%, #ff9900 36%) padding-box, radial-gradient(circle at calc(100% - 18px) calc(50% - 18px), #333 3.6%, #ff9900 100%) content-box;
+  }
+  5.2777777778% {
+    background: radial-gradient(circle at calc(0% + 19px) calc(50% + 19px), #333 3.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 19deg), #333 3.8%, #ff9900 38%) padding-box, radial-gradient(circle at calc(100% - 19px) calc(50% - 19px), #333 3.8%, #ff9900 100%) content-box;
+  }
+  5.5555555556% {
+    background: radial-gradient(circle at calc(0% + 20px) calc(50% + 20px), #333 4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 20deg), #333 4%, #ff9900 40%) padding-box, radial-gradient(circle at calc(100% - 20px) calc(50% - 20px), #333 4%, #ff9900 100%) content-box;
+  }
+  5.8333333333% {
+    background: radial-gradient(circle at calc(0% + 21px) calc(50% + 21px), #333 4.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 21deg), #333 4.2%, #ff9900 42%) padding-box, radial-gradient(circle at calc(100% - 21px) calc(50% - 21px), #333 4.2%, #ff9900 100%) content-box;
+  }
+  6.1111111111% {
+    background: radial-gradient(circle at calc(0% + 22px) calc(50% + 22px), #333 4.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 22deg), #333 4.4%, #ff9900 44%) padding-box, radial-gradient(circle at calc(100% - 22px) calc(50% - 22px), #333 4.4%, #ff9900 100%) content-box;
+  }
+  6.3888888889% {
+    background: radial-gradient(circle at calc(0% + 23px) calc(50% + 23px), #333 4.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 23deg), #333 4.6%, #ff9900 46%) padding-box, radial-gradient(circle at calc(100% - 23px) calc(50% - 23px), #333 4.6%, #ff9900 100%) content-box;
+  }
+  6.6666666667% {
+    background: radial-gradient(circle at calc(0% + 24px) calc(50% + 24px), #333 4.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 24deg), #333 4.8%, #ff9900 48%) padding-box, radial-gradient(circle at calc(100% - 24px) calc(50% - 24px), #333 4.8%, #ff9900 100%) content-box;
+  }
+  6.9444444444% {
+    background: radial-gradient(circle at calc(0% + 25px) calc(50% + 25px), #333 5%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 25deg), #333 5%, #ff9900 50%) padding-box, radial-gradient(circle at calc(100% - 25px) calc(50% - 25px), #333 5%, #ff9900 100%) content-box;
+  }
+  7.2222222222% {
+    background: radial-gradient(circle at calc(0% + 26px) calc(50% + 26px), #333 5.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 26deg), #333 5.2%, #ff9900 52%) padding-box, radial-gradient(circle at calc(100% - 26px) calc(50% - 26px), #333 5.2%, #ff9900 100%) content-box;
+  }
+  7.5% {
+    background: radial-gradient(circle at calc(0% + 27px) calc(50% + 27px), #333 5.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 27deg), #333 5.4%, #ff9900 54%) padding-box, radial-gradient(circle at calc(100% - 27px) calc(50% - 27px), #333 5.4%, #ff9900 100%) content-box;
+  }
+  7.7777777778% {
+    background: radial-gradient(circle at calc(0% + 28px) calc(50% + 28px), #333 5.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 28deg), #333 5.6%, #ff9900 56%) padding-box, radial-gradient(circle at calc(100% - 28px) calc(50% - 28px), #333 5.6%, #ff9900 100%) content-box;
+  }
+  8.0555555556% {
+    background: radial-gradient(circle at calc(0% + 29px) calc(50% + 29px), #333 5.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 29deg), #333 5.8%, #ff9900 58%) padding-box, radial-gradient(circle at calc(100% - 29px) calc(50% - 29px), #333 5.8%, #ff9900 100%) content-box;
+  }
+  8.3333333333% {
+    background: radial-gradient(circle at calc(0% + 30px) calc(50% + 30px), #333 6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 30deg), #333 6%, #ff9900 60%) padding-box, radial-gradient(circle at calc(100% - 30px) calc(50% - 30px), #333 6%, #ff9900 100%) content-box;
+  }
+  8.6111111111% {
+    background: radial-gradient(circle at calc(0% + 31px) calc(50% + 31px), #333 6.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 31deg), #333 6.2%, #ff9900 62%) padding-box, radial-gradient(circle at calc(100% - 31px) calc(50% - 31px), #333 6.2%, #ff9900 100%) content-box;
+  }
+  8.8888888889% {
+    background: radial-gradient(circle at calc(0% + 32px) calc(50% + 32px), #333 6.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 32deg), #333 6.4%, #ff9900 64%) padding-box, radial-gradient(circle at calc(100% - 32px) calc(50% - 32px), #333 6.4%, #ff9900 100%) content-box;
+  }
+  9.1666666667% {
+    background: radial-gradient(circle at calc(0% + 33px) calc(50% + 33px), #333 6.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 33deg), #333 6.6%, #ff9900 66%) padding-box, radial-gradient(circle at calc(100% - 33px) calc(50% - 33px), #333 6.6%, #ff9900 100%) content-box;
+  }
+  9.4444444444% {
+    background: radial-gradient(circle at calc(0% + 34px) calc(50% + 34px), #333 6.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 34deg), #333 6.8%, #ff9900 68%) padding-box, radial-gradient(circle at calc(100% - 34px) calc(50% - 34px), #333 6.8%, #ff9900 100%) content-box;
+  }
+  9.7222222222% {
+    background: radial-gradient(circle at calc(0% + 35px) calc(50% + 35px), #333 7%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 35deg), #333 7%, #ff9900 70%) padding-box, radial-gradient(circle at calc(100% - 35px) calc(50% - 35px), #333 7%, #ff9900 100%) content-box;
+  }
+  10% {
+    background: radial-gradient(circle at calc(0% + 36px) calc(50% + 36px), #333 7.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 36deg), #333 7.2%, #ff9900 72%) padding-box, radial-gradient(circle at calc(100% - 36px) calc(50% - 36px), #333 7.2%, #ff9900 100%) content-box;
+  }
+  10.2777777778% {
+    background: radial-gradient(circle at calc(0% + 37px) calc(50% + 37px), #333 7.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 37deg), #333 7.4%, #ff9900 74%) padding-box, radial-gradient(circle at calc(100% - 37px) calc(50% - 37px), #333 7.4%, #ff9900 100%) content-box;
+  }
+  10.5555555556% {
+    background: radial-gradient(circle at calc(0% + 38px) calc(50% + 38px), #333 7.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 38deg), #333 7.6%, #ff9900 76%) padding-box, radial-gradient(circle at calc(100% - 38px) calc(50% - 38px), #333 7.6%, #ff9900 100%) content-box;
+  }
+  10.8333333333% {
+    background: radial-gradient(circle at calc(0% + 39px) calc(50% + 39px), #333 7.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 39deg), #333 7.8%, #ff9900 78%) padding-box, radial-gradient(circle at calc(100% - 39px) calc(50% - 39px), #333 7.8%, #ff9900 100%) content-box;
+  }
+  11.1111111111% {
+    background: radial-gradient(circle at calc(0% + 40px) calc(50% + 40px), #333 8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 40deg), #333 8%, #ff9900 80%) padding-box, radial-gradient(circle at calc(100% - 40px) calc(50% - 40px), #333 8%, #ff9900 100%) content-box;
+  }
+  11.3888888889% {
+    background: radial-gradient(circle at calc(0% + 41px) calc(50% + 41px), #333 8.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 41deg), #333 8.2%, #ff9900 82%) padding-box, radial-gradient(circle at calc(100% - 41px) calc(50% - 41px), #333 8.2%, #ff9900 100%) content-box;
+  }
+  11.6666666667% {
+    background: radial-gradient(circle at calc(0% + 42px) calc(50% + 42px), #333 8.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 42deg), #333 8.4%, #ff9900 84%) padding-box, radial-gradient(circle at calc(100% - 42px) calc(50% - 42px), #333 8.4%, #ff9900 100%) content-box;
+  }
+  11.9444444444% {
+    background: radial-gradient(circle at calc(0% + 43px) calc(50% + 43px), #333 8.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 43deg), #333 8.6%, #ff9900 86%) padding-box, radial-gradient(circle at calc(100% - 43px) calc(50% - 43px), #333 8.6%, #ff9900 100%) content-box;
+  }
+  12.2222222222% {
+    background: radial-gradient(circle at calc(0% + 44px) calc(50% + 44px), #333 8.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 44deg), #333 8.8%, #ff9900 88%) padding-box, radial-gradient(circle at calc(100% - 44px) calc(50% - 44px), #333 8.8%, #ff9900 100%) content-box;
+  }
+  12.5% {
+    background: radial-gradient(circle at calc(0% + 45px) calc(50% + 45px), #333 9%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 45deg), #333 9%, #ff9900 90%) padding-box, radial-gradient(circle at calc(100% - 45px) calc(50% - 45px), #333 9%, #ff9900 100%) content-box;
+  }
+  12.7777777778% {
+    background: radial-gradient(circle at calc(0% + 46px) calc(50% + 46px), #333 9.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 46deg), #333 9.2%, #ff9900 92%) padding-box, radial-gradient(circle at calc(100% - 46px) calc(50% - 46px), #333 9.2%, #ff9900 100%) content-box;
+  }
+  13.0555555556% {
+    background: radial-gradient(circle at calc(0% + 47px) calc(50% + 47px), #333 9.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 47deg), #333 9.4%, #ff9900 94%) padding-box, radial-gradient(circle at calc(100% - 47px) calc(50% - 47px), #333 9.4%, #ff9900 100%) content-box;
+  }
+  13.3333333333% {
+    background: radial-gradient(circle at calc(0% + 48px) calc(50% + 48px), #333 9.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 48deg), #333 9.6%, #ff9900 96%) padding-box, radial-gradient(circle at calc(100% - 48px) calc(50% - 48px), #333 9.6%, #ff9900 100%) content-box;
+  }
+  13.6111111111% {
+    background: radial-gradient(circle at calc(0% + 49px) calc(50% + 49px), #333 9.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 49deg), #333 9.8%, #ff9900 98%) padding-box, radial-gradient(circle at calc(100% - 49px) calc(50% - 49px), #333 9.8%, #ff9900 100%) content-box;
+  }
+  13.8888888889% {
+    background: radial-gradient(circle at calc(0% + 50px) calc(50% + 50px), #333 10%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 50deg), #333 10%, #ff9900 100%) padding-box, radial-gradient(circle at calc(100% - 50px) calc(50% - 50px), #333 10%, #ff9900 100%) content-box;
+  }
+  14.1666666667% {
+    background: radial-gradient(circle at calc(0% + 51px) calc(50% + 51px), #333 10.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 51deg), #333 10.2%, #ff9900 102%) padding-box, radial-gradient(circle at calc(100% - 51px) calc(50% - 51px), #333 10.2%, #ff9900 100%) content-box;
+  }
+  14.4444444444% {
+    background: radial-gradient(circle at calc(0% + 52px) calc(50% + 52px), #333 10.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 52deg), #333 10.4%, #ff9900 104%) padding-box, radial-gradient(circle at calc(100% - 52px) calc(50% - 52px), #333 10.4%, #ff9900 100%) content-box;
+  }
+  14.7222222222% {
+    background: radial-gradient(circle at calc(0% + 53px) calc(50% + 53px), #333 10.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 53deg), #333 10.6%, #ff9900 106%) padding-box, radial-gradient(circle at calc(100% - 53px) calc(50% - 53px), #333 10.6%, #ff9900 100%) content-box;
+  }
+  15% {
+    background: radial-gradient(circle at calc(0% + 54px) calc(50% + 54px), #333 10.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 54deg), #333 10.8%, #ff9900 108%) padding-box, radial-gradient(circle at calc(100% - 54px) calc(50% - 54px), #333 10.8%, #ff9900 100%) content-box;
+  }
+  15.2777777778% {
+    background: radial-gradient(circle at calc(0% + 55px) calc(50% + 55px), #333 11%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 55deg), #333 11%, #ff9900 110%) padding-box, radial-gradient(circle at calc(100% - 55px) calc(50% - 55px), #333 11%, #ff9900 100%) content-box;
+  }
+  15.5555555556% {
+    background: radial-gradient(circle at calc(0% + 56px) calc(50% + 56px), #333 11.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 56deg), #333 11.2%, #ff9900 112%) padding-box, radial-gradient(circle at calc(100% - 56px) calc(50% - 56px), #333 11.2%, #ff9900 100%) content-box;
+  }
+  15.8333333333% {
+    background: radial-gradient(circle at calc(0% + 57px) calc(50% + 57px), #333 11.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 57deg), #333 11.4%, #ff9900 114%) padding-box, radial-gradient(circle at calc(100% - 57px) calc(50% - 57px), #333 11.4%, #ff9900 100%) content-box;
+  }
+  16.1111111111% {
+    background: radial-gradient(circle at calc(0% + 58px) calc(50% + 58px), #333 11.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 58deg), #333 11.6%, #ff9900 116%) padding-box, radial-gradient(circle at calc(100% - 58px) calc(50% - 58px), #333 11.6%, #ff9900 100%) content-box;
+  }
+  16.3888888889% {
+    background: radial-gradient(circle at calc(0% + 59px) calc(50% + 59px), #333 11.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 59deg), #333 11.8%, #ff9900 118%) padding-box, radial-gradient(circle at calc(100% - 59px) calc(50% - 59px), #333 11.8%, #ff9900 100%) content-box;
+  }
+  16.6666666667% {
+    background: radial-gradient(circle at calc(0% + 60px) calc(50% + 60px), #333 12%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 60deg), #333 12%, #ff9900 120%) padding-box, radial-gradient(circle at calc(100% - 60px) calc(50% - 60px), #333 12%, #ff9900 100%) content-box;
+  }
+  16.9444444444% {
+    background: radial-gradient(circle at calc(0% + 61px) calc(50% + 61px), #333 12.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 61deg), #333 12.2%, #ff9900 122%) padding-box, radial-gradient(circle at calc(100% - 61px) calc(50% - 61px), #333 12.2%, #ff9900 100%) content-box;
+  }
+  17.2222222222% {
+    background: radial-gradient(circle at calc(0% + 62px) calc(50% + 62px), #333 12.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 62deg), #333 12.4%, #ff9900 124%) padding-box, radial-gradient(circle at calc(100% - 62px) calc(50% - 62px), #333 12.4%, #ff9900 100%) content-box;
+  }
+  17.5% {
+    background: radial-gradient(circle at calc(0% + 63px) calc(50% + 63px), #333 12.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 63deg), #333 12.6%, #ff9900 126%) padding-box, radial-gradient(circle at calc(100% - 63px) calc(50% - 63px), #333 12.6%, #ff9900 100%) content-box;
+  }
+  17.7777777778% {
+    background: radial-gradient(circle at calc(0% + 64px) calc(50% + 64px), #333 12.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 64deg), #333 12.8%, #ff9900 128%) padding-box, radial-gradient(circle at calc(100% - 64px) calc(50% - 64px), #333 12.8%, #ff9900 100%) content-box;
+  }
+  18.0555555556% {
+    background: radial-gradient(circle at calc(0% + 65px) calc(50% + 65px), #333 13%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 65deg), #333 13%, #ff9900 130%) padding-box, radial-gradient(circle at calc(100% - 65px) calc(50% - 65px), #333 13%, #ff9900 100%) content-box;
+  }
+  18.3333333333% {
+    background: radial-gradient(circle at calc(0% + 66px) calc(50% + 66px), #333 13.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 66deg), #333 13.2%, #ff9900 132%) padding-box, radial-gradient(circle at calc(100% - 66px) calc(50% - 66px), #333 13.2%, #ff9900 100%) content-box;
+  }
+  18.6111111111% {
+    background: radial-gradient(circle at calc(0% + 67px) calc(50% + 67px), #333 13.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 67deg), #333 13.4%, #ff9900 134%) padding-box, radial-gradient(circle at calc(100% - 67px) calc(50% - 67px), #333 13.4%, #ff9900 100%) content-box;
+  }
+  18.8888888889% {
+    background: radial-gradient(circle at calc(0% + 68px) calc(50% + 68px), #333 13.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 68deg), #333 13.6%, #ff9900 136%) padding-box, radial-gradient(circle at calc(100% - 68px) calc(50% - 68px), #333 13.6%, #ff9900 100%) content-box;
+  }
+  19.1666666667% {
+    background: radial-gradient(circle at calc(0% + 69px) calc(50% + 69px), #333 13.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 69deg), #333 13.8%, #ff9900 138%) padding-box, radial-gradient(circle at calc(100% - 69px) calc(50% - 69px), #333 13.8%, #ff9900 100%) content-box;
+  }
+  19.4444444444% {
+    background: radial-gradient(circle at calc(0% + 70px) calc(50% + 70px), #333 14%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 70deg), #333 14%, #ff9900 140%) padding-box, radial-gradient(circle at calc(100% - 70px) calc(50% - 70px), #333 14%, #ff9900 100%) content-box;
+  }
+  19.7222222222% {
+    background: radial-gradient(circle at calc(0% + 71px) calc(50% + 71px), #333 14.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 71deg), #333 14.2%, #ff9900 142%) padding-box, radial-gradient(circle at calc(100% - 71px) calc(50% - 71px), #333 14.2%, #ff9900 100%) content-box;
+  }
+  20% {
+    background: radial-gradient(circle at calc(0% + 72px) calc(50% + 72px), #333 14.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 72deg), #333 14.4%, #ff9900 144%) padding-box, radial-gradient(circle at calc(100% - 72px) calc(50% - 72px), #333 14.4%, #ff9900 100%) content-box;
+  }
+  20.2777777778% {
+    background: radial-gradient(circle at calc(0% + 73px) calc(50% + 73px), #333 14.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 73deg), #333 14.6%, #ff9900 146%) padding-box, radial-gradient(circle at calc(100% - 73px) calc(50% - 73px), #333 14.6%, #ff9900 100%) content-box;
+  }
+  20.5555555556% {
+    background: radial-gradient(circle at calc(0% + 74px) calc(50% + 74px), #333 14.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 74deg), #333 14.8%, #ff9900 148%) padding-box, radial-gradient(circle at calc(100% - 74px) calc(50% - 74px), #333 14.8%, #ff9900 100%) content-box;
+  }
+  20.8333333333% {
+    background: radial-gradient(circle at calc(0% + 75px) calc(50% + 75px), #333 15%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 75deg), #333 15%, #ff9900 150%) padding-box, radial-gradient(circle at calc(100% - 75px) calc(50% - 75px), #333 15%, #ff9900 100%) content-box;
+  }
+  21.1111111111% {
+    background: radial-gradient(circle at calc(0% + 76px) calc(50% + 76px), #333 15.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 76deg), #333 15.2%, #ff9900 152%) padding-box, radial-gradient(circle at calc(100% - 76px) calc(50% - 76px), #333 15.2%, #ff9900 100%) content-box;
+  }
+  21.3888888889% {
+    background: radial-gradient(circle at calc(0% + 77px) calc(50% + 77px), #333 15.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 77deg), #333 15.4%, #ff9900 154%) padding-box, radial-gradient(circle at calc(100% - 77px) calc(50% - 77px), #333 15.4%, #ff9900 100%) content-box;
+  }
+  21.6666666667% {
+    background: radial-gradient(circle at calc(0% + 78px) calc(50% + 78px), #333 15.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 78deg), #333 15.6%, #ff9900 156%) padding-box, radial-gradient(circle at calc(100% - 78px) calc(50% - 78px), #333 15.6%, #ff9900 100%) content-box;
+  }
+  21.9444444444% {
+    background: radial-gradient(circle at calc(0% + 79px) calc(50% + 79px), #333 15.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 79deg), #333 15.8%, #ff9900 158%) padding-box, radial-gradient(circle at calc(100% - 79px) calc(50% - 79px), #333 15.8%, #ff9900 100%) content-box;
+  }
+  22.2222222222% {
+    background: radial-gradient(circle at calc(0% + 80px) calc(50% + 80px), #333 16%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 80deg), #333 16%, #ff9900 160%) padding-box, radial-gradient(circle at calc(100% - 80px) calc(50% - 80px), #333 16%, #ff9900 100%) content-box;
+  }
+  22.5% {
+    background: radial-gradient(circle at calc(0% + 81px) calc(50% + 81px), #333 16.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 81deg), #333 16.2%, #ff9900 162%) padding-box, radial-gradient(circle at calc(100% - 81px) calc(50% - 81px), #333 16.2%, #ff9900 100%) content-box;
+  }
+  22.7777777778% {
+    background: radial-gradient(circle at calc(0% + 82px) calc(50% + 82px), #333 16.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 82deg), #333 16.4%, #ff9900 164%) padding-box, radial-gradient(circle at calc(100% - 82px) calc(50% - 82px), #333 16.4%, #ff9900 100%) content-box;
+  }
+  23.0555555556% {
+    background: radial-gradient(circle at calc(0% + 83px) calc(50% + 83px), #333 16.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 83deg), #333 16.6%, #ff9900 166%) padding-box, radial-gradient(circle at calc(100% - 83px) calc(50% - 83px), #333 16.6%, #ff9900 100%) content-box;
+  }
+  23.3333333333% {
+    background: radial-gradient(circle at calc(0% + 84px) calc(50% + 84px), #333 16.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 84deg), #333 16.8%, #ff9900 168%) padding-box, radial-gradient(circle at calc(100% - 84px) calc(50% - 84px), #333 16.8%, #ff9900 100%) content-box;
+  }
+  23.6111111111% {
+    background: radial-gradient(circle at calc(0% + 85px) calc(50% + 85px), #333 17%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 85deg), #333 17%, #ff9900 170%) padding-box, radial-gradient(circle at calc(100% - 85px) calc(50% - 85px), #333 17%, #ff9900 100%) content-box;
+  }
+  23.8888888889% {
+    background: radial-gradient(circle at calc(0% + 86px) calc(50% + 86px), #333 17.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 86deg), #333 17.2%, #ff9900 172%) padding-box, radial-gradient(circle at calc(100% - 86px) calc(50% - 86px), #333 17.2%, #ff9900 100%) content-box;
+  }
+  24.1666666667% {
+    background: radial-gradient(circle at calc(0% + 87px) calc(50% + 87px), #333 17.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 87deg), #333 17.4%, #ff9900 174%) padding-box, radial-gradient(circle at calc(100% - 87px) calc(50% - 87px), #333 17.4%, #ff9900 100%) content-box;
+  }
+  24.4444444444% {
+    background: radial-gradient(circle at calc(0% + 88px) calc(50% + 88px), #333 17.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 88deg), #333 17.6%, #ff9900 176%) padding-box, radial-gradient(circle at calc(100% - 88px) calc(50% - 88px), #333 17.6%, #ff9900 100%) content-box;
+  }
+  24.7222222222% {
+    background: radial-gradient(circle at calc(0% + 89px) calc(50% + 89px), #333 17.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 89deg), #333 17.8%, #ff9900 178%) padding-box, radial-gradient(circle at calc(100% - 89px) calc(50% - 89px), #333 17.8%, #ff9900 100%) content-box;
+  }
+  25% {
+    background: radial-gradient(circle at calc(0% + 90px) calc(50% + 90px), #333 18%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 90deg), #333 18%, #ff9900 180%) padding-box, radial-gradient(circle at calc(100% - 90px) calc(50% - 90px), #333 18%, #ff9900 100%) content-box;
+  }
+  25.2777777778% {
+    background: radial-gradient(circle at calc(0% + 91px) calc(50% + 91px), #333 18.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 91deg), #333 18.2%, #ff9900 182%) padding-box, radial-gradient(circle at calc(100% - 91px) calc(50% - 91px), #333 18.2%, #ff9900 100%) content-box;
+  }
+  25.5555555556% {
+    background: radial-gradient(circle at calc(0% + 92px) calc(50% + 92px), #333 18.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 92deg), #333 18.4%, #ff9900 184%) padding-box, radial-gradient(circle at calc(100% - 92px) calc(50% - 92px), #333 18.4%, #ff9900 100%) content-box;
+  }
+  25.8333333333% {
+    background: radial-gradient(circle at calc(0% + 93px) calc(50% + 93px), #333 18.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 93deg), #333 18.6%, #ff9900 186%) padding-box, radial-gradient(circle at calc(100% - 93px) calc(50% - 93px), #333 18.6%, #ff9900 100%) content-box;
+  }
+  26.1111111111% {
+    background: radial-gradient(circle at calc(0% + 94px) calc(50% + 94px), #333 18.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 94deg), #333 18.8%, #ff9900 188%) padding-box, radial-gradient(circle at calc(100% - 94px) calc(50% - 94px), #333 18.8%, #ff9900 100%) content-box;
+  }
+  26.3888888889% {
+    background: radial-gradient(circle at calc(0% + 95px) calc(50% + 95px), #333 19%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 95deg), #333 19%, #ff9900 190%) padding-box, radial-gradient(circle at calc(100% - 95px) calc(50% - 95px), #333 19%, #ff9900 100%) content-box;
+  }
+  26.6666666667% {
+    background: radial-gradient(circle at calc(0% + 96px) calc(50% + 96px), #333 19.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 96deg), #333 19.2%, #ff9900 192%) padding-box, radial-gradient(circle at calc(100% - 96px) calc(50% - 96px), #333 19.2%, #ff9900 100%) content-box;
+  }
+  26.9444444444% {
+    background: radial-gradient(circle at calc(0% + 97px) calc(50% + 97px), #333 19.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 97deg), #333 19.4%, #ff9900 194%) padding-box, radial-gradient(circle at calc(100% - 97px) calc(50% - 97px), #333 19.4%, #ff9900 100%) content-box;
+  }
+  27.2222222222% {
+    background: radial-gradient(circle at calc(0% + 98px) calc(50% + 98px), #333 19.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 98deg), #333 19.6%, #ff9900 196%) padding-box, radial-gradient(circle at calc(100% - 98px) calc(50% - 98px), #333 19.6%, #ff9900 100%) content-box;
+  }
+  27.5% {
+    background: radial-gradient(circle at calc(0% + 99px) calc(50% + 99px), #333 19.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 99deg), #333 19.8%, #ff9900 198%) padding-box, radial-gradient(circle at calc(100% - 99px) calc(50% - 99px), #333 19.8%, #ff9900 100%) content-box;
+  }
+  27.7777777778% {
+    background: radial-gradient(circle at calc(0% + 100px) calc(50% + 100px), #333 20%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 100deg), #333 20%, #ff9900 200%) padding-box, radial-gradient(circle at calc(100% - 100px) calc(50% - 100px), #333 20%, #ff9900 100%) content-box;
+  }
+  28.0555555556% {
+    background: radial-gradient(circle at calc(0% + 101px) calc(50% + 101px), #333 20.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 101deg), #333 20.2%, #ff9900 202%) padding-box, radial-gradient(circle at calc(100% - 101px) calc(50% - 101px), #333 20.2%, #ff9900 100%) content-box;
+  }
+  28.3333333333% {
+    background: radial-gradient(circle at calc(0% + 102px) calc(50% + 102px), #333 20.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 102deg), #333 20.4%, #ff9900 204%) padding-box, radial-gradient(circle at calc(100% - 102px) calc(50% - 102px), #333 20.4%, #ff9900 100%) content-box;
+  }
+  28.6111111111% {
+    background: radial-gradient(circle at calc(0% + 103px) calc(50% + 103px), #333 20.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 103deg), #333 20.6%, #ff9900 206%) padding-box, radial-gradient(circle at calc(100% - 103px) calc(50% - 103px), #333 20.6%, #ff9900 100%) content-box;
+  }
+  28.8888888889% {
+    background: radial-gradient(circle at calc(0% + 104px) calc(50% + 104px), #333 20.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 104deg), #333 20.8%, #ff9900 208%) padding-box, radial-gradient(circle at calc(100% - 104px) calc(50% - 104px), #333 20.8%, #ff9900 100%) content-box;
+  }
+  29.1666666667% {
+    background: radial-gradient(circle at calc(0% + 105px) calc(50% + 105px), #333 21%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 105deg), #333 21%, #ff9900 210%) padding-box, radial-gradient(circle at calc(100% - 105px) calc(50% - 105px), #333 21%, #ff9900 100%) content-box;
+  }
+  29.4444444444% {
+    background: radial-gradient(circle at calc(0% + 106px) calc(50% + 106px), #333 21.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 106deg), #333 21.2%, #ff9900 212%) padding-box, radial-gradient(circle at calc(100% - 106px) calc(50% - 106px), #333 21.2%, #ff9900 100%) content-box;
+  }
+  29.7222222222% {
+    background: radial-gradient(circle at calc(0% + 107px) calc(50% + 107px), #333 21.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 107deg), #333 21.4%, #ff9900 214%) padding-box, radial-gradient(circle at calc(100% - 107px) calc(50% - 107px), #333 21.4%, #ff9900 100%) content-box;
+  }
+  30% {
+    background: radial-gradient(circle at calc(0% + 108px) calc(50% + 108px), #333 21.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 108deg), #333 21.6%, #ff9900 216%) padding-box, radial-gradient(circle at calc(100% - 108px) calc(50% - 108px), #333 21.6%, #ff9900 100%) content-box;
+  }
+  30.2777777778% {
+    background: radial-gradient(circle at calc(0% + 109px) calc(50% + 109px), #333 21.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 109deg), #333 21.8%, #ff9900 218%) padding-box, radial-gradient(circle at calc(100% - 109px) calc(50% - 109px), #333 21.8%, #ff9900 100%) content-box;
+  }
+  30.5555555556% {
+    background: radial-gradient(circle at calc(0% + 110px) calc(50% + 110px), #333 22%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 110deg), #333 22%, #ff9900 220%) padding-box, radial-gradient(circle at calc(100% - 110px) calc(50% - 110px), #333 22%, #ff9900 100%) content-box;
+  }
+  30.8333333333% {
+    background: radial-gradient(circle at calc(0% + 111px) calc(50% + 111px), #333 22.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 111deg), #333 22.2%, #ff9900 222%) padding-box, radial-gradient(circle at calc(100% - 111px) calc(50% - 111px), #333 22.2%, #ff9900 100%) content-box;
+  }
+  31.1111111111% {
+    background: radial-gradient(circle at calc(0% + 112px) calc(50% + 112px), #333 22.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 112deg), #333 22.4%, #ff9900 224%) padding-box, radial-gradient(circle at calc(100% - 112px) calc(50% - 112px), #333 22.4%, #ff9900 100%) content-box;
+  }
+  31.3888888889% {
+    background: radial-gradient(circle at calc(0% + 113px) calc(50% + 113px), #333 22.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 113deg), #333 22.6%, #ff9900 226%) padding-box, radial-gradient(circle at calc(100% - 113px) calc(50% - 113px), #333 22.6%, #ff9900 100%) content-box;
+  }
+  31.6666666667% {
+    background: radial-gradient(circle at calc(0% + 114px) calc(50% + 114px), #333 22.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 114deg), #333 22.8%, #ff9900 228%) padding-box, radial-gradient(circle at calc(100% - 114px) calc(50% - 114px), #333 22.8%, #ff9900 100%) content-box;
+  }
+  31.9444444444% {
+    background: radial-gradient(circle at calc(0% + 115px) calc(50% + 115px), #333 23%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 115deg), #333 23%, #ff9900 230%) padding-box, radial-gradient(circle at calc(100% - 115px) calc(50% - 115px), #333 23%, #ff9900 100%) content-box;
+  }
+  32.2222222222% {
+    background: radial-gradient(circle at calc(0% + 116px) calc(50% + 116px), #333 23.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 116deg), #333 23.2%, #ff9900 232%) padding-box, radial-gradient(circle at calc(100% - 116px) calc(50% - 116px), #333 23.2%, #ff9900 100%) content-box;
+  }
+  32.5% {
+    background: radial-gradient(circle at calc(0% + 117px) calc(50% + 117px), #333 23.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 117deg), #333 23.4%, #ff9900 234%) padding-box, radial-gradient(circle at calc(100% - 117px) calc(50% - 117px), #333 23.4%, #ff9900 100%) content-box;
+  }
+  32.7777777778% {
+    background: radial-gradient(circle at calc(0% + 118px) calc(50% + 118px), #333 23.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 118deg), #333 23.6%, #ff9900 236%) padding-box, radial-gradient(circle at calc(100% - 118px) calc(50% - 118px), #333 23.6%, #ff9900 100%) content-box;
+  }
+  33.0555555556% {
+    background: radial-gradient(circle at calc(0% + 119px) calc(50% + 119px), #333 23.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 119deg), #333 23.8%, #ff9900 238%) padding-box, radial-gradient(circle at calc(100% - 119px) calc(50% - 119px), #333 23.8%, #ff9900 100%) content-box;
+  }
+  33.3333333333% {
+    background: radial-gradient(circle at calc(0% + 120px) calc(50% + 120px), #333 24%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 120deg), #333 24%, #ff9900 240%) padding-box, radial-gradient(circle at calc(100% - 120px) calc(50% - 120px), #333 24%, #ff9900 100%) content-box;
+  }
+  33.6111111111% {
+    background: radial-gradient(circle at calc(0% + 121px) calc(50% + 121px), #333 24.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 121deg), #333 24.2%, #ff9900 242%) padding-box, radial-gradient(circle at calc(100% - 121px) calc(50% - 121px), #333 24.2%, #ff9900 100%) content-box;
+  }
+  33.8888888889% {
+    background: radial-gradient(circle at calc(0% + 122px) calc(50% + 122px), #333 24.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 122deg), #333 24.4%, #ff9900 244%) padding-box, radial-gradient(circle at calc(100% - 122px) calc(50% - 122px), #333 24.4%, #ff9900 100%) content-box;
+  }
+  34.1666666667% {
+    background: radial-gradient(circle at calc(0% + 123px) calc(50% + 123px), #333 24.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 123deg), #333 24.6%, #ff9900 246%) padding-box, radial-gradient(circle at calc(100% - 123px) calc(50% - 123px), #333 24.6%, #ff9900 100%) content-box;
+  }
+  34.4444444444% {
+    background: radial-gradient(circle at calc(0% + 124px) calc(50% + 124px), #333 24.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 124deg), #333 24.8%, #ff9900 248%) padding-box, radial-gradient(circle at calc(100% - 124px) calc(50% - 124px), #333 24.8%, #ff9900 100%) content-box;
+  }
+  34.7222222222% {
+    background: radial-gradient(circle at calc(0% + 125px) calc(50% + 125px), #333 25%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 125deg), #333 25%, #ff9900 250%) padding-box, radial-gradient(circle at calc(100% - 125px) calc(50% - 125px), #333 25%, #ff9900 100%) content-box;
+  }
+  35% {
+    background: radial-gradient(circle at calc(0% + 126px) calc(50% + 126px), #333 25.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 126deg), #333 25.2%, #ff9900 252%) padding-box, radial-gradient(circle at calc(100% - 126px) calc(50% - 126px), #333 25.2%, #ff9900 100%) content-box;
+  }
+  35.2777777778% {
+    background: radial-gradient(circle at calc(0% + 127px) calc(50% + 127px), #333 25.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 127deg), #333 25.4%, #ff9900 254%) padding-box, radial-gradient(circle at calc(100% - 127px) calc(50% - 127px), #333 25.4%, #ff9900 100%) content-box;
+  }
+  35.5555555556% {
+    background: radial-gradient(circle at calc(0% + 128px) calc(50% + 128px), #333 25.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 128deg), #333 25.6%, #ff9900 256%) padding-box, radial-gradient(circle at calc(100% - 128px) calc(50% - 128px), #333 25.6%, #ff9900 100%) content-box;
+  }
+  35.8333333333% {
+    background: radial-gradient(circle at calc(0% + 129px) calc(50% + 129px), #333 25.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 129deg), #333 25.8%, #ff9900 258%) padding-box, radial-gradient(circle at calc(100% - 129px) calc(50% - 129px), #333 25.8%, #ff9900 100%) content-box;
+  }
+  36.1111111111% {
+    background: radial-gradient(circle at calc(0% + 130px) calc(50% + 130px), #333 26%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 130deg), #333 26%, #ff9900 260%) padding-box, radial-gradient(circle at calc(100% - 130px) calc(50% - 130px), #333 26%, #ff9900 100%) content-box;
+  }
+  36.3888888889% {
+    background: radial-gradient(circle at calc(0% + 131px) calc(50% + 131px), #333 26.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 131deg), #333 26.2%, #ff9900 262%) padding-box, radial-gradient(circle at calc(100% - 131px) calc(50% - 131px), #333 26.2%, #ff9900 100%) content-box;
+  }
+  36.6666666667% {
+    background: radial-gradient(circle at calc(0% + 132px) calc(50% + 132px), #333 26.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 132deg), #333 26.4%, #ff9900 264%) padding-box, radial-gradient(circle at calc(100% - 132px) calc(50% - 132px), #333 26.4%, #ff9900 100%) content-box;
+  }
+  36.9444444444% {
+    background: radial-gradient(circle at calc(0% + 133px) calc(50% + 133px), #333 26.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 133deg), #333 26.6%, #ff9900 266%) padding-box, radial-gradient(circle at calc(100% - 133px) calc(50% - 133px), #333 26.6%, #ff9900 100%) content-box;
+  }
+  37.2222222222% {
+    background: radial-gradient(circle at calc(0% + 134px) calc(50% + 134px), #333 26.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 134deg), #333 26.8%, #ff9900 268%) padding-box, radial-gradient(circle at calc(100% - 134px) calc(50% - 134px), #333 26.8%, #ff9900 100%) content-box;
+  }
+  37.5% {
+    background: radial-gradient(circle at calc(0% + 135px) calc(50% + 135px), #333 27%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 135deg), #333 27%, #ff9900 270%) padding-box, radial-gradient(circle at calc(100% - 135px) calc(50% - 135px), #333 27%, #ff9900 100%) content-box;
+  }
+  37.7777777778% {
+    background: radial-gradient(circle at calc(0% + 136px) calc(50% + 136px), #333 27.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 136deg), #333 27.2%, #ff9900 272%) padding-box, radial-gradient(circle at calc(100% - 136px) calc(50% - 136px), #333 27.2%, #ff9900 100%) content-box;
+  }
+  38.0555555556% {
+    background: radial-gradient(circle at calc(0% + 137px) calc(50% + 137px), #333 27.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 137deg), #333 27.4%, #ff9900 274%) padding-box, radial-gradient(circle at calc(100% - 137px) calc(50% - 137px), #333 27.4%, #ff9900 100%) content-box;
+  }
+  38.3333333333% {
+    background: radial-gradient(circle at calc(0% + 138px) calc(50% + 138px), #333 27.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 138deg), #333 27.6%, #ff9900 276%) padding-box, radial-gradient(circle at calc(100% - 138px) calc(50% - 138px), #333 27.6%, #ff9900 100%) content-box;
+  }
+  38.6111111111% {
+    background: radial-gradient(circle at calc(0% + 139px) calc(50% + 139px), #333 27.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 139deg), #333 27.8%, #ff9900 278%) padding-box, radial-gradient(circle at calc(100% - 139px) calc(50% - 139px), #333 27.8%, #ff9900 100%) content-box;
+  }
+  38.8888888889% {
+    background: radial-gradient(circle at calc(0% + 140px) calc(50% + 140px), #333 28%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 140deg), #333 28%, #ff9900 280%) padding-box, radial-gradient(circle at calc(100% - 140px) calc(50% - 140px), #333 28%, #ff9900 100%) content-box;
+  }
+  39.1666666667% {
+    background: radial-gradient(circle at calc(0% + 141px) calc(50% + 141px), #333 28.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 141deg), #333 28.2%, #ff9900 282%) padding-box, radial-gradient(circle at calc(100% - 141px) calc(50% - 141px), #333 28.2%, #ff9900 100%) content-box;
+  }
+  39.4444444444% {
+    background: radial-gradient(circle at calc(0% + 142px) calc(50% + 142px), #333 28.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 142deg), #333 28.4%, #ff9900 284%) padding-box, radial-gradient(circle at calc(100% - 142px) calc(50% - 142px), #333 28.4%, #ff9900 100%) content-box;
+  }
+  39.7222222222% {
+    background: radial-gradient(circle at calc(0% + 143px) calc(50% + 143px), #333 28.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 143deg), #333 28.6%, #ff9900 286%) padding-box, radial-gradient(circle at calc(100% - 143px) calc(50% - 143px), #333 28.6%, #ff9900 100%) content-box;
+  }
+  40% {
+    background: radial-gradient(circle at calc(0% + 144px) calc(50% + 144px), #333 28.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 144deg), #333 28.8%, #ff9900 288%) padding-box, radial-gradient(circle at calc(100% - 144px) calc(50% - 144px), #333 28.8%, #ff9900 100%) content-box;
+  }
+  40.2777777778% {
+    background: radial-gradient(circle at calc(0% + 145px) calc(50% + 145px), #333 29%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 145deg), #333 29%, #ff9900 290%) padding-box, radial-gradient(circle at calc(100% - 145px) calc(50% - 145px), #333 29%, #ff9900 100%) content-box;
+  }
+  40.5555555556% {
+    background: radial-gradient(circle at calc(0% + 146px) calc(50% + 146px), #333 29.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 146deg), #333 29.2%, #ff9900 292%) padding-box, radial-gradient(circle at calc(100% - 146px) calc(50% - 146px), #333 29.2%, #ff9900 100%) content-box;
+  }
+  40.8333333333% {
+    background: radial-gradient(circle at calc(0% + 147px) calc(50% + 147px), #333 29.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 147deg), #333 29.4%, #ff9900 294%) padding-box, radial-gradient(circle at calc(100% - 147px) calc(50% - 147px), #333 29.4%, #ff9900 100%) content-box;
+  }
+  41.1111111111% {
+    background: radial-gradient(circle at calc(0% + 148px) calc(50% + 148px), #333 29.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 148deg), #333 29.6%, #ff9900 296%) padding-box, radial-gradient(circle at calc(100% - 148px) calc(50% - 148px), #333 29.6%, #ff9900 100%) content-box;
+  }
+  41.3888888889% {
+    background: radial-gradient(circle at calc(0% + 149px) calc(50% + 149px), #333 29.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 149deg), #333 29.8%, #ff9900 298%) padding-box, radial-gradient(circle at calc(100% - 149px) calc(50% - 149px), #333 29.8%, #ff9900 100%) content-box;
+  }
+  41.6666666667% {
+    background: radial-gradient(circle at calc(0% + 150px) calc(50% + 150px), #333 30%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 150deg), #333 30%, #ff9900 300%) padding-box, radial-gradient(circle at calc(100% - 150px) calc(50% - 150px), #333 30%, #ff9900 100%) content-box;
+  }
+  41.9444444444% {
+    background: radial-gradient(circle at calc(0% + 151px) calc(50% + 151px), #333 30.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 151deg), #333 30.2%, #ff9900 302%) padding-box, radial-gradient(circle at calc(100% - 151px) calc(50% - 151px), #333 30.2%, #ff9900 100%) content-box;
+  }
+  42.2222222222% {
+    background: radial-gradient(circle at calc(0% + 152px) calc(50% + 152px), #333 30.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 152deg), #333 30.4%, #ff9900 304%) padding-box, radial-gradient(circle at calc(100% - 152px) calc(50% - 152px), #333 30.4%, #ff9900 100%) content-box;
+  }
+  42.5% {
+    background: radial-gradient(circle at calc(0% + 153px) calc(50% + 153px), #333 30.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 153deg), #333 30.6%, #ff9900 306%) padding-box, radial-gradient(circle at calc(100% - 153px) calc(50% - 153px), #333 30.6%, #ff9900 100%) content-box;
+  }
+  42.7777777778% {
+    background: radial-gradient(circle at calc(0% + 154px) calc(50% + 154px), #333 30.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 154deg), #333 30.8%, #ff9900 308%) padding-box, radial-gradient(circle at calc(100% - 154px) calc(50% - 154px), #333 30.8%, #ff9900 100%) content-box;
+  }
+  43.0555555556% {
+    background: radial-gradient(circle at calc(0% + 155px) calc(50% + 155px), #333 31%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 155deg), #333 31%, #ff9900 310%) padding-box, radial-gradient(circle at calc(100% - 155px) calc(50% - 155px), #333 31%, #ff9900 100%) content-box;
+  }
+  43.3333333333% {
+    background: radial-gradient(circle at calc(0% + 156px) calc(50% + 156px), #333 31.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 156deg), #333 31.2%, #ff9900 312%) padding-box, radial-gradient(circle at calc(100% - 156px) calc(50% - 156px), #333 31.2%, #ff9900 100%) content-box;
+  }
+  43.6111111111% {
+    background: radial-gradient(circle at calc(0% + 157px) calc(50% + 157px), #333 31.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 157deg), #333 31.4%, #ff9900 314%) padding-box, radial-gradient(circle at calc(100% - 157px) calc(50% - 157px), #333 31.4%, #ff9900 100%) content-box;
+  }
+  43.8888888889% {
+    background: radial-gradient(circle at calc(0% + 158px) calc(50% + 158px), #333 31.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 158deg), #333 31.6%, #ff9900 316%) padding-box, radial-gradient(circle at calc(100% - 158px) calc(50% - 158px), #333 31.6%, #ff9900 100%) content-box;
+  }
+  44.1666666667% {
+    background: radial-gradient(circle at calc(0% + 159px) calc(50% + 159px), #333 31.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 159deg), #333 31.8%, #ff9900 318%) padding-box, radial-gradient(circle at calc(100% - 159px) calc(50% - 159px), #333 31.8%, #ff9900 100%) content-box;
+  }
+  44.4444444444% {
+    background: radial-gradient(circle at calc(0% + 160px) calc(50% + 160px), #333 32%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 160deg), #333 32%, #ff9900 320%) padding-box, radial-gradient(circle at calc(100% - 160px) calc(50% - 160px), #333 32%, #ff9900 100%) content-box;
+  }
+  44.7222222222% {
+    background: radial-gradient(circle at calc(0% + 161px) calc(50% + 161px), #333 32.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 161deg), #333 32.2%, #ff9900 322%) padding-box, radial-gradient(circle at calc(100% - 161px) calc(50% - 161px), #333 32.2%, #ff9900 100%) content-box;
+  }
+  45% {
+    background: radial-gradient(circle at calc(0% + 162px) calc(50% + 162px), #333 32.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 162deg), #333 32.4%, #ff9900 324%) padding-box, radial-gradient(circle at calc(100% - 162px) calc(50% - 162px), #333 32.4%, #ff9900 100%) content-box;
+  }
+  45.2777777778% {
+    background: radial-gradient(circle at calc(0% + 163px) calc(50% + 163px), #333 32.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 163deg), #333 32.6%, #ff9900 326%) padding-box, radial-gradient(circle at calc(100% - 163px) calc(50% - 163px), #333 32.6%, #ff9900 100%) content-box;
+  }
+  45.5555555556% {
+    background: radial-gradient(circle at calc(0% + 164px) calc(50% + 164px), #333 32.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 164deg), #333 32.8%, #ff9900 328%) padding-box, radial-gradient(circle at calc(100% - 164px) calc(50% - 164px), #333 32.8%, #ff9900 100%) content-box;
+  }
+  45.8333333333% {
+    background: radial-gradient(circle at calc(0% + 165px) calc(50% + 165px), #333 33%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 165deg), #333 33%, #ff9900 330%) padding-box, radial-gradient(circle at calc(100% - 165px) calc(50% - 165px), #333 33%, #ff9900 100%) content-box;
+  }
+  46.1111111111% {
+    background: radial-gradient(circle at calc(0% + 166px) calc(50% + 166px), #333 33.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 166deg), #333 33.2%, #ff9900 332%) padding-box, radial-gradient(circle at calc(100% - 166px) calc(50% - 166px), #333 33.2%, #ff9900 100%) content-box;
+  }
+  46.3888888889% {
+    background: radial-gradient(circle at calc(0% + 167px) calc(50% + 167px), #333 33.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 167deg), #333 33.4%, #ff9900 334%) padding-box, radial-gradient(circle at calc(100% - 167px) calc(50% - 167px), #333 33.4%, #ff9900 100%) content-box;
+  }
+  46.6666666667% {
+    background: radial-gradient(circle at calc(0% + 168px) calc(50% + 168px), #333 33.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 168deg), #333 33.6%, #ff9900 336%) padding-box, radial-gradient(circle at calc(100% - 168px) calc(50% - 168px), #333 33.6%, #ff9900 100%) content-box;
+  }
+  46.9444444444% {
+    background: radial-gradient(circle at calc(0% + 169px) calc(50% + 169px), #333 33.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 169deg), #333 33.8%, #ff9900 338%) padding-box, radial-gradient(circle at calc(100% - 169px) calc(50% - 169px), #333 33.8%, #ff9900 100%) content-box;
+  }
+  47.2222222222% {
+    background: radial-gradient(circle at calc(0% + 170px) calc(50% + 170px), #333 34%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 170deg), #333 34%, #ff9900 340%) padding-box, radial-gradient(circle at calc(100% - 170px) calc(50% - 170px), #333 34%, #ff9900 100%) content-box;
+  }
+  47.5% {
+    background: radial-gradient(circle at calc(0% + 171px) calc(50% + 171px), #333 34.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 171deg), #333 34.2%, #ff9900 342%) padding-box, radial-gradient(circle at calc(100% - 171px) calc(50% - 171px), #333 34.2%, #ff9900 100%) content-box;
+  }
+  47.7777777778% {
+    background: radial-gradient(circle at calc(0% + 172px) calc(50% + 172px), #333 34.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 172deg), #333 34.4%, #ff9900 344%) padding-box, radial-gradient(circle at calc(100% - 172px) calc(50% - 172px), #333 34.4%, #ff9900 100%) content-box;
+  }
+  48.0555555556% {
+    background: radial-gradient(circle at calc(0% + 173px) calc(50% + 173px), #333 34.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 173deg), #333 34.6%, #ff9900 346%) padding-box, radial-gradient(circle at calc(100% - 173px) calc(50% - 173px), #333 34.6%, #ff9900 100%) content-box;
+  }
+  48.3333333333% {
+    background: radial-gradient(circle at calc(0% + 174px) calc(50% + 174px), #333 34.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 174deg), #333 34.8%, #ff9900 348%) padding-box, radial-gradient(circle at calc(100% - 174px) calc(50% - 174px), #333 34.8%, #ff9900 100%) content-box;
+  }
+  48.6111111111% {
+    background: radial-gradient(circle at calc(0% + 175px) calc(50% + 175px), #333 35%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 175deg), #333 35%, #ff9900 350%) padding-box, radial-gradient(circle at calc(100% - 175px) calc(50% - 175px), #333 35%, #ff9900 100%) content-box;
+  }
+  48.8888888889% {
+    background: radial-gradient(circle at calc(0% + 176px) calc(50% + 176px), #333 35.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 176deg), #333 35.2%, #ff9900 352%) padding-box, radial-gradient(circle at calc(100% - 176px) calc(50% - 176px), #333 35.2%, #ff9900 100%) content-box;
+  }
+  49.1666666667% {
+    background: radial-gradient(circle at calc(0% + 177px) calc(50% + 177px), #333 35.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 177deg), #333 35.4%, #ff9900 354%) padding-box, radial-gradient(circle at calc(100% - 177px) calc(50% - 177px), #333 35.4%, #ff9900 100%) content-box;
+  }
+  49.4444444444% {
+    background: radial-gradient(circle at calc(0% + 178px) calc(50% + 178px), #333 35.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 178deg), #333 35.6%, #ff9900 356%) padding-box, radial-gradient(circle at calc(100% - 178px) calc(50% - 178px), #333 35.6%, #ff9900 100%) content-box;
+  }
+  49.7222222222% {
+    background: radial-gradient(circle at calc(0% + 179px) calc(50% + 179px), #333 35.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 179deg), #333 35.8%, #ff9900 358%) padding-box, radial-gradient(circle at calc(100% - 179px) calc(50% - 179px), #333 35.8%, #ff9900 100%) content-box;
+  }
+  50% {
+    background: radial-gradient(circle at calc(0% + 180px) calc(50% + 180px), #333 36%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 180deg), #333 36%, #ff9900 360%) padding-box, radial-gradient(circle at calc(100% - 180px) calc(50% - 180px), #333 36%, #ff9900 100%) content-box;
+  }
+  50.2777777778% {
+    background: radial-gradient(circle at calc(0% + 181px) calc(50% + 181px), #333 36.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 181deg), #333 36.2%, #ff9900 362%) padding-box, radial-gradient(circle at calc(100% - 181px) calc(50% - 181px), #333 36.2%, #ff9900 100%) content-box;
+  }
+  50.5555555556% {
+    background: radial-gradient(circle at calc(0% + 182px) calc(50% + 182px), #333 36.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 182deg), #333 36.4%, #ff9900 364%) padding-box, radial-gradient(circle at calc(100% - 182px) calc(50% - 182px), #333 36.4%, #ff9900 100%) content-box;
+  }
+  50.8333333333% {
+    background: radial-gradient(circle at calc(0% + 183px) calc(50% + 183px), #333 36.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 183deg), #333 36.6%, #ff9900 366%) padding-box, radial-gradient(circle at calc(100% - 183px) calc(50% - 183px), #333 36.6%, #ff9900 100%) content-box;
+  }
+  51.1111111111% {
+    background: radial-gradient(circle at calc(0% + 184px) calc(50% + 184px), #333 36.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 184deg), #333 36.8%, #ff9900 368%) padding-box, radial-gradient(circle at calc(100% - 184px) calc(50% - 184px), #333 36.8%, #ff9900 100%) content-box;
+  }
+  51.3888888889% {
+    background: radial-gradient(circle at calc(0% + 185px) calc(50% + 185px), #333 37%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 185deg), #333 37%, #ff9900 370%) padding-box, radial-gradient(circle at calc(100% - 185px) calc(50% - 185px), #333 37%, #ff9900 100%) content-box;
+  }
+  51.6666666667% {
+    background: radial-gradient(circle at calc(0% + 186px) calc(50% + 186px), #333 37.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 186deg), #333 37.2%, #ff9900 372%) padding-box, radial-gradient(circle at calc(100% - 186px) calc(50% - 186px), #333 37.2%, #ff9900 100%) content-box;
+  }
+  51.9444444444% {
+    background: radial-gradient(circle at calc(0% + 187px) calc(50% + 187px), #333 37.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 187deg), #333 37.4%, #ff9900 374%) padding-box, radial-gradient(circle at calc(100% - 187px) calc(50% - 187px), #333 37.4%, #ff9900 100%) content-box;
+  }
+  52.2222222222% {
+    background: radial-gradient(circle at calc(0% + 188px) calc(50% + 188px), #333 37.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 188deg), #333 37.6%, #ff9900 376%) padding-box, radial-gradient(circle at calc(100% - 188px) calc(50% - 188px), #333 37.6%, #ff9900 100%) content-box;
+  }
+  52.5% {
+    background: radial-gradient(circle at calc(0% + 189px) calc(50% + 189px), #333 37.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 189deg), #333 37.8%, #ff9900 378%) padding-box, radial-gradient(circle at calc(100% - 189px) calc(50% - 189px), #333 37.8%, #ff9900 100%) content-box;
+  }
+  52.7777777778% {
+    background: radial-gradient(circle at calc(0% + 190px) calc(50% + 190px), #333 38%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 190deg), #333 38%, #ff9900 380%) padding-box, radial-gradient(circle at calc(100% - 190px) calc(50% - 190px), #333 38%, #ff9900 100%) content-box;
+  }
+  53.0555555556% {
+    background: radial-gradient(circle at calc(0% + 191px) calc(50% + 191px), #333 38.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 191deg), #333 38.2%, #ff9900 382%) padding-box, radial-gradient(circle at calc(100% - 191px) calc(50% - 191px), #333 38.2%, #ff9900 100%) content-box;
+  }
+  53.3333333333% {
+    background: radial-gradient(circle at calc(0% + 192px) calc(50% + 192px), #333 38.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 192deg), #333 38.4%, #ff9900 384%) padding-box, radial-gradient(circle at calc(100% - 192px) calc(50% - 192px), #333 38.4%, #ff9900 100%) content-box;
+  }
+  53.6111111111% {
+    background: radial-gradient(circle at calc(0% + 193px) calc(50% + 193px), #333 38.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 193deg), #333 38.6%, #ff9900 386%) padding-box, radial-gradient(circle at calc(100% - 193px) calc(50% - 193px), #333 38.6%, #ff9900 100%) content-box;
+  }
+  53.8888888889% {
+    background: radial-gradient(circle at calc(0% + 194px) calc(50% + 194px), #333 38.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 194deg), #333 38.8%, #ff9900 388%) padding-box, radial-gradient(circle at calc(100% - 194px) calc(50% - 194px), #333 38.8%, #ff9900 100%) content-box;
+  }
+  54.1666666667% {
+    background: radial-gradient(circle at calc(0% + 195px) calc(50% + 195px), #333 39%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 195deg), #333 39%, #ff9900 390%) padding-box, radial-gradient(circle at calc(100% - 195px) calc(50% - 195px), #333 39%, #ff9900 100%) content-box;
+  }
+  54.4444444444% {
+    background: radial-gradient(circle at calc(0% + 196px) calc(50% + 196px), #333 39.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 196deg), #333 39.2%, #ff9900 392%) padding-box, radial-gradient(circle at calc(100% - 196px) calc(50% - 196px), #333 39.2%, #ff9900 100%) content-box;
+  }
+  54.7222222222% {
+    background: radial-gradient(circle at calc(0% + 197px) calc(50% + 197px), #333 39.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 197deg), #333 39.4%, #ff9900 394%) padding-box, radial-gradient(circle at calc(100% - 197px) calc(50% - 197px), #333 39.4%, #ff9900 100%) content-box;
+  }
+  55% {
+    background: radial-gradient(circle at calc(0% + 198px) calc(50% + 198px), #333 39.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 198deg), #333 39.6%, #ff9900 396%) padding-box, radial-gradient(circle at calc(100% - 198px) calc(50% - 198px), #333 39.6%, #ff9900 100%) content-box;
+  }
+  55.2777777778% {
+    background: radial-gradient(circle at calc(0% + 199px) calc(50% + 199px), #333 39.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 199deg), #333 39.8%, #ff9900 398%) padding-box, radial-gradient(circle at calc(100% - 199px) calc(50% - 199px), #333 39.8%, #ff9900 100%) content-box;
+  }
+  55.5555555556% {
+    background: radial-gradient(circle at calc(0% + 200px) calc(50% + 200px), #333 40%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 200deg), #333 40%, #ff9900 400%) padding-box, radial-gradient(circle at calc(100% - 200px) calc(50% - 200px), #333 40%, #ff9900 100%) content-box;
+  }
+  55.8333333333% {
+    background: radial-gradient(circle at calc(0% + 201px) calc(50% + 201px), #333 40.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 201deg), #333 40.2%, #ff9900 402%) padding-box, radial-gradient(circle at calc(100% - 201px) calc(50% - 201px), #333 40.2%, #ff9900 100%) content-box;
+  }
+  56.1111111111% {
+    background: radial-gradient(circle at calc(0% + 202px) calc(50% + 202px), #333 40.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 202deg), #333 40.4%, #ff9900 404%) padding-box, radial-gradient(circle at calc(100% - 202px) calc(50% - 202px), #333 40.4%, #ff9900 100%) content-box;
+  }
+  56.3888888889% {
+    background: radial-gradient(circle at calc(0% + 203px) calc(50% + 203px), #333 40.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 203deg), #333 40.6%, #ff9900 406%) padding-box, radial-gradient(circle at calc(100% - 203px) calc(50% - 203px), #333 40.6%, #ff9900 100%) content-box;
+  }
+  56.6666666667% {
+    background: radial-gradient(circle at calc(0% + 204px) calc(50% + 204px), #333 40.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 204deg), #333 40.8%, #ff9900 408%) padding-box, radial-gradient(circle at calc(100% - 204px) calc(50% - 204px), #333 40.8%, #ff9900 100%) content-box;
+  }
+  56.9444444444% {
+    background: radial-gradient(circle at calc(0% + 205px) calc(50% + 205px), #333 41%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 205deg), #333 41%, #ff9900 410%) padding-box, radial-gradient(circle at calc(100% - 205px) calc(50% - 205px), #333 41%, #ff9900 100%) content-box;
+  }
+  57.2222222222% {
+    background: radial-gradient(circle at calc(0% + 206px) calc(50% + 206px), #333 41.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 206deg), #333 41.2%, #ff9900 412%) padding-box, radial-gradient(circle at calc(100% - 206px) calc(50% - 206px), #333 41.2%, #ff9900 100%) content-box;
+  }
+  57.5% {
+    background: radial-gradient(circle at calc(0% + 207px) calc(50% + 207px), #333 41.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 207deg), #333 41.4%, #ff9900 414%) padding-box, radial-gradient(circle at calc(100% - 207px) calc(50% - 207px), #333 41.4%, #ff9900 100%) content-box;
+  }
+  57.7777777778% {
+    background: radial-gradient(circle at calc(0% + 208px) calc(50% + 208px), #333 41.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 208deg), #333 41.6%, #ff9900 416%) padding-box, radial-gradient(circle at calc(100% - 208px) calc(50% - 208px), #333 41.6%, #ff9900 100%) content-box;
+  }
+  58.0555555556% {
+    background: radial-gradient(circle at calc(0% + 209px) calc(50% + 209px), #333 41.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 209deg), #333 41.8%, #ff9900 418%) padding-box, radial-gradient(circle at calc(100% - 209px) calc(50% - 209px), #333 41.8%, #ff9900 100%) content-box;
+  }
+  58.3333333333% {
+    background: radial-gradient(circle at calc(0% + 210px) calc(50% + 210px), #333 42%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 210deg), #333 42%, #ff9900 420%) padding-box, radial-gradient(circle at calc(100% - 210px) calc(50% - 210px), #333 42%, #ff9900 100%) content-box;
+  }
+  58.6111111111% {
+    background: radial-gradient(circle at calc(0% + 211px) calc(50% + 211px), #333 42.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 211deg), #333 42.2%, #ff9900 422%) padding-box, radial-gradient(circle at calc(100% - 211px) calc(50% - 211px), #333 42.2%, #ff9900 100%) content-box;
+  }
+  58.8888888889% {
+    background: radial-gradient(circle at calc(0% + 212px) calc(50% + 212px), #333 42.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 212deg), #333 42.4%, #ff9900 424%) padding-box, radial-gradient(circle at calc(100% - 212px) calc(50% - 212px), #333 42.4%, #ff9900 100%) content-box;
+  }
+  59.1666666667% {
+    background: radial-gradient(circle at calc(0% + 213px) calc(50% + 213px), #333 42.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 213deg), #333 42.6%, #ff9900 426%) padding-box, radial-gradient(circle at calc(100% - 213px) calc(50% - 213px), #333 42.6%, #ff9900 100%) content-box;
+  }
+  59.4444444444% {
+    background: radial-gradient(circle at calc(0% + 214px) calc(50% + 214px), #333 42.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 214deg), #333 42.8%, #ff9900 428%) padding-box, radial-gradient(circle at calc(100% - 214px) calc(50% - 214px), #333 42.8%, #ff9900 100%) content-box;
+  }
+  59.7222222222% {
+    background: radial-gradient(circle at calc(0% + 215px) calc(50% + 215px), #333 43%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 215deg), #333 43%, #ff9900 430%) padding-box, radial-gradient(circle at calc(100% - 215px) calc(50% - 215px), #333 43%, #ff9900 100%) content-box;
+  }
+  60% {
+    background: radial-gradient(circle at calc(0% + 216px) calc(50% + 216px), #333 43.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 216deg), #333 43.2%, #ff9900 432%) padding-box, radial-gradient(circle at calc(100% - 216px) calc(50% - 216px), #333 43.2%, #ff9900 100%) content-box;
+  }
+  60.2777777778% {
+    background: radial-gradient(circle at calc(0% + 217px) calc(50% + 217px), #333 43.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 217deg), #333 43.4%, #ff9900 434%) padding-box, radial-gradient(circle at calc(100% - 217px) calc(50% - 217px), #333 43.4%, #ff9900 100%) content-box;
+  }
+  60.5555555556% {
+    background: radial-gradient(circle at calc(0% + 218px) calc(50% + 218px), #333 43.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 218deg), #333 43.6%, #ff9900 436%) padding-box, radial-gradient(circle at calc(100% - 218px) calc(50% - 218px), #333 43.6%, #ff9900 100%) content-box;
+  }
+  60.8333333333% {
+    background: radial-gradient(circle at calc(0% + 219px) calc(50% + 219px), #333 43.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 219deg), #333 43.8%, #ff9900 438%) padding-box, radial-gradient(circle at calc(100% - 219px) calc(50% - 219px), #333 43.8%, #ff9900 100%) content-box;
+  }
+  61.1111111111% {
+    background: radial-gradient(circle at calc(0% + 220px) calc(50% + 220px), #333 44%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 220deg), #333 44%, #ff9900 440%) padding-box, radial-gradient(circle at calc(100% - 220px) calc(50% - 220px), #333 44%, #ff9900 100%) content-box;
+  }
+  61.3888888889% {
+    background: radial-gradient(circle at calc(0% + 221px) calc(50% + 221px), #333 44.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 221deg), #333 44.2%, #ff9900 442%) padding-box, radial-gradient(circle at calc(100% - 221px) calc(50% - 221px), #333 44.2%, #ff9900 100%) content-box;
+  }
+  61.6666666667% {
+    background: radial-gradient(circle at calc(0% + 222px) calc(50% + 222px), #333 44.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 222deg), #333 44.4%, #ff9900 444%) padding-box, radial-gradient(circle at calc(100% - 222px) calc(50% - 222px), #333 44.4%, #ff9900 100%) content-box;
+  }
+  61.9444444444% {
+    background: radial-gradient(circle at calc(0% + 223px) calc(50% + 223px), #333 44.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 223deg), #333 44.6%, #ff9900 446%) padding-box, radial-gradient(circle at calc(100% - 223px) calc(50% - 223px), #333 44.6%, #ff9900 100%) content-box;
+  }
+  62.2222222222% {
+    background: radial-gradient(circle at calc(0% + 224px) calc(50% + 224px), #333 44.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 224deg), #333 44.8%, #ff9900 448%) padding-box, radial-gradient(circle at calc(100% - 224px) calc(50% - 224px), #333 44.8%, #ff9900 100%) content-box;
+  }
+  62.5% {
+    background: radial-gradient(circle at calc(0% + 225px) calc(50% + 225px), #333 45%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 225deg), #333 45%, #ff9900 450%) padding-box, radial-gradient(circle at calc(100% - 225px) calc(50% - 225px), #333 45%, #ff9900 100%) content-box;
+  }
+  62.7777777778% {
+    background: radial-gradient(circle at calc(0% + 226px) calc(50% + 226px), #333 45.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 226deg), #333 45.2%, #ff9900 452%) padding-box, radial-gradient(circle at calc(100% - 226px) calc(50% - 226px), #333 45.2%, #ff9900 100%) content-box;
+  }
+  63.0555555556% {
+    background: radial-gradient(circle at calc(0% + 227px) calc(50% + 227px), #333 45.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 227deg), #333 45.4%, #ff9900 454%) padding-box, radial-gradient(circle at calc(100% - 227px) calc(50% - 227px), #333 45.4%, #ff9900 100%) content-box;
+  }
+  63.3333333333% {
+    background: radial-gradient(circle at calc(0% + 228px) calc(50% + 228px), #333 45.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 228deg), #333 45.6%, #ff9900 456%) padding-box, radial-gradient(circle at calc(100% - 228px) calc(50% - 228px), #333 45.6%, #ff9900 100%) content-box;
+  }
+  63.6111111111% {
+    background: radial-gradient(circle at calc(0% + 229px) calc(50% + 229px), #333 45.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 229deg), #333 45.8%, #ff9900 458%) padding-box, radial-gradient(circle at calc(100% - 229px) calc(50% - 229px), #333 45.8%, #ff9900 100%) content-box;
+  }
+  63.8888888889% {
+    background: radial-gradient(circle at calc(0% + 230px) calc(50% + 230px), #333 46%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 230deg), #333 46%, #ff9900 460%) padding-box, radial-gradient(circle at calc(100% - 230px) calc(50% - 230px), #333 46%, #ff9900 100%) content-box;
+  }
+  64.1666666667% {
+    background: radial-gradient(circle at calc(0% + 231px) calc(50% + 231px), #333 46.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 231deg), #333 46.2%, #ff9900 462%) padding-box, radial-gradient(circle at calc(100% - 231px) calc(50% - 231px), #333 46.2%, #ff9900 100%) content-box;
+  }
+  64.4444444444% {
+    background: radial-gradient(circle at calc(0% + 232px) calc(50% + 232px), #333 46.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 232deg), #333 46.4%, #ff9900 464%) padding-box, radial-gradient(circle at calc(100% - 232px) calc(50% - 232px), #333 46.4%, #ff9900 100%) content-box;
+  }
+  64.7222222222% {
+    background: radial-gradient(circle at calc(0% + 233px) calc(50% + 233px), #333 46.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 233deg), #333 46.6%, #ff9900 466%) padding-box, radial-gradient(circle at calc(100% - 233px) calc(50% - 233px), #333 46.6%, #ff9900 100%) content-box;
+  }
+  65% {
+    background: radial-gradient(circle at calc(0% + 234px) calc(50% + 234px), #333 46.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 234deg), #333 46.8%, #ff9900 468%) padding-box, radial-gradient(circle at calc(100% - 234px) calc(50% - 234px), #333 46.8%, #ff9900 100%) content-box;
+  }
+  65.2777777778% {
+    background: radial-gradient(circle at calc(0% + 235px) calc(50% + 235px), #333 47%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 235deg), #333 47%, #ff9900 470%) padding-box, radial-gradient(circle at calc(100% - 235px) calc(50% - 235px), #333 47%, #ff9900 100%) content-box;
+  }
+  65.5555555556% {
+    background: radial-gradient(circle at calc(0% + 236px) calc(50% + 236px), #333 47.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 236deg), #333 47.2%, #ff9900 472%) padding-box, radial-gradient(circle at calc(100% - 236px) calc(50% - 236px), #333 47.2%, #ff9900 100%) content-box;
+  }
+  65.8333333333% {
+    background: radial-gradient(circle at calc(0% + 237px) calc(50% + 237px), #333 47.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 237deg), #333 47.4%, #ff9900 474%) padding-box, radial-gradient(circle at calc(100% - 237px) calc(50% - 237px), #333 47.4%, #ff9900 100%) content-box;
+  }
+  66.1111111111% {
+    background: radial-gradient(circle at calc(0% + 238px) calc(50% + 238px), #333 47.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 238deg), #333 47.6%, #ff9900 476%) padding-box, radial-gradient(circle at calc(100% - 238px) calc(50% - 238px), #333 47.6%, #ff9900 100%) content-box;
+  }
+  66.3888888889% {
+    background: radial-gradient(circle at calc(0% + 239px) calc(50% + 239px), #333 47.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 239deg), #333 47.8%, #ff9900 478%) padding-box, radial-gradient(circle at calc(100% - 239px) calc(50% - 239px), #333 47.8%, #ff9900 100%) content-box;
+  }
+  66.6666666667% {
+    background: radial-gradient(circle at calc(0% + 240px) calc(50% + 240px), #333 48%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 240deg), #333 48%, #ff9900 480%) padding-box, radial-gradient(circle at calc(100% - 240px) calc(50% - 240px), #333 48%, #ff9900 100%) content-box;
+  }
+  66.9444444444% {
+    background: radial-gradient(circle at calc(0% + 241px) calc(50% + 241px), #333 48.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 241deg), #333 48.2%, #ff9900 482%) padding-box, radial-gradient(circle at calc(100% - 241px) calc(50% - 241px), #333 48.2%, #ff9900 100%) content-box;
+  }
+  67.2222222222% {
+    background: radial-gradient(circle at calc(0% + 242px) calc(50% + 242px), #333 48.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 242deg), #333 48.4%, #ff9900 484%) padding-box, radial-gradient(circle at calc(100% - 242px) calc(50% - 242px), #333 48.4%, #ff9900 100%) content-box;
+  }
+  67.5% {
+    background: radial-gradient(circle at calc(0% + 243px) calc(50% + 243px), #333 48.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 243deg), #333 48.6%, #ff9900 486%) padding-box, radial-gradient(circle at calc(100% - 243px) calc(50% - 243px), #333 48.6%, #ff9900 100%) content-box;
+  }
+  67.7777777778% {
+    background: radial-gradient(circle at calc(0% + 244px) calc(50% + 244px), #333 48.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 244deg), #333 48.8%, #ff9900 488%) padding-box, radial-gradient(circle at calc(100% - 244px) calc(50% - 244px), #333 48.8%, #ff9900 100%) content-box;
+  }
+  68.0555555556% {
+    background: radial-gradient(circle at calc(0% + 245px) calc(50% + 245px), #333 49%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 245deg), #333 49%, #ff9900 490%) padding-box, radial-gradient(circle at calc(100% - 245px) calc(50% - 245px), #333 49%, #ff9900 100%) content-box;
+  }
+  68.3333333333% {
+    background: radial-gradient(circle at calc(0% + 246px) calc(50% + 246px), #333 49.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 246deg), #333 49.2%, #ff9900 492%) padding-box, radial-gradient(circle at calc(100% - 246px) calc(50% - 246px), #333 49.2%, #ff9900 100%) content-box;
+  }
+  68.6111111111% {
+    background: radial-gradient(circle at calc(0% + 247px) calc(50% + 247px), #333 49.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 247deg), #333 49.4%, #ff9900 494%) padding-box, radial-gradient(circle at calc(100% - 247px) calc(50% - 247px), #333 49.4%, #ff9900 100%) content-box;
+  }
+  68.8888888889% {
+    background: radial-gradient(circle at calc(0% + 248px) calc(50% + 248px), #333 49.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 248deg), #333 49.6%, #ff9900 496%) padding-box, radial-gradient(circle at calc(100% - 248px) calc(50% - 248px), #333 49.6%, #ff9900 100%) content-box;
+  }
+  69.1666666667% {
+    background: radial-gradient(circle at calc(0% + 249px) calc(50% + 249px), #333 49.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 249deg), #333 49.8%, #ff9900 498%) padding-box, radial-gradient(circle at calc(100% - 249px) calc(50% - 249px), #333 49.8%, #ff9900 100%) content-box;
+  }
+  69.4444444444% {
+    background: radial-gradient(circle at calc(0% + 250px) calc(50% + 250px), #333 50%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 250deg), #333 50%, #ff9900 500%) padding-box, radial-gradient(circle at calc(100% - 250px) calc(50% - 250px), #333 50%, #ff9900 100%) content-box;
+  }
+  69.7222222222% {
+    background: radial-gradient(circle at calc(0% + 251px) calc(50% + 251px), #333 50.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 251deg), #333 50.2%, #ff9900 502%) padding-box, radial-gradient(circle at calc(100% - 251px) calc(50% - 251px), #333 50.2%, #ff9900 100%) content-box;
+  }
+  70% {
+    background: radial-gradient(circle at calc(0% + 252px) calc(50% + 252px), #333 50.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 252deg), #333 50.4%, #ff9900 504%) padding-box, radial-gradient(circle at calc(100% - 252px) calc(50% - 252px), #333 50.4%, #ff9900 100%) content-box;
+  }
+  70.2777777778% {
+    background: radial-gradient(circle at calc(0% + 253px) calc(50% + 253px), #333 50.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 253deg), #333 50.6%, #ff9900 506%) padding-box, radial-gradient(circle at calc(100% - 253px) calc(50% - 253px), #333 50.6%, #ff9900 100%) content-box;
+  }
+  70.5555555556% {
+    background: radial-gradient(circle at calc(0% + 254px) calc(50% + 254px), #333 50.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 254deg), #333 50.8%, #ff9900 508%) padding-box, radial-gradient(circle at calc(100% - 254px) calc(50% - 254px), #333 50.8%, #ff9900 100%) content-box;
+  }
+  70.8333333333% {
+    background: radial-gradient(circle at calc(0% + 255px) calc(50% + 255px), #333 51%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 255deg), #333 51%, #ff9900 510%) padding-box, radial-gradient(circle at calc(100% - 255px) calc(50% - 255px), #333 51%, #ff9900 100%) content-box;
+  }
+  71.1111111111% {
+    background: radial-gradient(circle at calc(0% + 256px) calc(50% + 256px), #333 51.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 256deg), #333 51.2%, #ff9900 512%) padding-box, radial-gradient(circle at calc(100% - 256px) calc(50% - 256px), #333 51.2%, #ff9900 100%) content-box;
+  }
+  71.3888888889% {
+    background: radial-gradient(circle at calc(0% + 257px) calc(50% + 257px), #333 51.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 257deg), #333 51.4%, #ff9900 514%) padding-box, radial-gradient(circle at calc(100% - 257px) calc(50% - 257px), #333 51.4%, #ff9900 100%) content-box;
+  }
+  71.6666666667% {
+    background: radial-gradient(circle at calc(0% + 258px) calc(50% + 258px), #333 51.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 258deg), #333 51.6%, #ff9900 516%) padding-box, radial-gradient(circle at calc(100% - 258px) calc(50% - 258px), #333 51.6%, #ff9900 100%) content-box;
+  }
+  71.9444444444% {
+    background: radial-gradient(circle at calc(0% + 259px) calc(50% + 259px), #333 51.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 259deg), #333 51.8%, #ff9900 518%) padding-box, radial-gradient(circle at calc(100% - 259px) calc(50% - 259px), #333 51.8%, #ff9900 100%) content-box;
+  }
+  72.2222222222% {
+    background: radial-gradient(circle at calc(0% + 260px) calc(50% + 260px), #333 52%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 260deg), #333 52%, #ff9900 520%) padding-box, radial-gradient(circle at calc(100% - 260px) calc(50% - 260px), #333 52%, #ff9900 100%) content-box;
+  }
+  72.5% {
+    background: radial-gradient(circle at calc(0% + 261px) calc(50% + 261px), #333 52.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 261deg), #333 52.2%, #ff9900 522%) padding-box, radial-gradient(circle at calc(100% - 261px) calc(50% - 261px), #333 52.2%, #ff9900 100%) content-box;
+  }
+  72.7777777778% {
+    background: radial-gradient(circle at calc(0% + 262px) calc(50% + 262px), #333 52.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 262deg), #333 52.4%, #ff9900 524%) padding-box, radial-gradient(circle at calc(100% - 262px) calc(50% - 262px), #333 52.4%, #ff9900 100%) content-box;
+  }
+  73.0555555556% {
+    background: radial-gradient(circle at calc(0% + 263px) calc(50% + 263px), #333 52.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 263deg), #333 52.6%, #ff9900 526%) padding-box, radial-gradient(circle at calc(100% - 263px) calc(50% - 263px), #333 52.6%, #ff9900 100%) content-box;
+  }
+  73.3333333333% {
+    background: radial-gradient(circle at calc(0% + 264px) calc(50% + 264px), #333 52.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 264deg), #333 52.8%, #ff9900 528%) padding-box, radial-gradient(circle at calc(100% - 264px) calc(50% - 264px), #333 52.8%, #ff9900 100%) content-box;
+  }
+  73.6111111111% {
+    background: radial-gradient(circle at calc(0% + 265px) calc(50% + 265px), #333 53%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 265deg), #333 53%, #ff9900 530%) padding-box, radial-gradient(circle at calc(100% - 265px) calc(50% - 265px), #333 53%, #ff9900 100%) content-box;
+  }
+  73.8888888889% {
+    background: radial-gradient(circle at calc(0% + 266px) calc(50% + 266px), #333 53.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 266deg), #333 53.2%, #ff9900 532%) padding-box, radial-gradient(circle at calc(100% - 266px) calc(50% - 266px), #333 53.2%, #ff9900 100%) content-box;
+  }
+  74.1666666667% {
+    background: radial-gradient(circle at calc(0% + 267px) calc(50% + 267px), #333 53.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 267deg), #333 53.4%, #ff9900 534%) padding-box, radial-gradient(circle at calc(100% - 267px) calc(50% - 267px), #333 53.4%, #ff9900 100%) content-box;
+  }
+  74.4444444444% {
+    background: radial-gradient(circle at calc(0% + 268px) calc(50% + 268px), #333 53.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 268deg), #333 53.6%, #ff9900 536%) padding-box, radial-gradient(circle at calc(100% - 268px) calc(50% - 268px), #333 53.6%, #ff9900 100%) content-box;
+  }
+  74.7222222222% {
+    background: radial-gradient(circle at calc(0% + 269px) calc(50% + 269px), #333 53.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 269deg), #333 53.8%, #ff9900 538%) padding-box, radial-gradient(circle at calc(100% - 269px) calc(50% - 269px), #333 53.8%, #ff9900 100%) content-box;
+  }
+  75% {
+    background: radial-gradient(circle at calc(0% + 270px) calc(50% + 270px), #333 54%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 270deg), #333 54%, #ff9900 540%) padding-box, radial-gradient(circle at calc(100% - 270px) calc(50% - 270px), #333 54%, #ff9900 100%) content-box;
+  }
+  75.2777777778% {
+    background: radial-gradient(circle at calc(0% + 271px) calc(50% + 271px), #333 54.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 271deg), #333 54.2%, #ff9900 542%) padding-box, radial-gradient(circle at calc(100% - 271px) calc(50% - 271px), #333 54.2%, #ff9900 100%) content-box;
+  }
+  75.5555555556% {
+    background: radial-gradient(circle at calc(0% + 272px) calc(50% + 272px), #333 54.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 272deg), #333 54.4%, #ff9900 544%) padding-box, radial-gradient(circle at calc(100% - 272px) calc(50% - 272px), #333 54.4%, #ff9900 100%) content-box;
+  }
+  75.8333333333% {
+    background: radial-gradient(circle at calc(0% + 273px) calc(50% + 273px), #333 54.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 273deg), #333 54.6%, #ff9900 546%) padding-box, radial-gradient(circle at calc(100% - 273px) calc(50% - 273px), #333 54.6%, #ff9900 100%) content-box;
+  }
+  76.1111111111% {
+    background: radial-gradient(circle at calc(0% + 274px) calc(50% + 274px), #333 54.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 274deg), #333 54.8%, #ff9900 548%) padding-box, radial-gradient(circle at calc(100% - 274px) calc(50% - 274px), #333 54.8%, #ff9900 100%) content-box;
+  }
+  76.3888888889% {
+    background: radial-gradient(circle at calc(0% + 275px) calc(50% + 275px), #333 55%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 275deg), #333 55%, #ff9900 550%) padding-box, radial-gradient(circle at calc(100% - 275px) calc(50% - 275px), #333 55%, #ff9900 100%) content-box;
+  }
+  76.6666666667% {
+    background: radial-gradient(circle at calc(0% + 276px) calc(50% + 276px), #333 55.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 276deg), #333 55.2%, #ff9900 552%) padding-box, radial-gradient(circle at calc(100% - 276px) calc(50% - 276px), #333 55.2%, #ff9900 100%) content-box;
+  }
+  76.9444444444% {
+    background: radial-gradient(circle at calc(0% + 277px) calc(50% + 277px), #333 55.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 277deg), #333 55.4%, #ff9900 554%) padding-box, radial-gradient(circle at calc(100% - 277px) calc(50% - 277px), #333 55.4%, #ff9900 100%) content-box;
+  }
+  77.2222222222% {
+    background: radial-gradient(circle at calc(0% + 278px) calc(50% + 278px), #333 55.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 278deg), #333 55.6%, #ff9900 556%) padding-box, radial-gradient(circle at calc(100% - 278px) calc(50% - 278px), #333 55.6%, #ff9900 100%) content-box;
+  }
+  77.5% {
+    background: radial-gradient(circle at calc(0% + 279px) calc(50% + 279px), #333 55.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 279deg), #333 55.8%, #ff9900 558%) padding-box, radial-gradient(circle at calc(100% - 279px) calc(50% - 279px), #333 55.8%, #ff9900 100%) content-box;
+  }
+  77.7777777778% {
+    background: radial-gradient(circle at calc(0% + 280px) calc(50% + 280px), #333 56%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 280deg), #333 56%, #ff9900 560%) padding-box, radial-gradient(circle at calc(100% - 280px) calc(50% - 280px), #333 56%, #ff9900 100%) content-box;
+  }
+  78.0555555556% {
+    background: radial-gradient(circle at calc(0% + 281px) calc(50% + 281px), #333 56.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 281deg), #333 56.2%, #ff9900 562%) padding-box, radial-gradient(circle at calc(100% - 281px) calc(50% - 281px), #333 56.2%, #ff9900 100%) content-box;
+  }
+  78.3333333333% {
+    background: radial-gradient(circle at calc(0% + 282px) calc(50% + 282px), #333 56.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 282deg), #333 56.4%, #ff9900 564%) padding-box, radial-gradient(circle at calc(100% - 282px) calc(50% - 282px), #333 56.4%, #ff9900 100%) content-box;
+  }
+  78.6111111111% {
+    background: radial-gradient(circle at calc(0% + 283px) calc(50% + 283px), #333 56.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 283deg), #333 56.6%, #ff9900 566%) padding-box, radial-gradient(circle at calc(100% - 283px) calc(50% - 283px), #333 56.6%, #ff9900 100%) content-box;
+  }
+  78.8888888889% {
+    background: radial-gradient(circle at calc(0% + 284px) calc(50% + 284px), #333 56.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 284deg), #333 56.8%, #ff9900 568%) padding-box, radial-gradient(circle at calc(100% - 284px) calc(50% - 284px), #333 56.8%, #ff9900 100%) content-box;
+  }
+  79.1666666667% {
+    background: radial-gradient(circle at calc(0% + 285px) calc(50% + 285px), #333 57%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 285deg), #333 57%, #ff9900 570%) padding-box, radial-gradient(circle at calc(100% - 285px) calc(50% - 285px), #333 57%, #ff9900 100%) content-box;
+  }
+  79.4444444444% {
+    background: radial-gradient(circle at calc(0% + 286px) calc(50% + 286px), #333 57.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 286deg), #333 57.2%, #ff9900 572%) padding-box, radial-gradient(circle at calc(100% - 286px) calc(50% - 286px), #333 57.2%, #ff9900 100%) content-box;
+  }
+  79.7222222222% {
+    background: radial-gradient(circle at calc(0% + 287px) calc(50% + 287px), #333 57.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 287deg), #333 57.4%, #ff9900 574%) padding-box, radial-gradient(circle at calc(100% - 287px) calc(50% - 287px), #333 57.4%, #ff9900 100%) content-box;
+  }
+  80% {
+    background: radial-gradient(circle at calc(0% + 288px) calc(50% + 288px), #333 57.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 288deg), #333 57.6%, #ff9900 576%) padding-box, radial-gradient(circle at calc(100% - 288px) calc(50% - 288px), #333 57.6%, #ff9900 100%) content-box;
+  }
+  80.2777777778% {
+    background: radial-gradient(circle at calc(0% + 289px) calc(50% + 289px), #333 57.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 289deg), #333 57.8%, #ff9900 578%) padding-box, radial-gradient(circle at calc(100% - 289px) calc(50% - 289px), #333 57.8%, #ff9900 100%) content-box;
+  }
+  80.5555555556% {
+    background: radial-gradient(circle at calc(0% + 290px) calc(50% + 290px), #333 58%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 290deg), #333 58%, #ff9900 580%) padding-box, radial-gradient(circle at calc(100% - 290px) calc(50% - 290px), #333 58%, #ff9900 100%) content-box;
+  }
+  80.8333333333% {
+    background: radial-gradient(circle at calc(0% + 291px) calc(50% + 291px), #333 58.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 291deg), #333 58.2%, #ff9900 582%) padding-box, radial-gradient(circle at calc(100% - 291px) calc(50% - 291px), #333 58.2%, #ff9900 100%) content-box;
+  }
+  81.1111111111% {
+    background: radial-gradient(circle at calc(0% + 292px) calc(50% + 292px), #333 58.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 292deg), #333 58.4%, #ff9900 584%) padding-box, radial-gradient(circle at calc(100% - 292px) calc(50% - 292px), #333 58.4%, #ff9900 100%) content-box;
+  }
+  81.3888888889% {
+    background: radial-gradient(circle at calc(0% + 293px) calc(50% + 293px), #333 58.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 293deg), #333 58.6%, #ff9900 586%) padding-box, radial-gradient(circle at calc(100% - 293px) calc(50% - 293px), #333 58.6%, #ff9900 100%) content-box;
+  }
+  81.6666666667% {
+    background: radial-gradient(circle at calc(0% + 294px) calc(50% + 294px), #333 58.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 294deg), #333 58.8%, #ff9900 588%) padding-box, radial-gradient(circle at calc(100% - 294px) calc(50% - 294px), #333 58.8%, #ff9900 100%) content-box;
+  }
+  81.9444444444% {
+    background: radial-gradient(circle at calc(0% + 295px) calc(50% + 295px), #333 59%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 295deg), #333 59%, #ff9900 590%) padding-box, radial-gradient(circle at calc(100% - 295px) calc(50% - 295px), #333 59%, #ff9900 100%) content-box;
+  }
+  82.2222222222% {
+    background: radial-gradient(circle at calc(0% + 296px) calc(50% + 296px), #333 59.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 296deg), #333 59.2%, #ff9900 592%) padding-box, radial-gradient(circle at calc(100% - 296px) calc(50% - 296px), #333 59.2%, #ff9900 100%) content-box;
+  }
+  82.5% {
+    background: radial-gradient(circle at calc(0% + 297px) calc(50% + 297px), #333 59.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 297deg), #333 59.4%, #ff9900 594%) padding-box, radial-gradient(circle at calc(100% - 297px) calc(50% - 297px), #333 59.4%, #ff9900 100%) content-box;
+  }
+  82.7777777778% {
+    background: radial-gradient(circle at calc(0% + 298px) calc(50% + 298px), #333 59.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 298deg), #333 59.6%, #ff9900 596%) padding-box, radial-gradient(circle at calc(100% - 298px) calc(50% - 298px), #333 59.6%, #ff9900 100%) content-box;
+  }
+  83.0555555556% {
+    background: radial-gradient(circle at calc(0% + 299px) calc(50% + 299px), #333 59.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 299deg), #333 59.8%, #ff9900 598%) padding-box, radial-gradient(circle at calc(100% - 299px) calc(50% - 299px), #333 59.8%, #ff9900 100%) content-box;
+  }
+  83.3333333333% {
+    background: radial-gradient(circle at calc(0% + 300px) calc(50% + 300px), #333 60%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 300deg), #333 60%, #ff9900 600%) padding-box, radial-gradient(circle at calc(100% - 300px) calc(50% - 300px), #333 60%, #ff9900 100%) content-box;
+  }
+  83.6111111111% {
+    background: radial-gradient(circle at calc(0% + 301px) calc(50% + 301px), #333 60.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 301deg), #333 60.2%, #ff9900 602%) padding-box, radial-gradient(circle at calc(100% - 301px) calc(50% - 301px), #333 60.2%, #ff9900 100%) content-box;
+  }
+  83.8888888889% {
+    background: radial-gradient(circle at calc(0% + 302px) calc(50% + 302px), #333 60.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 302deg), #333 60.4%, #ff9900 604%) padding-box, radial-gradient(circle at calc(100% - 302px) calc(50% - 302px), #333 60.4%, #ff9900 100%) content-box;
+  }
+  84.1666666667% {
+    background: radial-gradient(circle at calc(0% + 303px) calc(50% + 303px), #333 60.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 303deg), #333 60.6%, #ff9900 606%) padding-box, radial-gradient(circle at calc(100% - 303px) calc(50% - 303px), #333 60.6%, #ff9900 100%) content-box;
+  }
+  84.4444444444% {
+    background: radial-gradient(circle at calc(0% + 304px) calc(50% + 304px), #333 60.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 304deg), #333 60.8%, #ff9900 608%) padding-box, radial-gradient(circle at calc(100% - 304px) calc(50% - 304px), #333 60.8%, #ff9900 100%) content-box;
+  }
+  84.7222222222% {
+    background: radial-gradient(circle at calc(0% + 305px) calc(50% + 305px), #333 61%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 305deg), #333 61%, #ff9900 610%) padding-box, radial-gradient(circle at calc(100% - 305px) calc(50% - 305px), #333 61%, #ff9900 100%) content-box;
+  }
+  85% {
+    background: radial-gradient(circle at calc(0% + 306px) calc(50% + 306px), #333 61.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 306deg), #333 61.2%, #ff9900 612%) padding-box, radial-gradient(circle at calc(100% - 306px) calc(50% - 306px), #333 61.2%, #ff9900 100%) content-box;
+  }
+  85.2777777778% {
+    background: radial-gradient(circle at calc(0% + 307px) calc(50% + 307px), #333 61.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 307deg), #333 61.4%, #ff9900 614%) padding-box, radial-gradient(circle at calc(100% - 307px) calc(50% - 307px), #333 61.4%, #ff9900 100%) content-box;
+  }
+  85.5555555556% {
+    background: radial-gradient(circle at calc(0% + 308px) calc(50% + 308px), #333 61.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 308deg), #333 61.6%, #ff9900 616%) padding-box, radial-gradient(circle at calc(100% - 308px) calc(50% - 308px), #333 61.6%, #ff9900 100%) content-box;
+  }
+  85.8333333333% {
+    background: radial-gradient(circle at calc(0% + 309px) calc(50% + 309px), #333 61.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 309deg), #333 61.8%, #ff9900 618%) padding-box, radial-gradient(circle at calc(100% - 309px) calc(50% - 309px), #333 61.8%, #ff9900 100%) content-box;
+  }
+  86.1111111111% {
+    background: radial-gradient(circle at calc(0% + 310px) calc(50% + 310px), #333 62%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 310deg), #333 62%, #ff9900 620%) padding-box, radial-gradient(circle at calc(100% - 310px) calc(50% - 310px), #333 62%, #ff9900 100%) content-box;
+  }
+  86.3888888889% {
+    background: radial-gradient(circle at calc(0% + 311px) calc(50% + 311px), #333 62.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 311deg), #333 62.2%, #ff9900 622%) padding-box, radial-gradient(circle at calc(100% - 311px) calc(50% - 311px), #333 62.2%, #ff9900 100%) content-box;
+  }
+  86.6666666667% {
+    background: radial-gradient(circle at calc(0% + 312px) calc(50% + 312px), #333 62.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 312deg), #333 62.4%, #ff9900 624%) padding-box, radial-gradient(circle at calc(100% - 312px) calc(50% - 312px), #333 62.4%, #ff9900 100%) content-box;
+  }
+  86.9444444444% {
+    background: radial-gradient(circle at calc(0% + 313px) calc(50% + 313px), #333 62.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 313deg), #333 62.6%, #ff9900 626%) padding-box, radial-gradient(circle at calc(100% - 313px) calc(50% - 313px), #333 62.6%, #ff9900 100%) content-box;
+  }
+  87.2222222222% {
+    background: radial-gradient(circle at calc(0% + 314px) calc(50% + 314px), #333 62.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 314deg), #333 62.8%, #ff9900 628%) padding-box, radial-gradient(circle at calc(100% - 314px) calc(50% - 314px), #333 62.8%, #ff9900 100%) content-box;
+  }
+  87.5% {
+    background: radial-gradient(circle at calc(0% + 315px) calc(50% + 315px), #333 63%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 315deg), #333 63%, #ff9900 630%) padding-box, radial-gradient(circle at calc(100% - 315px) calc(50% - 315px), #333 63%, #ff9900 100%) content-box;
+  }
+  87.7777777778% {
+    background: radial-gradient(circle at calc(0% + 316px) calc(50% + 316px), #333 63.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 316deg), #333 63.2%, #ff9900 632%) padding-box, radial-gradient(circle at calc(100% - 316px) calc(50% - 316px), #333 63.2%, #ff9900 100%) content-box;
+  }
+  88.0555555556% {
+    background: radial-gradient(circle at calc(0% + 317px) calc(50% + 317px), #333 63.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 317deg), #333 63.4%, #ff9900 634%) padding-box, radial-gradient(circle at calc(100% - 317px) calc(50% - 317px), #333 63.4%, #ff9900 100%) content-box;
+  }
+  88.3333333333% {
+    background: radial-gradient(circle at calc(0% + 318px) calc(50% + 318px), #333 63.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 318deg), #333 63.6%, #ff9900 636%) padding-box, radial-gradient(circle at calc(100% - 318px) calc(50% - 318px), #333 63.6%, #ff9900 100%) content-box;
+  }
+  88.6111111111% {
+    background: radial-gradient(circle at calc(0% + 319px) calc(50% + 319px), #333 63.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 319deg), #333 63.8%, #ff9900 638%) padding-box, radial-gradient(circle at calc(100% - 319px) calc(50% - 319px), #333 63.8%, #ff9900 100%) content-box;
+  }
+  88.8888888889% {
+    background: radial-gradient(circle at calc(0% + 320px) calc(50% + 320px), #333 64%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 320deg), #333 64%, #ff9900 640%) padding-box, radial-gradient(circle at calc(100% - 320px) calc(50% - 320px), #333 64%, #ff9900 100%) content-box;
+  }
+  89.1666666667% {
+    background: radial-gradient(circle at calc(0% + 321px) calc(50% + 321px), #333 64.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 321deg), #333 64.2%, #ff9900 642%) padding-box, radial-gradient(circle at calc(100% - 321px) calc(50% - 321px), #333 64.2%, #ff9900 100%) content-box;
+  }
+  89.4444444444% {
+    background: radial-gradient(circle at calc(0% + 322px) calc(50% + 322px), #333 64.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 322deg), #333 64.4%, #ff9900 644%) padding-box, radial-gradient(circle at calc(100% - 322px) calc(50% - 322px), #333 64.4%, #ff9900 100%) content-box;
+  }
+  89.7222222222% {
+    background: radial-gradient(circle at calc(0% + 323px) calc(50% + 323px), #333 64.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 323deg), #333 64.6%, #ff9900 646%) padding-box, radial-gradient(circle at calc(100% - 323px) calc(50% - 323px), #333 64.6%, #ff9900 100%) content-box;
+  }
+  90% {
+    background: radial-gradient(circle at calc(0% + 324px) calc(50% + 324px), #333 64.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 324deg), #333 64.8%, #ff9900 648%) padding-box, radial-gradient(circle at calc(100% - 324px) calc(50% - 324px), #333 64.8%, #ff9900 100%) content-box;
+  }
+  90.2777777778% {
+    background: radial-gradient(circle at calc(0% + 325px) calc(50% + 325px), #333 65%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 325deg), #333 65%, #ff9900 650%) padding-box, radial-gradient(circle at calc(100% - 325px) calc(50% - 325px), #333 65%, #ff9900 100%) content-box;
+  }
+  90.5555555556% {
+    background: radial-gradient(circle at calc(0% + 326px) calc(50% + 326px), #333 65.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 326deg), #333 65.2%, #ff9900 652%) padding-box, radial-gradient(circle at calc(100% - 326px) calc(50% - 326px), #333 65.2%, #ff9900 100%) content-box;
+  }
+  90.8333333333% {
+    background: radial-gradient(circle at calc(0% + 327px) calc(50% + 327px), #333 65.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 327deg), #333 65.4%, #ff9900 654%) padding-box, radial-gradient(circle at calc(100% - 327px) calc(50% - 327px), #333 65.4%, #ff9900 100%) content-box;
+  }
+  91.1111111111% {
+    background: radial-gradient(circle at calc(0% + 328px) calc(50% + 328px), #333 65.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 328deg), #333 65.6%, #ff9900 656%) padding-box, radial-gradient(circle at calc(100% - 328px) calc(50% - 328px), #333 65.6%, #ff9900 100%) content-box;
+  }
+  91.3888888889% {
+    background: radial-gradient(circle at calc(0% + 329px) calc(50% + 329px), #333 65.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 329deg), #333 65.8%, #ff9900 658%) padding-box, radial-gradient(circle at calc(100% - 329px) calc(50% - 329px), #333 65.8%, #ff9900 100%) content-box;
+  }
+  91.6666666667% {
+    background: radial-gradient(circle at calc(0% + 330px) calc(50% + 330px), #333 66%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 330deg), #333 66%, #ff9900 660%) padding-box, radial-gradient(circle at calc(100% - 330px) calc(50% - 330px), #333 66%, #ff9900 100%) content-box;
+  }
+  91.9444444444% {
+    background: radial-gradient(circle at calc(0% + 331px) calc(50% + 331px), #333 66.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 331deg), #333 66.2%, #ff9900 662%) padding-box, radial-gradient(circle at calc(100% - 331px) calc(50% - 331px), #333 66.2%, #ff9900 100%) content-box;
+  }
+  92.2222222222% {
+    background: radial-gradient(circle at calc(0% + 332px) calc(50% + 332px), #333 66.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 332deg), #333 66.4%, #ff9900 664%) padding-box, radial-gradient(circle at calc(100% - 332px) calc(50% - 332px), #333 66.4%, #ff9900 100%) content-box;
+  }
+  92.5% {
+    background: radial-gradient(circle at calc(0% + 333px) calc(50% + 333px), #333 66.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 333deg), #333 66.6%, #ff9900 666%) padding-box, radial-gradient(circle at calc(100% - 333px) calc(50% - 333px), #333 66.6%, #ff9900 100%) content-box;
+  }
+  92.7777777778% {
+    background: radial-gradient(circle at calc(0% + 334px) calc(50% + 334px), #333 66.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 334deg), #333 66.8%, #ff9900 668%) padding-box, radial-gradient(circle at calc(100% - 334px) calc(50% - 334px), #333 66.8%, #ff9900 100%) content-box;
+  }
+  93.0555555556% {
+    background: radial-gradient(circle at calc(0% + 335px) calc(50% + 335px), #333 67%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 335deg), #333 67%, #ff9900 670%) padding-box, radial-gradient(circle at calc(100% - 335px) calc(50% - 335px), #333 67%, #ff9900 100%) content-box;
+  }
+  93.3333333333% {
+    background: radial-gradient(circle at calc(0% + 336px) calc(50% + 336px), #333 67.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 336deg), #333 67.2%, #ff9900 672%) padding-box, radial-gradient(circle at calc(100% - 336px) calc(50% - 336px), #333 67.2%, #ff9900 100%) content-box;
+  }
+  93.6111111111% {
+    background: radial-gradient(circle at calc(0% + 337px) calc(50% + 337px), #333 67.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 337deg), #333 67.4%, #ff9900 674%) padding-box, radial-gradient(circle at calc(100% - 337px) calc(50% - 337px), #333 67.4%, #ff9900 100%) content-box;
+  }
+  93.8888888889% {
+    background: radial-gradient(circle at calc(0% + 338px) calc(50% + 338px), #333 67.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 338deg), #333 67.6%, #ff9900 676%) padding-box, radial-gradient(circle at calc(100% - 338px) calc(50% - 338px), #333 67.6%, #ff9900 100%) content-box;
+  }
+  94.1666666667% {
+    background: radial-gradient(circle at calc(0% + 339px) calc(50% + 339px), #333 67.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 339deg), #333 67.8%, #ff9900 678%) padding-box, radial-gradient(circle at calc(100% - 339px) calc(50% - 339px), #333 67.8%, #ff9900 100%) content-box;
+  }
+  94.4444444444% {
+    background: radial-gradient(circle at calc(0% + 340px) calc(50% + 340px), #333 68%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 340deg), #333 68%, #ff9900 680%) padding-box, radial-gradient(circle at calc(100% - 340px) calc(50% - 340px), #333 68%, #ff9900 100%) content-box;
+  }
+  94.7222222222% {
+    background: radial-gradient(circle at calc(0% + 341px) calc(50% + 341px), #333 68.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 341deg), #333 68.2%, #ff9900 682%) padding-box, radial-gradient(circle at calc(100% - 341px) calc(50% - 341px), #333 68.2%, #ff9900 100%) content-box;
+  }
+  95% {
+    background: radial-gradient(circle at calc(0% + 342px) calc(50% + 342px), #333 68.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 342deg), #333 68.4%, #ff9900 684%) padding-box, radial-gradient(circle at calc(100% - 342px) calc(50% - 342px), #333 68.4%, #ff9900 100%) content-box;
+  }
+  95.2777777778% {
+    background: radial-gradient(circle at calc(0% + 343px) calc(50% + 343px), #333 68.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 343deg), #333 68.6%, #ff9900 686%) padding-box, radial-gradient(circle at calc(100% - 343px) calc(50% - 343px), #333 68.6%, #ff9900 100%) content-box;
+  }
+  95.5555555556% {
+    background: radial-gradient(circle at calc(0% + 344px) calc(50% + 344px), #333 68.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 344deg), #333 68.8%, #ff9900 688%) padding-box, radial-gradient(circle at calc(100% - 344px) calc(50% - 344px), #333 68.8%, #ff9900 100%) content-box;
+  }
+  95.8333333333% {
+    background: radial-gradient(circle at calc(0% + 345px) calc(50% + 345px), #333 69%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 345deg), #333 69%, #ff9900 690%) padding-box, radial-gradient(circle at calc(100% - 345px) calc(50% - 345px), #333 69%, #ff9900 100%) content-box;
+  }
+  96.1111111111% {
+    background: radial-gradient(circle at calc(0% + 346px) calc(50% + 346px), #333 69.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 346deg), #333 69.2%, #ff9900 692%) padding-box, radial-gradient(circle at calc(100% - 346px) calc(50% - 346px), #333 69.2%, #ff9900 100%) content-box;
+  }
+  96.3888888889% {
+    background: radial-gradient(circle at calc(0% + 347px) calc(50% + 347px), #333 69.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 347deg), #333 69.4%, #ff9900 694%) padding-box, radial-gradient(circle at calc(100% - 347px) calc(50% - 347px), #333 69.4%, #ff9900 100%) content-box;
+  }
+  96.6666666667% {
+    background: radial-gradient(circle at calc(0% + 348px) calc(50% + 348px), #333 69.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 348deg), #333 69.6%, #ff9900 696%) padding-box, radial-gradient(circle at calc(100% - 348px) calc(50% - 348px), #333 69.6%, #ff9900 100%) content-box;
+  }
+  96.9444444444% {
+    background: radial-gradient(circle at calc(0% + 349px) calc(50% + 349px), #333 69.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 349deg), #333 69.8%, #ff9900 698%) padding-box, radial-gradient(circle at calc(100% - 349px) calc(50% - 349px), #333 69.8%, #ff9900 100%) content-box;
+  }
+  97.2222222222% {
+    background: radial-gradient(circle at calc(0% + 350px) calc(50% + 350px), #333 70%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 350deg), #333 70%, #ff9900 700%) padding-box, radial-gradient(circle at calc(100% - 350px) calc(50% - 350px), #333 70%, #ff9900 100%) content-box;
+  }
+  97.5% {
+    background: radial-gradient(circle at calc(0% + 351px) calc(50% + 351px), #333 70.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 351deg), #333 70.2%, #ff9900 702%) padding-box, radial-gradient(circle at calc(100% - 351px) calc(50% - 351px), #333 70.2%, #ff9900 100%) content-box;
+  }
+  97.7777777778% {
+    background: radial-gradient(circle at calc(0% + 352px) calc(50% + 352px), #333 70.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 352deg), #333 70.4%, #ff9900 704%) padding-box, radial-gradient(circle at calc(100% - 352px) calc(50% - 352px), #333 70.4%, #ff9900 100%) content-box;
+  }
+  98.0555555556% {
+    background: radial-gradient(circle at calc(0% + 353px) calc(50% + 353px), #333 70.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 353deg), #333 70.6%, #ff9900 706%) padding-box, radial-gradient(circle at calc(100% - 353px) calc(50% - 353px), #333 70.6%, #ff9900 100%) content-box;
+  }
+  98.3333333333% {
+    background: radial-gradient(circle at calc(0% + 354px) calc(50% + 354px), #333 70.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 354deg), #333 70.8%, #ff9900 708%) padding-box, radial-gradient(circle at calc(100% - 354px) calc(50% - 354px), #333 70.8%, #ff9900 100%) content-box;
+  }
+  98.6111111111% {
+    background: radial-gradient(circle at calc(0% + 355px) calc(50% + 355px), #333 71%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 355deg), #333 71%, #ff9900 710%) padding-box, radial-gradient(circle at calc(100% - 355px) calc(50% - 355px), #333 71%, #ff9900 100%) content-box;
+  }
+  98.8888888889% {
+    background: radial-gradient(circle at calc(0% + 356px) calc(50% + 356px), #333 71.2%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 356deg), #333 71.2%, #ff9900 712%) padding-box, radial-gradient(circle at calc(100% - 356px) calc(50% - 356px), #333 71.2%, #ff9900 100%) content-box;
+  }
+  99.1666666667% {
+    background: radial-gradient(circle at calc(0% + 357px) calc(50% + 357px), #333 71.4%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 357deg), #333 71.4%, #ff9900 714%) padding-box, radial-gradient(circle at calc(100% - 357px) calc(50% - 357px), #333 71.4%, #ff9900 100%) content-box;
+  }
+  99.4444444444% {
+    background: radial-gradient(circle at calc(0% + 358px) calc(50% + 358px), #333 71.6%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 358deg), #333 71.6%, #ff9900 716%) padding-box, radial-gradient(circle at calc(100% - 358px) calc(50% - 358px), #333 71.6%, #ff9900 100%) content-box;
+  }
+  99.7222222222% {
+    background: radial-gradient(circle at calc(0% + 359px) calc(50% + 359px), #333 71.8%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 359deg), #333 71.8%, #ff9900 718%) padding-box, radial-gradient(circle at calc(100% - 359px) calc(50% - 359px), #333 71.8%, #ff9900 100%) content-box;
+  }
+  100% {
+    background: radial-gradient(circle at calc(0% + 360px) calc(50% + 360px), #333 72%, #ff9900 100%) border-box, linear-gradient(calc(140deg - 360deg), #333 72%, #ff9900 720%) padding-box, radial-gradient(circle at calc(100% - 360px) calc(50% - 360px), #333 72%, #ff9900 100%) content-box;
+  }
 }/*# sourceMappingURL=index.css.map */

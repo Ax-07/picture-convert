@@ -18,4 +18,6 @@ $background-secondary: linear-gradient(40deg, rgba($color-secondary-light, 1) 0%
 $background-light: linear-gradient(190deg, rgba($color-light, 0.3) 70%, $color-dark 200%);
 $background-btn: linear-gradient(40deg, rgba($color-secondary, 1) 0%, $color-secondary-light 100%) padding-box,
   linear-gradient(40deg, $color-secondary-light 0%, $color-secondary 100%) border-box;
-// Path: client/src/scss/global/_theme.scss
+$background-btn-pad: linear-gradient(-66deg, rgba($color-secondary, 1) 0%, $color-dark 100%) padding-box,
+  linear-gradient(40deg, $color-secondary 0%, $color-secondary-light 100%) border-box;
+$conic-gradient: conic-gradient(from 0deg at 50% 50%, $color-secondary 0%, $color-secondary-light 100%);

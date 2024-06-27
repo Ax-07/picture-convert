@@ -71,6 +71,7 @@
     }
 
     &__column {
+      position: relative;
       flex: 1;
       &-left {}
       &-right {

@@ -3952,6 +3952,7 @@ pre, code {
   }
 }
 .hero__column {
+  position: relative;
   flex: 1;
 }
 @media (max-width: 1024px) {
@@ -4245,7 +4246,6 @@ pre, code {
   align-items: center;
   gap: 1rem;
   position: fixed;
-  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;

@@ -65,7 +65,7 @@
         $opacity: calc(1% * $i / 6);
         $color-light-percent: calc(1% * $i / 6);
         background: 
-        linear-gradient(-66deg, #666 0%, #ffbb00 100%) padding-box,
+        linear-gradient(-66deg, #666 0%, #000 100%) padding-box,
         repeating-conic-gradient(from $angle1 at 50% 50%, $spectrum) 50% 50% / 200% 200% border-box;
       }
     }

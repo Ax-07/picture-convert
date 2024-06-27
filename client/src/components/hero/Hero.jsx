@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { BtnStart } from "../btn/Buttons";
-import mockup from "../../assets/images/hero-mockup.png";
+import mockup from "../../assets/images/hero-mockup.webp";
 
 export const Hero = () => {
     return (

@@ -15,11 +15,11 @@ export const InfoPicture = ({pictureProperty, type}) => {
     }
     return (
       <div className="picture-info">
-      <h3>{`Image ${displayType}`}</h3>
-        <p>
+      <h3 className="picture-info__title">{`Image ${displayType}`}</h3>
+        <p className="picture-info__description">
           {"Dimensions :"} {pictureProperty.width} x {pictureProperty.height}
         </p>
-        <p>
+        <p className="picture-info__description">
           {"Taille :"} {Math.round(pictureProperty.size / 1024)} Ko
         </p>
       </div>

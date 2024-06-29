@@ -1,0 +1,59 @@
+h1,h2,h3,h4,h5,h6,p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 125%;
+    color: #000;
+}
+@mixin font-logo {
+    font-size: 2.5rem;
+
+    @media screen and (max-width: 768px) {
+        font-size: 2rem;
+    }
+}
+@mixin font-title-page {}
+@mixin font-subtitle-page {}
+@mixin font-title-section {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 2rem;
+    }
+}
+@mixin font-subtitle-section {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1rem;
+    }
+}
+@mixin font-title-card {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: $color-secondary;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.25rem;
+    }
+}
+@mixin font-subtitle-card {}
+@mixin font-body {
+    font-size: 1.25rem;
+}
+@mixin font-description {
+    font-size: 1rem;
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.875rem;
+    }
+}
+@mixin font-caption {}
+@mixin font-button {}
+@mixin font-link {}
+@mixin font-code {
+    font-size: 1rem;
+    color: #fff;
+}

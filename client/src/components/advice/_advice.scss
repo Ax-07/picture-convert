@@ -1,74 +1,48 @@
-/* Section Styling */
 .advice {
-    width: 100%;
+  @include flex(column, center, center, 50px);
+  width: 100%;
 
-  }
-  
-  /* Title Styling */
-  .advice__title {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
+  @media (max-width: 600px) {
+    padding: 10px;
   }
 
-  .advice__sub-title {
-    font-size: 1.5em;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
+  &__title {
+    @include font-title-section;
   }
-  
-  /* List Styling */
-  .advice ul {
-    list-style: none;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    background: linear-gradient(-66deg, #666666, #000000);
 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  &__sub-title {
+    @include font-subtitle-section;
   }
-  
-  .advice li {
-    margin-bottom: 15px;
-    padding-left: 20px;
+
+  &__list {
+    @include flex(column, center, flex-start, 20px);
+    @include boxStyle;
+  }
+
+  &__item {
     position: relative;
     color: #fff;
+    padding-left: 20px;
+
+    &::before {
+      content: '✔';
+      color: $color-secondary;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2em;
+    }
   }
-  
-  .advice li::before {
-    content: '✔';
-    color: $color-secondary;;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.2em;
-  }
-  
-  /* Strong Text Styling */
-  .advice strong {
+
+  & strong {
     color: $color-secondary;
   }
-  
-  .advice pre {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+  & pre {
+    @include font-code;
     color: #f4f4f4;
     padding: 20px;
     border-radius: 8px;
     overflow-x: auto;
-    font-size: 1rem;
   }
-  
-  /* Media Queries for Responsive Design */
-  @media (max-width: 600px) {
-    .advice {
-      padding: 10px;
-    }
-  
-    .advice__title {
-      font-size: 1.5em;
-    }
-  }
+}

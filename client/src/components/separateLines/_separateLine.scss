@@ -1,8 +1,5 @@
 .separateLine {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    @include flex(row, center, center, 20px);
     margin: 1rem 0;
     width: 100%;
 

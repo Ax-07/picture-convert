@@ -1,51 +1,31 @@
 .about {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    @include flex(column, center, center, 50px);
     text-align: left;
     padding: 20px 50px;
 
     &__title {
-        margin-bottom: 30px;
-        font-size: 2.5em;
-        color: #333;
-
-        @media screen and (max-width: 768px) {
-            font-size: 2em;
-        }
+        @include font-title-section;
     }
 
     &__description {
-        font-size: 1.1em;
-        color: #000;
-        margin-bottom: 20px;
-        line-height: 1.6;
+        @include font-body;
+    }
 
-        @media screen and (max-width: 768px) {
-            font-size: 1em;
+    &__features {
+        &-list {
+            @include flex(column, center, center, 20px);
         }
-    }
-    &__btn {
-        display: inline-block;
-    }
-
-    ul {
-        li {
-            margin-bottom: 20px;
+        &-item {
+            width: 100%;
         }
     }
 
     .feature {
-        display: flex;
-        margin: 25px;
-        padding: 20px;
-        background: linear-gradient(-66deg, #666666, #000000);
+        @include flex(row, flex-start, center, 20px);
+        @include boxStyle;
 
         @media screen and (max-width: 430px) {
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            margin: 0;
+            @include flex(column, center, center, 20px);
         }
 
         &__icon {
@@ -55,34 +35,20 @@
         }
 
         &__content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 10px;
-            margin-left: 20px;
+            @include flex(column, center, flex-start, 0px);
 
             @media screen and (max-width: 430px) {
                 text-align: center;
-                margin-left: 0;
             }
         }
 
         &__title {
-            font-size: 1.5em;
-            color: #ff6600;
-
-            @media screen and (max-width: 768px) {
-                font-size: 1.2em;
-            }
+            @include font-title-card;
         }
 
         &__description {
+            @include font-description;
             color: #fff;
-
-            @media screen and (max-width: 768px) {
-                font-size: 0.9em;
-            }
         }
-    
     }
 }

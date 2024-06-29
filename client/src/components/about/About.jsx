@@ -36,9 +36,9 @@ export const About = () => {
         <p className="about__description">
           <strong>Picture convert</strong> est conçu pour vous offrir une solution simple, rapide et efficace pour gérer vos images en ligne. Voici pourquoi vous devriez choisir notre application :
         </p>
-        <ul>
+        <ul className="about__features-list">
           {features.map((feature, index) => (
-            <li key={index}>
+            <li key={index} className="about__features-item">
               <Feature
                 title={feature.title}
                 description={feature.description}

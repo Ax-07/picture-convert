@@ -1,103 +1,80 @@
 .hero {
   position: relative;
+  @include flex(row, center, center, 0);
+  padding: 50px 100px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 !important;
+
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+  }
+
+  &__bg-image {
+    @include container-fill-absolute;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 100px;
-    text-align: center;
-    width: 100%;
-    height: 100vh;
-    margin: 0 !important;
-    color: white;
-    background: rgba($color: #000000, $alpha: 1);
+    z-index: 0;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__mask {
+    @include container-fill-absolute;
+    background: rgba($color: #8B6D41, $alpha: 0.2);
+    z-index: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    @include flex(column, flex-start, flex-end, 0);
+    max-width: 800px;
+    margin: 0 auto;
 
     @media (max-width: 1024px) {
-      padding: 50px 20px;
-    }
-
-    &__bg-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      object-fit: cover;
-      
-      & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    &__mask {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba($color: #8B6D41, $alpha: 0.2);
-      z-index: 0;
-    }
-  
-    &__content {
-      position: relative;
-      z-index: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-end;
-      max-width: 800px;
-      margin: 0 auto;
-
-      @media (max-width: 1024px) {
-        align-items: center;
-      }
-    }
-
-    &__cta {
-      display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 20px;
-      margin: 20px;
-
-      @media (max-width: 1024px) {
-        flex-direction: column;
-      }
     }
+  }
 
-    &__column {
-      position: relative;
-      flex: 1;
-      &-left {}
-      &-right {
-        @media (max-width: 1024px) {
-          display: none;
-        }
-      }
+  &__cta {
+    @include flex(row, center, center, 20px);
+    margin: 20px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
     }
-  
-    h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-align: left;
+  }
 
-      @media (max-width: 1024px) {
-        font-size: 2em;
-      }
-    }
-  
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-        text-align: left;
+  &__column {
+    position: relative;
+    flex: 1;
+    @include flex(column, center, center, 0);
 
+    &-left {}
+    &-right {
       @media (max-width: 1024px) {
-        font-size: 1em;
+        display: none;
       }
     }
   }
+
+  &__title {
+    @include font-title-section;
+    color: #fff;
+    text-align: left;
+  }
+
+  &__subtitle {
+    @include font-subtitle-section;
+    color: #fff;
+    text-align: left;
+
+    @media (max-width: 1024px) {
+      font-size: 1em;
+    }
+  }
+}

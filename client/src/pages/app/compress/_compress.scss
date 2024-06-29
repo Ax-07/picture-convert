@@ -15,30 +15,21 @@
     &__header {
         position: relative;
         z-index: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
+        @include flex(column, space-between, center, 1rem);
         width: 100%;
         padding: 1rem; 
         margin-bottom: 0.5rem;
         border: 1px solid $color-dark;
         border-radius: 5px;
-        background-color: $color-white;
         box-shadow: $box-shadow-dark;
         background: linear-gradient(84deg, #000 15%, #666 100%);
-        backdrop-filter: blur(3px);
     }
 
 
     &__form {
         position: relative;
         z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        @include flex(column, center, center);
         width: 100%;
         padding: 50px 10px; 
         border: 1px solid $color-dark;
@@ -49,6 +40,10 @@
         
         & h3 {
             color: $color-secondary;
+        }
+
+        & p {
+            color: #fff;
         }
 
         & > .separateLine {
@@ -63,11 +58,8 @@
 
     &__comparator {
         position: relative;
-        display: flex;
-        flex-direction: column;
+        @include flex(column, center, center);
         width: 100%;
-        justify-content: center;
-        align-items: center;
         max-width: 100%;
         padding: 1rem; 
         border: 1px solid $color-dark;
@@ -77,10 +69,10 @@
     }
 
     &__infos-wrapper {
-        display: flex;
-        justify-content: space-between;
+        @include flex(row, space-between, center);
         width: 600px;
         padding: 0 1rem;
         color: #fff;
+        margin-bottom: 20px;
     }
 }

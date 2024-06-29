@@ -31,7 +31,7 @@ export const useImageProcessing = (images, quality, sizes) => {
     const [downloadUrls, setDownloadUrls] = useState(null);
     const [downloadUrl, setDownloadUrl] = useState(null);
     const location = useLocation();
-    const { setComparedImageProperty} = useContext(PictureContext);
+    const { setComparedImageProperty, resetPictures} = useContext(PictureContext);
 
     const onReset = () => {
         if (abortControllerRef.current) {
@@ -101,7 +101,7 @@ export const useImageProcessing = (images, quality, sizes) => {
         return () => clearTimeout(timer);
     }, [isLoading, setIsError]);
 
-    return { response, downloadUrl, downloadUrls, isError, isLoading, onSubmit, onReset, setIsError, setIsLoading };
+    return { response, downloadUrl, downloadUrls, isError, isLoading, onSubmit, onReset, setIsError, setIsLoading, setDownloadUrls };
 };
 
 useImageProcessing.propTypes = {

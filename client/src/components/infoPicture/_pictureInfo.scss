@@ -1,0 +1,8 @@
+.picture-info {
+    &__title {
+        @include font-title-card;
+    }
+    &__description {
+        color: #fff;
+    }
+}

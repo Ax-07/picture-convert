@@ -22,6 +22,7 @@ export const MultiSize = () => {
 
   const {
     downloadUrls, 
+    setDownloadUrls,
     isError, 
     isLoading, 
     onSubmit, 

@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useRef } from "react";
-import { ImageZoom } from "../imageZoom/ImageZoom";
 
 /**
  *
@@ -71,7 +70,7 @@ export const ImgComparator = ({ original, compared }) => {
 
   return (
     <div
-      className="image-comparator"
+      className="image-comparator damier-background"
       data-testid="image-comparator"
       ref={comparatorRef}
     >

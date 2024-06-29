@@ -4,7 +4,7 @@ import { icons } from "../../assets/icons/icons";
 export const HowItWorks = () => {
     return (
       <section id="how-it-works" className="how-it-works">
-        <h2>Comment ça marche ?</h2>
+        <h2 className="how-it-works__title">Comment ça marche ?</h2>
         <div className="step__list">
           <Step
             title="Importez une image"

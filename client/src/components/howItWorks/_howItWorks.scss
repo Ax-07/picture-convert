@@ -1,10 +1,9 @@
 .how-it-works {
+  @include flex(column, center, center, 20px);
     max-width: 1440px;
   
-    h2 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 40px;
+    &__title {
+      @include font-title-section;
 
       @media screen and (max-width: 768px) {
         font-size: 2em;
@@ -12,10 +11,8 @@
     }
   
     .step {
-      background: linear-gradient(-66deg, #666666, #000000);
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 1);
+      @include flex(column, center, center, 15px);
+      @include boxStyle;
       flex-basis: 30%;
       margin-bottom: 20px;
       text-align: center;
@@ -32,22 +29,14 @@
       }
 
       svg {
-        font-size: 3em;
-        margin-bottom: 20px;
-        color: white;
+        font-size: 3rem;
         @media screen and (max-width: 768px) {
           font-size: 2em;
         }
       }
 
       h3 {
-        font-size: 1.5em;
-        margin-bottom: 15px;
-        color: $color-secondary;
-
-        @media screen and (max-width: 768px) {
-          font-size: 1.2em;
-        }
+        @include font-title-card;
       }
   
       p {

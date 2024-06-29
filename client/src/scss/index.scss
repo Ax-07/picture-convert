@@ -1,5 +1,7 @@
 // globals styles
 @import './global/theme.scss';
+@import './global/mixin.scss';
+@import './global/fonts.scss';
 @import './global/reset.scss';
 
 // layouts
@@ -20,6 +22,7 @@
 @import '../components/howItWorks/howItWorks.scss';
 @import '../components/advice/advice.scss';
 @import '../components/btnBurger/BtnBurger.scss';
+@import '../components/infoPicture/pictureInfo.scss';
 
 // pages
 @import '../pages/app/compress/compress.scss';

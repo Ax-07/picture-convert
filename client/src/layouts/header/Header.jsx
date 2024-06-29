@@ -33,7 +33,7 @@ export const Header = () => {
     <header className="header" data-testid="header">
       <div className="header__nav">
         <Link to="/#" className={`navbar__link`} onClick={scrollToTop}>
-          <h1>{logo}</h1>
+          <h1 className="navbar__link-logo">{logo}</h1>
         </Link>
         { desktopView && <Navbar navData={navData} /> }
       </div>

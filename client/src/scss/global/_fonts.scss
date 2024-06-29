@@ -52,7 +52,10 @@ h1,h2,h3,h4,h5,h6,p {
 }
 @mixin font-caption {}
 @mixin font-button {}
-@mixin font-link {}
+@mixin font-link {
+    font-size: 1rem;
+    font-weight: bold;
+}
 @mixin font-code {
     font-size: 1rem;
     color: #fff;

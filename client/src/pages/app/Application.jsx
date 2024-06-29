@@ -41,8 +41,8 @@ export const Application = () => {
 const DefaultMessage = () => {
   return (
     <section>
-      <h1>Bienvenue !</h1>
-      <p>Veuillez sélectionner une option dans le menu.</p>
+      <h1 className="application__title">Bienvenue !</h1>
+      <p className="application__subtitle">Veuillez sélectionner une option dans le menu.</p>
       <div className="application__list">
       <Link to='/application/convert' className='application__btn-link'>
         <img src={refresh} alt="icon liens convert" />

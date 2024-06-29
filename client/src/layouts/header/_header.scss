@@ -2,14 +2,13 @@
     position: fixed;
     z-index: 2;
     top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(row, space-between, center);
     width: 100%;
     padding: 0px 20px;
     backdrop-filter: blur(10px);
 
     &__nav {
+        @include flex(row, center, baseline);
         display: flex;
         align-items: baseline;
         gap: 20px;

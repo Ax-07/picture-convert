@@ -1,24 +1,21 @@
 .navbar {
     &__list {
         @include flex(row, space-between, baseline, 1rem);
-
         height: 100%;
-        padding: 0 1rem;
-        font-size: 1rem;
-        font-weight: 600;
+        @include font-link;
 
         &--column {
             flex-direction: column;
         }
+
         @media screen and (max-width: 768px) {
             flex-direction: column;
         }
+
         &--row {
             flex-direction: row;
         }
     }
-
-    &__item {}
 
     &__link {
         &-logo {
@@ -34,7 +31,6 @@
                 animation: underline 0.3s ease-in-out forwards;
             }
         }
-
     }
 }
 
@@ -42,6 +38,7 @@
     0% {
         width: 0;
     }
+
     100% {
         width: 100%;
     }

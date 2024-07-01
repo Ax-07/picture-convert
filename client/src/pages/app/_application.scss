@@ -1,10 +1,37 @@
 .application {
+  margin: 0;
   margin-top: 58px;
 
-  &__content {
-    width: 100%;
-    @include flex(column, center, center);
+   h1 {
+    @include font-title-section;
   }
+  p {
+    @include font-subtitle-section;
+  }
+  
+  &__dashboard {
+    position: relative;
+    @include flex(row, center, flex-start);
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__menu {
+    @include flex(column, center, center, 0);
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+
 
   &__list {
     @include flex(row, center, center, 20px);

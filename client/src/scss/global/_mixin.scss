@@ -22,7 +22,6 @@
 }
 
 @mixin boxStyle {
-    padding: 20px;
     border: 2px solid transparent;
     border-radius: 8px;
     background: linear-gradient(-66deg, #666666, #000000) padding-box, linear-gradient(-5deg, #000 15%, #666 100%) border-box;
@@ -52,4 +51,27 @@
           repeating-conic-gradient(from $angle1 at 50% 50%, $spectrum) 50% 50% / 200% 200% border-box;
       }
     }
-  }
+}
+
+@mixin CustomInputNumber {
+    text-align: center;
+        font-size: 1rem;
+        border: none;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow-light;
+
+        &:focus {
+            outline-color: $color-secondary;
+            box-shadow: $box-shadow-secondary;
+        }
+
+        &:hover {
+            box-shadow: $box-shadow-secondary;
+        }
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+}

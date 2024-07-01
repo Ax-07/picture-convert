@@ -5,3 +5,4 @@ export const BtnStart = () => {
         <NavLink to="/application" className="hero__link btn hero__btn-start">Commencer</NavLink>
     );
 };
+

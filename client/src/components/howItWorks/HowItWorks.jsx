@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
-import { icons } from "../../assets/icons/icons";
+import cloudUpload from "../../assets/svg/faCloudArrowUp.svg";
+import sliders from '../../assets/svg/faSliders.svg';
+import download from '../../assets/svg/faDownload.svg';
 
 export const HowItWorks = () => {
     return (
@@ -9,17 +11,17 @@ export const HowItWorks = () => {
           <Step
             title="Importez une image"
             description="Sélectionnez une image que vous souhaitez optimiser depuis votre appareil."
-            icon={icons.cloudUpload}
+            icon={cloudUpload}
           />
           <Step
             title="Choisissez les options"
             description="Sélectionnez les options de conversion, compression ou de redimensionnement."
-            icon={icons.sliders}
+            icon={sliders}
           />
           <Step
             title="Téléchargez vos images"
             description="Récupérez vos images optimisées prêtes à être utilisées sur votre site web."
-            icon={icons.download}
+            icon={download}
           />
         </div>
       </section>
@@ -29,7 +31,7 @@ export const HowItWorks = () => {
 const Step = ({ title, description, icon }) => {
     return (
       <div className="step">
-        {icon}
+        <img src={icon} alt={title} />
         <h3>{title}</h3>
         <p>{description}</p>
       </div>

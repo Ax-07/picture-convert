@@ -5,6 +5,7 @@ export const SliderRange = ({ min, max, value, setValue }) => {
     <div className="sliderRange" data-testid="sliderRange">
       <input
         type="number"
+        className="sliderRange__value"
         onChange={(e) => setValue(Number(e.target.value))}
         id="quality"
         min={1}

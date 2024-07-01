@@ -17,6 +17,7 @@
   &__list {
     @include flex(column, center, flex-start, 20px);
     @include boxStyle;
+    padding: 20px;
   }
 
   &__item {

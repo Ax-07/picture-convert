@@ -1321,6 +1321,33 @@ code {
   animation: none;
 }
 
+.btn-menu {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: linear-gradient(-66deg, #666666, #000000) padding-box, linear-gradient(-5deg, #000 15%, #666 100%) border-box;
+  box-shadow: 0 0 10px 0px rgba(51, 51, 51, 0.8);
+  width: 220px;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 20px;
+}
+.btn-menu:hover {
+  border: 2px solid transparent;
+  animation: rotateGradientPad 2s ease-in-out infinite;
+  box-shadow: 0 0 10px 0px rgba(255, 102, 0, 0.8);
+}
+.btn-menu img {
+  width: 25px;
+}
+.btn-menu--active {
+  color: #ff6600;
+  box-shadow: 0px 0px 10px 0px #ff9900;
+}
+
 @keyframes rotateGradientBtn {
   0% {
     background: linear-gradient(calc(-66deg + 0deg), #ff6600 0%, #ff9900 100%) padding-box, linear-gradient(calc(140deg - 0deg), #ff6600 0%, #ff9900 0%) border-box;
@@ -4864,6 +4891,26 @@ code {
   width: 100%;
   max-width: 350px;
 }
+.sliderRange__value {
+  width: 100px;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px 0px rgba(51, 51, 51, 0.2);
+}
+.sliderRange__value:focus {
+  outline-color: #ff6600;
+  box-shadow: 0 0 10px 0px rgba(255, 102, 0, 0.8);
+}
+.sliderRange__value:hover {
+  box-shadow: 0 0 10px 0px rgba(255, 102, 0, 0.8);
+}
+.sliderRange__value::-webkit-inner-spin-button, .sliderRange__value::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .sliderRange__input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -5119,11 +5166,11 @@ code {
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  padding: 20px;
   border: 2px solid transparent;
   border-radius: 8px;
   background: linear-gradient(-66deg, #666666, #000000) padding-box, linear-gradient(-5deg, #000 15%, #666 100%) border-box;
   box-shadow: 0 0 10px 0px rgba(51, 51, 51, 0.8);
+  padding: 20px;
 }
 .about .feature:hover {
   border: 2px solid transparent;
@@ -5206,12 +5253,12 @@ code {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  padding: 20px;
   border: 2px solid transparent;
   border-radius: 8px;
   background: linear-gradient(-66deg, #666666, #000000) padding-box, linear-gradient(-5deg, #000 15%, #666 100%) border-box;
   box-shadow: 0 0 10px 0px rgba(51, 51, 51, 0.8);
   flex-basis: 30%;
+  padding: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -5231,12 +5278,12 @@ code {
     padding: 0 20px;
   }
 }
-.how-it-works .step svg {
-  font-size: 3rem;
+.how-it-works .step img {
+  height: 3rem;
 }
 @media screen and (max-width: 768px) {
-  .how-it-works .step svg {
-    font-size: 2em;
+  .how-it-works .step img {
+    height: 2em;
   }
 }
 .how-it-works .step h3 {
@@ -5298,11 +5345,11 @@ code {
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  padding: 20px;
   border: 2px solid transparent;
   border-radius: 8px;
   background: linear-gradient(-66deg, #666666, #000000) padding-box, linear-gradient(-5deg, #000 15%, #666 100%) border-box;
   box-shadow: 0 0 10px 0px rgba(51, 51, 51, 0.8);
+  padding: 20px;
 }
 .advice__list:hover {
   border: 2px solid transparent;
@@ -5478,7 +5525,7 @@ code {
   position: relative;
   display: flex;
   width: 100%;
-  max-width: 1024px;
+  margin: 0;
 }
 .compress-picture__title {
   color: #ff6600;
@@ -5580,15 +5627,57 @@ code {
 }
 
 .application {
+  margin: 0;
   margin-top: 58px;
 }
-.application__content {
+.application h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  .application h1 {
+    font-size: 2rem;
+  }
+}
+.application p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .application p {
+    font-size: 1rem;
+  }
+}
+.application__dashboard {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
   width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .application__dashboard {
+    flex-direction: column;
+  }
+}
+.application__menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .application__menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 .application__list {
   display: flex;
@@ -5610,7 +5699,6 @@ code {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 20px;
   border: 2px solid transparent;
   border-radius: 8px;
   background: linear-gradient(-66deg, #666666, #000000) padding-box, linear-gradient(-5deg, #000 15%, #666 100%) border-box;

@@ -1,27 +1,30 @@
 import PropTypes from "prop-types";
-import { icons } from "../../assets/icons/icons";
+import cursorArrow from "../../assets/svg/cursorarrow.rays.svg";
+import photoStack from "../../assets/svg/photo.stack.svg";
+import gaugeOpen from "../../assets/svg/gauge.open.with.lines.needle.33percent.and.arrowtriangle.from.0percent.to.50percent.svg";
+import faStar from "../../assets/svg/faStar.svg";
 
 export const About = () => {
   const features = [
     {
       title: "Facilité d’utilisation",
       description: "Une interface intuitive qui vous permet de convertir, compresser et redimensionner vos images en quelques clics.",
-      icon: icons.cursorArrow,
+      icon: cursorArrow,
     },
     {
       title: "Qualité optimale",
       description: "Des algorithmes avancés qui garantissent une qualité optimale pour vos images, même après compression.",
-      icon: icons.faStar,
+      icon: faStar,
     },
     {
       title: "Formats multiples",
       description: "Support de plusieurs formats d'image, y compris JPG, PNG et le performant WebP.",
-      icon: icons.photoStack,
+      icon: photoStack,
     },
     {
       title: "Optimisation pour le web",
       description: "Réduisez les temps de chargement de vos pages web et améliorez l'expérience utilisateur.",
-      icon: icons.gaugeOpen,
+      icon: gaugeOpen,
     },
     // {
     //   title: "Gain de temps",

@@ -2,7 +2,8 @@
     position: relative;
     display: flex;
     width: 100%;
-    max-width: 1024px;
+    margin: 0;
+    // max-width: 1024px;
 
     &__title {
         color: $color-secondary;

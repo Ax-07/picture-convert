@@ -25,25 +25,6 @@
     &__input {
         width: 100%;
         flex: 1;
-        text-align: center;
-        font-size: 1rem;
-        border: none;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow-light;
-
-        &:focus {
-            outline-color: $color-secondary;
-            box-shadow: $box-shadow-secondary;
-        }
-
-        &:hover {
-            box-shadow: $box-shadow-secondary;
-        }
-
-        &::-webkit-inner-spin-button,
-        &::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+        @include CustomInputNumber;
     }
 }

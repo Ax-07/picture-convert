@@ -23,6 +23,7 @@
     .feature {
         @include flex(row, flex-start, center, 20px);
         @include boxStyle;
+        padding: 20px;
 
         @media screen and (max-width: 430px) {
             @include flex(column, center, center, 20px);

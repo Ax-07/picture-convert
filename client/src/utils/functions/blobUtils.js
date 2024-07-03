@@ -11,6 +11,18 @@ export const createBlobUrl = (imageData) => {
 };
 
 /**
+ * @description Crée une URL de blob à partir de données de fichier.
+ * @param {object} fileData - Les données du fichier.
+ * @returns L'URL de l'objet blob créée pour le fichier.
+ */
+
+export const createZipUrl = (zipData) => {
+    const blob = new Blob([new Uint8Array(zipData.buffer.data)], { type: "application/zip" });
+    const url = window.URL.createObjectURL(blob);
+    return url;
+}
+
+/**
  * @description Crée des URLs de téléchargement pour les images compressées.
  * @param {Array} response - Réponse de l'API contenant les données des images compressées. 
  * @returns Objet contenant les URLs de téléchargement et les noms de fichiers des images compressées pour mobile, tablette et bureau.
@@ -21,6 +33,7 @@ export const createDownloadUrls = (response) => {
         mobile: { url: "", name: "" },
         tablet: { url: "", name: "" },
         desktop: { url: "", name: "" },
+        zip: { url: "", name: "" },
     };
 
     response.files?.forEach((res) => {
@@ -33,6 +46,9 @@ export const createDownloadUrls = (response) => {
         downloadUrls.desktop.name = res.desktop.originalname;
         }
     });
+
+    downloadUrls.zip.url = createZipUrl(response.zip);
+    downloadUrls.zip.name = response.zip.originalname;
 
     return downloadUrls;
 };

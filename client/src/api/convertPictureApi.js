@@ -66,27 +66,3 @@ export const multiSizePicture = async (form_data) => {
         throw new Error(`Erreur lors de la création des images: ${error.message}`);
     }
 }
-
-export const downloadZip = async () => {
-    try {
-        const response = await fetch(`${serverHost}/api/download/zip`, {
-            method: 'GET',
-        });
-
-        if (!response.ok) {
-            throw new Error(`Erreur lors du téléchargement du fichier: ${response.statusText}`);
-        }
-
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.style.display = 'none';
-        a.href = url;
-        a.download = 'images.zip';
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-    } catch (error) {
-        console.error(`Erreur lors du téléchargement du fichier: ${error.message}`);
-    }
-};

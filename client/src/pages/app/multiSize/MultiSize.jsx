@@ -8,7 +8,6 @@ import { SizeSelector } from "../../../components/SizeSelector/SizeSelector";
 import { PropagateLoader } from "react-spinners";
 import { PictureContext } from "../../../context/PicturesContext";
 import { useImageProcessing } from "../../../utils/hooks/useImageProcessing";
-import { downloadZip } from "../../../api/convertPictureApi";
 
 export const MultiSize = () => {
   const {
@@ -29,10 +28,6 @@ export const MultiSize = () => {
   const onCancel = () => {
     onReset();
     resetPictures();
-  };
-
-  const onDownloadZip = async () => {
-    await downloadZip();
   };
 
   return (
@@ -67,13 +62,6 @@ export const MultiSize = () => {
                   </span>
                 </a>
               ))}
-            <span
-              className="btn"
-              onClick={onDownloadZip}
-              role="download-zip-btn"
-            >
-              Télécharger toutes les images
-            </span>
             <span className="btn" onClick={onCancel} role="cancel-btn">
               Annuler
             </span>

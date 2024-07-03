@@ -31,7 +31,7 @@ export const useImageProcessing = (images, quality, sizes) => {
     const [downloadUrls, setDownloadUrls] = useState(null);
     const [downloadUrl, setDownloadUrl] = useState(null);
     const location = useLocation();
-    const { setComparedImageProperty, resetPictures} = useContext(PictureContext);
+    const { setComparedImageProperty} = useContext(PictureContext);
 
     const onReset = () => {
         if (abortControllerRef.current) {

@@ -2,7 +2,6 @@ const multer = require('multer');
 const sharp = require('sharp');
 const path = require('path');
 const archiver = require('archiver');
-const fs = require('fs');
 const { WritableStreamBuffer } = require('stream-buffers');
 
 const upload = multer({
@@ -21,6 +20,7 @@ const processImage = async (file, size, quality) => {
 }
 
 module.exports = (req, res, next) => {
+    let baseName;
     upload(req, res, async function (err) {
         // verifie si multer a rencontré une erreur lors de l'upload des fichiers
         if (err instanceof multer.MulterError) {
@@ -42,7 +42,7 @@ module.exports = (req, res, next) => {
                     const tabletImage = await processImage(file, TABLET_SIZE, IMAGE_QUALITY);
                     const mobileImage = await processImage(file, MOBILE_SIZE, IMAGE_QUALITY);
 
-                    const baseName = path.parse(file.originalname).name;
+                    baseName = path.parse(file.originalname).name;
 
                     return {
                         desktop: {

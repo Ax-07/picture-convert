@@ -5,15 +5,14 @@
     flex-direction: column;
     width: 100%;
     max-width: 600px;
-    margin-bottom: 30px;
     border: 1px solid $color-dark;
     border-radius: 5px;
     background: linear-gradient(40deg, $color-light 70%, $color-dark 200%);
     box-shadow: 0px 0px 10px 0px $color-dark;
     overflow: hidden;
     backdrop-filter: blur(05px);
+
     &__wrapper {
-        // @include flex(column, center);
         position: relative;
         z-index: 2;
         display: flex;

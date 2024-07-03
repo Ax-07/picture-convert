@@ -9,13 +9,14 @@ import compress from "../../assets/svg/faCompressArrowsAlt.svg";
 import photoStack from "../../assets/svg/photo.stack.svg";
 import { Menu } from "../../components/navigation/menu/Menu";
 import home from "../../assets/svg/faHome.svg";
+import { IconsHome, IconCompress, IconPhotoStack, IconRefresh } from "../../components/IconsCompononents/IconsComponents";
 
 
 const navData = [
-  { id: 1, name: "Accueil", link: "/application", icon: home },
-  { id: 2, name: "Convertir", link: "/application/convert", icon: refresh},
-  { id: 3, name: "Compresser", link: "/application/compress", icon: compress},
-  { id: 4, name: "Multi-Size", link: "/application/multi-size", icon: photoStack},
+  { id: 1, name: "Accueil", link: "/application", icon: <IconsHome /> },
+  { id: 2, name: "Convertir", link: "/application/convert", icon: <IconRefresh />},
+  { id: 3, name: "Compresser", link: "/application/compress", icon: <IconCompress />},
+  { id: 4, name: "Multi-Size", link: "/application/multi-size", icon: <IconPhotoStack />},
 ];
 
 export const Application = () => {

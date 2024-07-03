@@ -31,7 +31,13 @@ export const Convert = () => {
 
   return (
     <section className="compress-picture" data-testid="convert-picture">
-      <header
+      
+      <form
+        className="compress-picture__form"
+        onSubmit={onSubmit}
+        data-testid="convert-picture__form"
+      >
+        <header
         className="compress-picture__header"
         data-testid="convert-picture__header"
       >
@@ -40,11 +46,6 @@ export const Convert = () => {
           Convertissez simplement vos images au format webp.
         </p>
       </header>
-      <form
-        className="compress-picture__form"
-        onSubmit={onSubmit}
-        data-testid="convert-picture__form"
-      >
         <AddPicture setImages={setImages} cancel={onCancel} />
         {downloadUrl && !isLoading ? (
           <>

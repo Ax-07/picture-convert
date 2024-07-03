@@ -37,14 +37,18 @@
   @include flex(row, flex-start, center, 10px);
   padding: 5px 20px;
 
-  & img {
+  & svg {
     width: 25px;
+    height: 25px;
   }
 
    &--active {
     color: $color-secondary;
     box-shadow: 0px 0px 10px 0px $color-secondary-light;
   
+    path {
+      fill: $color-secondary;
+    }
   }
 }
 

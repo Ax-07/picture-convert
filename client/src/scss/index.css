@@ -1340,12 +1340,16 @@ code {
   animation: rotateGradientPad 2s ease-in-out infinite;
   box-shadow: 0 0 10px 0px rgba(255, 102, 0, 0.8);
 }
-.btn-menu img {
+.btn-menu svg {
   width: 25px;
+  height: 25px;
 }
 .btn-menu--active {
   color: #ff6600;
   box-shadow: 0px 0px 10px 0px #ff9900;
+}
+.btn-menu--active path {
+  fill: #ff6600;
 }
 
 @keyframes rotateGradientBtn {
@@ -3556,7 +3560,6 @@ code {
   flex-direction: column;
   width: 100%;
   max-width: 600px;
-  margin-bottom: 30px;
   border: 1px solid #333;
   border-radius: 5px;
   background: linear-gradient(40deg, #f4f4f4 70%, #333 200%);
@@ -4970,8 +4973,6 @@ code {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 0.5rem;
-  margin: 0.25rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
@@ -5204,7 +5205,7 @@ code {
   }
 }
 .about .feature__title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 10px;
   color: #ff6600;
@@ -5287,7 +5288,7 @@ code {
   }
 }
 .how-it-works .step h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 10px;
   color: #ff6600;
@@ -5508,7 +5509,7 @@ code {
   }
 }
 .picture-info__title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 10px;
   color: #ff6600;
@@ -5541,14 +5542,9 @@ code {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 0;
   width: 100%;
   padding: 1rem;
-  margin-bottom: 0.5rem;
-  border: 1px solid #333;
-  border-radius: 5px;
-  box-shadow: 0 0 10px 0px rgba(51, 51, 51, 0.8);
-  background: linear-gradient(84deg, #000 15%, #666 100%);
 }
 .compress-picture__form {
   position: relative;
@@ -5559,7 +5555,7 @@ code {
   align-items: center;
   gap: 0;
   width: 100%;
-  padding: 50px 10px;
+  padding: 15px;
   border: 1px solid #333;
   border-radius: 5px;
   background: linear-gradient(-66deg, #666666, #000000);
@@ -5567,10 +5563,25 @@ code {
   color: #fff;
 }
 .compress-picture__form h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
   color: #ff6600;
+  color: #ff6600;
+}
+@media screen and (max-width: 768px) {
+  .compress-picture__form h3 {
+    font-size: 1.25rem;
+  }
 }
 .compress-picture__form p {
   color: #fff;
+  font-size: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .compress-picture__form p {
+    font-size: 0.875rem;
+  }
 }
 .compress-picture__form > .separateLine > .separateLine__line {
   border-color: #fff;
@@ -5625,28 +5636,29 @@ code {
 }
 .home__container-border {
   width: 100%;
+  height: 45px;
 }
 
 .application {
   margin: 0;
   margin-top: 58px;
 }
-.application h1 {
+.application__title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
-  .application h1 {
+  .application__title {
     font-size: 2rem;
   }
 }
-.application p {
+.application__subtitle {
   font-size: 1.25rem;
   margin-bottom: 20px;
 }
 @media screen and (max-width: 768px) {
-  .application p {
+  .application__subtitle {
     font-size: 1rem;
   }
 }

@@ -2,10 +2,10 @@
   margin: 0;
   margin-top: 58px;
 
-   h1 {
+   &__title {
     @include font-title-section;
   }
-  p {
+  &__subtitle {
     @include font-subtitle-section;
   }
   

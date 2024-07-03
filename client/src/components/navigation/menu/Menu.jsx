@@ -20,7 +20,7 @@ const BtnMenu = ({ data }) => {
 
     return (
         <NavLink to={data.link} className={`btn btn-menu ${activeLink === data.link ? "btn-menu--active" : ""}`}>
-            <img src={data.icon} alt={`icon ${data.name}`} />
+            {data.icon}
             {data.name}
         </NavLink>
     );

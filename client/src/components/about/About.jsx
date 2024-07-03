@@ -51,7 +51,7 @@ export const About = () => {
           ))}
         </ul>
         <p className="about__description">
-          <strong>Conclusion :</strong> Picture Convert est une solution complète pour gérer vos images en ligne. Elle vous permet de convertir, compresser et redimensionner vos images avec facilité, tout en garantissant une qualité optimale et des performances web améliorées.
+          Picture Convert est une solution complète pour gérer vos images en ligne. Elle vous permet de convertir, compresser et redimensionner vos images avec facilité, tout en garantissant une qualité optimale et des performances web améliorées.
         </p>
     </section>
   );

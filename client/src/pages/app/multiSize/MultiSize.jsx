@@ -12,23 +12,20 @@ import { downloadZip } from "../../../api/convertPictureApi";
 
 export const MultiSize = () => {
   const {
-    images, setImages,
-    quality, setQuality,
-    sizes, setSizes,
+    images,
+    setImages,
+    quality,
+    setQuality,
+    sizes,
+    setSizes,
     originalPictureProperty,
     comparedImageProperty,
     resetPictures,
   } = useContext(PictureContext);
 
-  const {
-    downloadUrls, 
-    setDownloadUrls,
-    isError, 
-    isLoading, 
-    onSubmit, 
-    onReset 
-  } = useImageProcessing(images, quality, sizes);
-  
+  const { downloadUrls, isError, isLoading, onSubmit, onReset } =
+    useImageProcessing(images, quality, sizes);
+
   const onCancel = () => {
     onReset();
     resetPictures();
@@ -36,22 +33,10 @@ export const MultiSize = () => {
 
   const onDownloadZip = async () => {
     await downloadZip();
-  }
+  };
 
   return (
     <section className="compress-picture" data-testid="multiSize-picture">
-      <header
-        className="compress-picture__header"
-        data-testid="multiSize-picture__header"
-      >
-        <h2 className="compress-picture__title" role="title">
-          Compression d'images multi-tailles
-        </h2>
-        <p className="compress-picture__sub-title" role="sub-title">
-          Convertissez et compressez vos images en plusieur taille tout en conservant la
-          qualité.
-        </p>
-      </header>
       {downloadUrls && images && !isLoading ? (
         <>
           <div className="compress-picture__comparator">
@@ -59,9 +44,7 @@ export const MultiSize = () => {
               original={URL.createObjectURL(images)}
               compared={downloadUrls.desktop.url}
             />
-            <div
-              className="compress-picture__infos-wrapper"
-            >
+            <div className="compress-picture__infos-wrapper">
               <InfoPicture
                 pictureProperty={originalPictureProperty || {}}
                 type={"originale"}
@@ -84,9 +67,13 @@ export const MultiSize = () => {
                   </span>
                 </a>
               ))}
-              <span className="btn" onClick={onDownloadZip} role="download-zip-btn">
-                Télécharger toutes les images
-              </span>
+            <span
+              className="btn"
+              onClick={onDownloadZip}
+              role="download-zip-btn"
+            >
+              Télécharger toutes les images
+            </span>
             <span className="btn" onClick={onCancel} role="cancel-btn">
               Annuler
             </span>
@@ -98,8 +85,20 @@ export const MultiSize = () => {
           onSubmit={onSubmit}
           data-testid="multiSize-picture__form"
         >
-        <AddPicture setImages={setImages} cancel={onCancel} />
-        {images && (
+          <header
+            className="compress-picture__header"
+            data-testid="multiSize-picture__header"
+          >
+            <h2 className="compress-picture__title" role="title">
+              Compression d'images multi-tailles
+            </h2>
+            <p className="compress-picture__sub-title" role="sub-title">
+              Convertissez et compressez vos images en plusieur taille tout en
+              conservant la qualité.
+            </p>
+          </header>
+          <AddPicture setImages={setImages} cancel={onCancel} />
+          {images && (
             <InfoPicture
               pictureProperty={originalPictureProperty || {}}
               type={"origine"}
@@ -126,19 +125,19 @@ export const MultiSize = () => {
           {isError && <span>{"une erreur est survenue"}</span>}
           {isLoading && !isError ? (
             <>
-            <span className="btn" onClick={onCancel} role="cancel-btn">
-              Annuler
-            </span>
+              <span className="btn" onClick={onCancel} role="cancel-btn">
+                Annuler
+              </span>
               <PropagateLoader color={"#333"} loading={isLoading} size={15} />
             </>
           ) : (
             <button
-            className="btn"
-            type="submit"
-            disabled={!images}
-            data-testid="submit-btn"
-            role="convert-btn"
-          >
+              className="btn"
+              type="submit"
+              disabled={!images}
+              data-testid="submit-btn"
+              role="convert-btn"
+            >
               {"Convertir l'image"}
             </button>
           )}

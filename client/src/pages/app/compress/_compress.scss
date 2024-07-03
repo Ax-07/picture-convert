@@ -3,7 +3,6 @@
     display: flex;
     width: 100%;
     margin: 0;
-    // max-width: 1024px;
 
     &__title {
         color: $color-secondary;
@@ -16,14 +15,10 @@
     &__header {
         position: relative;
         z-index: 1;
-        @include flex(column, space-between, center, 1rem);
+        @include flex(column, space-between, center);
         width: 100%;
         padding: 1rem; 
-        margin-bottom: 0.5rem;
-        border: 1px solid $color-dark;
-        border-radius: 5px;
-        box-shadow: $box-shadow-dark;
-        background: linear-gradient(84deg, #000 15%, #666 100%);
+
     }
 
 
@@ -32,7 +27,7 @@
         z-index: 1;
         @include flex(column, center, center);
         width: 100%;
-        padding: 50px 10px; 
+        padding: 15px; 
         border: 1px solid $color-dark;
         border-radius: 5px;
         background: linear-gradient(-66deg, #666666, #000000);
@@ -40,11 +35,13 @@
         color: #fff;
         
         & h3 {
+            @include font-title-card;
             color: $color-secondary;
         }
 
         & p {
             color: #fff;
+            @include font-description;
         }
 
         & > .separateLine {

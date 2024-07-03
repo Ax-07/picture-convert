@@ -27,15 +27,7 @@ export const Compress = () => {
 
   return (
     <section className="compress-picture" data-testid="compress-picture">
-      <header
-        className="compress-picture__header"
-        data-testid="compress-picture__header"
-      >
-        <h2 className="compress-picture__title" role="title">Compresser une image</h2>
-        <p className="compress-picture__sub-title" role="sub-title">
-          Réduisez la taille de vos images tout en conservant la qualité.
-        </p>
-      </header>
+      
       {response && images && downloadUrl && !isLoading ? (
         <>
           <div
@@ -78,6 +70,15 @@ export const Compress = () => {
           onSubmit={onSubmit}
           data-testid="compress-picture__form"
         >
+          <header
+        className="compress-picture__header"
+        data-testid="compress-picture__header"
+      >
+        <h2 className="compress-picture__title" role="title">Compresser une image</h2>
+        <p className="compress-picture__sub-title" role="sub-title">
+          Réduisez la taille de vos images tout en conservant la qualité.
+        </p>
+      </header>
         <AddPicture setImages={setImages} cancel={onCancel} />
         {images && (
             <InfoPicture

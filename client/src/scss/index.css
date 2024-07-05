@@ -4858,7 +4858,6 @@ code {
   overflow: hidden;
 }
 .image-comparator__image--compared {
-  filter: hue-rotate(90deg);
   max-width: none;
 }
 .image-comparator__slider {

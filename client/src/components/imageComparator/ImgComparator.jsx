@@ -14,7 +14,6 @@ export const ImgComparator = ({ original, compared }) => {
   const overlayRef = useRef(null);
   const sliderRef = useRef(null);
   const [isSliding, setIsSliding] = useState(false);
-
   useEffect(() => {
     const comparator = comparatorRef.current;
     const overlay = overlayRef.current;

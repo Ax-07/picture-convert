@@ -14,6 +14,7 @@
     @include container-fill-absolute;
     display: flex;
     z-index: 0;
+    width: 100%;
 
     & img {
       width: 100%;

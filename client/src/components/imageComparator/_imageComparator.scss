@@ -1,7 +1,6 @@
 .image-comparator {
-  position: relative;
-  width: 600px;
-  height: 400px;
+  display: flex;
+  // height: 100%;
   margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0 0 10px 0px rgba($color-light, 0.8);
@@ -10,12 +9,17 @@
 
   &__wrapper {
     position: relative;
+    display: flex;
     height: 100%;
   }
 
   &__image {
-    @include container-fill-absolute;
-    object-fit: cover;
+    // display: flex;
+    position: relative;
+    height: 100%;
+    max-height: 550px;
+    max-width: 100%;
+    object-fit: contain;
     pointer-events: none;
   }
 
@@ -25,7 +29,8 @@
   }
 
   &__image--compared {
-    width: 600px;
+    filter: hue-rotate(90deg);
+    max-width: none;
   }
 
   &__slider {

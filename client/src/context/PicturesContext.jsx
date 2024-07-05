@@ -50,6 +50,8 @@ export const PictureProvider = ({ children }) => {
     width: 0,
     height: 0,
   });
+  const [downloadUrls, setDownloadUrls] = useState(null);
+  const [downloadUrl, setDownloadUrl] = useState(null);
 
   const resetPictures = () => {
     setPreviewPicture(null);
@@ -77,6 +79,8 @@ export const PictureProvider = ({ children }) => {
         sizes, setSizes,
         originalPictureProperty, setOriginalPictureProperty,
         comparedImageProperty, setComparedImageProperty,
+        downloadUrls, setDownloadUrls,
+        downloadUrl, setDownloadUrl,
         resetPictures,
       }}
     >

@@ -1,28 +1,66 @@
 .application {
   margin: 0;
   margin-top: 58px;
+  margin-bottom: 0px;
+  width: 100%;
+  flex: 1;
 
-   &__title {
-    @include font-title-section;
+  &__title {
+    @include font-title-card;
   }
+
   &__subtitle {
-    @include font-subtitle-section;
+    @include font-subtitle-card;
+    width: 100%;
+    padding: 0 30px;
   }
-  
+
   &__dashboard {
     position: relative;
-    @include flex(row, center, flex-start);
+    @include flex(row, flex-start, normal, 20px);
+    @include boxStyle;
     width: 100%;
-    padding: 20px;
-    margin-bottom: 20px;
+    flex: 1;
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
     }
+
+    &-sidebar {
+      width: 400px;
+      border-right: 1px solid #fff;
+      margin: 20px;
+      padding-right: 20px;
+
+      .separateLine {
+        &>.separateLine__line {
+          border-color: #fff;
+        }
+
+        &>.separateLine__icon {
+          border-color: #fff;
+        }
+      }
+    }
+
+    &-content {
+      @include flex(column, center, center);
+      flex: 1;
+      width: 100%;
+      padding: 20px;
+    }
+  }
+
+  &__pictures-infos {
+    @include flex(row, space-between, center);
+    width: 600px;
+    padding: 0 1rem;
+    color: #fff;
+    margin-bottom: 20px;
   }
 
   &__menu {
-    @include flex(column, center, center, 0);
+    @include flex(row, center, center, 0);
     margin-bottom: 20px;
 
     @media screen and (max-width: 768px) {
@@ -50,7 +88,7 @@
     height: 165px;
     transition: all 0.1s ease-in-out;
 
-    > h2 {
+    >h2 {
       color: $color-secondary;
     }
   }

@@ -1,0 +1,35 @@
+.genericPictureForm {
+
+    &__header{
+        position: relative;
+        z-index: 1;
+        @include flex(column, space-between, center);
+        width: 100%;
+
+        &-title {
+            color: $color-secondary;
+        }
+        &-subtitle {
+            color: #fff;
+        }
+    }
+    &__form {
+        position: relative;
+        z-index: 1;
+        @include flex(column, center, center);
+        width: 100%;
+        padding: 15px; 
+        color: #fff;
+        text-align: center;
+        
+        & h3 {
+            @include font-title-card;
+        }
+
+        & p {
+            color: #fff;
+            @include font-description;
+        }
+    }
+
+}

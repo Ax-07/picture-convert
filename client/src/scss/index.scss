@@ -15,6 +15,7 @@
 @import '../components/addPicture/addPictureForm.scss';
 @import '../components/imageComparator/imageComparator.scss';
 @import '../components/navigation/navbar/navbar.scss';
+@import '../components/navigation/menu/menu.scss';
 @import '../components/sliderRange/sliderRange.scss';
 @import '../components/SizeSelector/sizeSelector.scss';
 @import '../components/hero/hero.scss';
@@ -23,8 +24,8 @@
 @import '../components/advice/advice.scss';
 @import '../components/btnBurger/BtnBurger.scss';
 @import '../components/infoPicture/pictureInfo.scss';
+@import '../components/genericPictureForm/genericPictureForm.scss';
 
 // pages
-@import '../pages/app/compress/compress.scss';
 @import '../pages/home/home.scss';
 @import '../pages/app/application.scss';

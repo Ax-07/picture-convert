@@ -28,10 +28,9 @@ export const useImageProcessing = (images, quality, sizes) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const abortControllerRef = useRef(null);
-    const [downloadUrls, setDownloadUrls] = useState(null);
-    const [downloadUrl, setDownloadUrl] = useState(null);
+
     const location = useLocation();
-    const { setComparedImageProperty} = useContext(PictureContext);
+    const { setComparedImageProperty, setReponse, setDownloadUrl, setDownloadUrls} = useContext(PictureContext);
 
     const onReset = () => {
         if (abortControllerRef.current) {
@@ -49,7 +48,6 @@ export const useImageProcessing = (images, quality, sizes) => {
         setIsError(false);
         setIsLoading(true);
         abortControllerRef.current = new AbortController();
-        console.log(location.pathname)
         try {
             let response, multiSizeForm, compressForm, convertForm;
             switch (location.pathname) {
@@ -57,6 +55,7 @@ export const useImageProcessing = (images, quality, sizes) => {
                     multiSizeForm = setMultiSizeFormData(images, quality, sizes);
                     response = await multiSizePicture(multiSizeForm, abortControllerRef.current);
                     setResponse(response);
+                    setReponse(response);
                     initComparedImageProperty(response.files[0].desktop, setComparedImageProperty);
                     setDownloadUrls(createDownloadUrls(response));
                     break;
@@ -64,6 +63,7 @@ export const useImageProcessing = (images, quality, sizes) => {
                     compressForm = setCompressFormData(images, quality);
                     response = await compressPicture(compressForm, abortControllerRef.current);
                     setResponse(response);
+                    setReponse(response);
                     initComparedImageProperty(response, setComparedImageProperty)
                     setDownloadUrl(createBlobUrl(response));
                     break;
@@ -71,6 +71,7 @@ export const useImageProcessing = (images, quality, sizes) => {
                     convertForm = setConvertFormData(images);
                     response = await convertPicture(convertForm, abortControllerRef.current);
                     setResponse(response);
+                    setReponse(response);
                     setDownloadUrl(createBlobUrl(response));
                     break;
                 default:
@@ -101,7 +102,7 @@ export const useImageProcessing = (images, quality, sizes) => {
         return () => clearTimeout(timer);
     }, [isLoading, setIsError]);
 
-    return { response, downloadUrl, downloadUrls, isError, isLoading, onSubmit, onReset, setIsError, setIsLoading, setDownloadUrls };
+    return { response, isError, isLoading, onSubmit, onReset, setIsError, setIsLoading, setDownloadUrls };
 };
 
 useImageProcessing.propTypes = {

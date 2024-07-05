@@ -4,7 +4,7 @@
  * @returns L'URL de l'objet blob créée pour l'image.
  */
 export const createBlobUrl = (imageData) => {
-    console.log("imageData", imageData)
+    console.log("setDownloadUrl imageData", imageData)
     const blob = new Blob([new Uint8Array(imageData.buffer.data)], { type: "image/webp" });
     const url = window.URL.createObjectURL(blob);
     return url;
@@ -80,6 +80,7 @@ export const initPictureProperty = (image, setProperty) => {
  * @param {function} setProperty - Fonction pour mettre à jour l'état des propriétés de l'image à comparer.
  */
 export const initComparedImageProperty = (imageData, setProperty) => {
+    console.log("imageData", imageData)
     const blob = new Blob([new Uint8Array(imageData.buffer.data)], { type: "image/webp" });
     const img = new Image();
     img.src = URL.createObjectURL(blob);

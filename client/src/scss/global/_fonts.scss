@@ -39,7 +39,15 @@ h1,h2,h3,h4,h5,h6,p {
         font-size: 1.25rem;
     }
 }
-@mixin font-subtitle-card {}
+@mixin font-subtitle-card {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.875rem;
+    }
+}
 @mixin font-body {
     font-size: 1.25rem;
 }
@@ -51,7 +59,9 @@ h1,h2,h3,h4,h5,h6,p {
     }
 }
 @mixin font-caption {}
-@mixin font-button {}
+@mixin font-button {
+    font-size: 0.75rem;
+}
 @mixin font-link {
     font-size: 1rem;
     font-weight: bold;

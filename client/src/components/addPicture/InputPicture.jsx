@@ -20,13 +20,14 @@ export const InputPicture = ({ onInputChange, inputRef }) => {
         }
       }}
     >
-      <span className="add-picture__icon" role="icon">
+      <span className="add-picture__icon" role="img" aria-label="Ajouter une image">
         {icons.image}
       </span>
       <label
         htmlFor="picture"
         className="add-picture__wrapper add-picture__btn"
         role="button"
+        aria-label="Ajouter une image"
       >
         {icons.plusCircle}
       </label>
@@ -37,9 +38,9 @@ export const InputPicture = ({ onInputChange, inputRef }) => {
         className="add-picture__input"
         onChange={onInputChange}
         ref={inputRef}
-        role="addPictureButton"
+        aria-labelledby="picture"
       />
-      <p className="add-picture__txt" role="txt">
+      <p className="add-picture__txt" >
         jpg, png : 2mo max
       </p>
     </div>

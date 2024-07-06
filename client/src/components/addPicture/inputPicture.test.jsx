@@ -12,11 +12,11 @@ describe("InputPicture component", () => {
     render(<InputPicture onInputChange={onInputChange} />);
 
     // vérifie si l'élément addPicture est présent dans le DOM
-    const addPicture = screen.getByRole("addPictureButton");
+    const addPicture = screen.getByTestId("inputPicture").querySelector(".add-picture__input");
     expect(addPicture).toBeInTheDocument();
 
     // vérifie si l'élément icon est présent dans le DOM
-    const icon = screen.getByRole("icon");
+    const icon = screen.getByRole("img");
     expect(icon).toBeInTheDocument();
 
     // verifie si l'élément btn est présent dans le DOM
@@ -24,7 +24,7 @@ describe("InputPicture component", () => {
     expect(btn).toBeInTheDocument();
 
     // vérifie si l'élément txt est présent dans le DOM
-    const txt = screen.getByRole("txt");
+    const txt = screen.getByText(/jpg, png : 2mo max/i)
     expect(txt).toBeInTheDocument();
   });
 });
@@ -34,7 +34,7 @@ describe("InputPicture component", () => {
   test("checks onInputChange function call", () => {
     const onInputChange = vi.fn();
     render(<InputPicture onInputChange={onInputChange} />);
-    const input = screen.getByRole("addPictureButton");
+    const input = screen.getByTestId("inputPicture").querySelector(".add-picture__input");
     fireEvent.change(input);
 
     expect(onInputChange).toHaveBeenCalledTimes(1);

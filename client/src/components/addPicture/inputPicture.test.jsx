@@ -20,7 +20,7 @@ describe("InputPicture component", () => {
     expect(icon).toBeInTheDocument();
 
     // verifie si l'élément btn est présent dans le DOM
-    const btn = screen.getByRole("button");
+    const btn = screen.getByTestId("addPicture");
     expect(btn).toBeInTheDocument();
 
     // vérifie si l'élément txt est présent dans le DOM

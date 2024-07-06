@@ -26,7 +26,7 @@ export const InputPicture = ({ onInputChange, inputRef }) => {
       <label
         htmlFor="picture"
         className="add-picture__wrapper add-picture__btn"
-        role="button"
+        data-testid="addPicture"
         aria-label="Ajouter une image"
       >
         {icons.plusCircle}

@@ -27,6 +27,7 @@ const BtnMenu = ({ data }) => {
         activeLink === data.link ? "btn-menu--active" : ""
       }`}
       aria-label={`menu ${data.name}`}
+      data-name={data.id}
     >
       {data.icon}
     </NavLink>

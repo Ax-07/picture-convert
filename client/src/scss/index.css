@@ -1308,7 +1308,6 @@ code {
   color: #f4f4f4;
   font-weight: 600;
   cursor: pointer;
-  overflow: hidden;
   transition: all 0.15s ease-in-out;
 }
 .btn:hover {
@@ -1369,6 +1368,18 @@ code {
 .btn-menu:active path {
   fill: #ff9900;
   stroke: #ff9900;
+}
+.btn-menu:hover::after {
+  content: attr(data-name);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  color: #f4f4f4;
+  transition: all 0.15s ease-in-out;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .btn-download {

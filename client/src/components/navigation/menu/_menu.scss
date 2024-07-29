@@ -1,8 +1,9 @@
 .menu {
     margin: 20px;
+
     &__title {
         @include font-title-card;
-margin-left: 20px;
-padding: 0 20px;
+        margin-left: 20px;
+        padding: 0 20px;
     }
 }

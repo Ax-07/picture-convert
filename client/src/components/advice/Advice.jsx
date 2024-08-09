@@ -65,10 +65,10 @@ export const Advice = () => {
           <code>
             {`
               <picture>
-                <source srcset="image-small.jpg" media="(max-width: 600px)">
-                <source srcset="image-medium.jpg" media="(min-width: 601px) and (max-width: 1024px)">
-                <source srcset="image-large.jpg" media="(min-width: 1025px)">
-                <img src="default.jpg" alt="Description de l'image" loading="lazy">
+                <source srcset="image-small.jpg" media="(max-width: 600px)"/>
+                <source srcset="image-medium.jpg" media="(min-width: 601px) and (max-width: 1024px)"/>
+                <source srcset="image-large.jpg" media="(min-width: 1025px)"/>
+                <img src="default.jpg" alt="Description de l'image" loading="lazy"/>
               </picture>
             `}
           </code>
@@ -79,20 +79,20 @@ export const Advice = () => {
                 <source 
                   srcset="image-small.jpg" 
                   media="(max-width: 600px)"
-                >
+                />
                 <source 
                   srcset="image-medium.jpg" 
                   media="(min-width: 601px) and (max-width: 1024px)"
-                >
+                />
                 <source 
                   srcset="image-large.jpg" 
                   media="(min-width: 1025px)"
-                >
+                />
                 <img 
                   src="default.jpg" 
                   alt="Description de l'image" 
                   loading="lazy"
-                >
+                />
               </picture>
             `}
           </code>
